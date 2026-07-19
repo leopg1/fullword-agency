@@ -1,0 +1,986 @@
+{
+  "nav": {
+    "home": "Home",
+    "jobs": "Jobs",
+    "services": "Services",
+    "about": "About us",
+    "contact": "Contact",
+    "whatsapp": "Message us on WhatsApp",
+    "callUs": "Call us",
+    "menu": "Menu",
+    "closeMenu": "Close menu",
+    "mainMenu": "Main menu",
+    "mobileMenu": "Mobile menu",
+    "forCandidates": "For candidates",
+    "blog": "Blog"
+  },
+  "hero": {
+    "eyebrow": "Recruitment agency · Bucharest",
+    "titleStart": "The right",
+    "titleHighlight": "people,",
+    "titleEnd": " in the right place.",
+    "subtitle": "We find reliable staff for your company or a secure job for you — in Romania and across Europe.",
+    "ctaCompanies": "I need staff",
+    "ctaCandidates": "I need a job",
+    "trust1": "Interview within 24 hours",
+    "trust2": "30-day replacement guarantee",
+    "trust3": "No fees for candidates"
+  },
+  "stats": {
+    "title": "Experience you can rely on",
+    "subtitle": "Diana Dina, the agency's founder, has worked in human resources for over 15 years.",
+    "interviews": "interviews held",
+    "companies": "partner companies",
+    "placements": "employees placed"
+  },
+  "footer": {
+    "description": "Recruitment agency and complete HR partner in Bucharest. Recruitment, work permits, company formation, Romanian citizenship and mediation.",
+    "servicesTitle": "Services",
+    "companyTitle": "Company",
+    "candidatesTitle": "Candidates",
+    "legalTitle": "Legal",
+    "contactTitle": "Contact",
+    "recruitment": "Staff recruitment",
+    "hrOutsourcing": "External HR partner",
+    "workPermits": "Work permits",
+    "marketEntry": "Company formation in Romania",
+    "citizenship": "Romanian citizenship",
+    "mediation": "Mediation",
+    "openJobs": "Open jobs",
+    "forCandidates": "How it works",
+    "aboutUs": "About us",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Privacy policy",
+    "cookies": "Cookie policy",
+    "terms": "Terms and conditions",
+    "companyData": "FULL WORK SERVICES S.R.L. · VAT ID 45291775 · Trade Reg. J2021020993406",
+    "sol": "Online dispute resolution (ODR)",
+    "address": "63 Grigore Ionescu St., District 2, Bucharest, Romania",
+    "rights": "All rights reserved."
+  },
+  "common": {
+    "seeMore": "See more",
+    "apply": "Apply now",
+    "requestOffer": "Request an offer",
+    "openJob": "Open job",
+    "closedJob": "Position filled",
+    "perHour": "per hour",
+    "perWeek": "per week",
+    "perMonth": "per month",
+    "net": "net",
+    "gross": "gross"
+  },
+  "audience": {
+    "title": "How can we help?",
+    "subtitle": "Pick your path — it takes 30 seconds.",
+    "companiesTitle": "I'm a company",
+    "companiesText": "You need people and no time for dozens of interviews. We take over the whole process, from posting to hiring.",
+    "companiesB1": "First CVs within 48 hours",
+    "companiesB2": "Free replacement within the first 30 days",
+    "companiesB3": "HR administration and paperwork fully covered",
+    "companiesCta": "Request an offer",
+    "candidatesTitle": "I'm looking for a job",
+    "candidatesText": "Verified jobs in Romania and across Europe, with official contracts and on-time pay. No fees for you, ever.",
+    "candidatesB1": "Interview within 24 hours",
+    "candidatesB2": "Housing and transport covered for jobs abroad",
+    "candidatesB3": "We stay with you until your first day at work",
+    "candidatesCta": "See open jobs"
+  },
+  "services": {
+    "title": "Our services",
+    "subtitle": "From the first interview to the final paperwork — one partner for everything people-related.",
+    "recruitmentTitle": "Staff recruitment",
+    "recruitmentText": "We find and vet the right candidates for your company, from skilled workers to managers.",
+    "hrTitle": "External HR partner",
+    "hrText": "Contracts, timesheets, job descriptions and legal compliance — outsource your entire HR to us.",
+    "permitsTitle": "Work permits",
+    "permitsText": "Hire non-EU employees legally: IGI files, approvals and all the paperwork, handled by us.",
+    "marketTitle": "Company formation in Romania",
+    "marketText": "For foreign entrepreneurs: registered company, bank account and full compliance, without the queues.",
+    "citizenshipTitle": "Romanian citizenship",
+    "citizenshipText": "Citizenship reacquisition: file, archives, translations and ANC submission, step by step.",
+    "mediationTitle": "Mediation",
+    "mediationText": "We settle workplace disputes amicably, fast and confidentially, without going to court.",
+    "cta": "Learn more"
+  },
+  "domains": {
+    "title": "Jobs by industry",
+    "subtitle": "We work with employers in the industries that hire the most.",
+    "construction": "Construction & industry",
+    "logistics": "Warehouse & logistics",
+    "transport": "Transport",
+    "horeca": "HoReCa & cleaning",
+    "office": "Office & sales",
+    "medical": "Medical",
+    "jobsCount": "{count, plural, =0 {no open jobs} one {# open job} other {# open jobs}}"
+  },
+  "process": {
+    "title": "How it works",
+    "subtitle": "Simple and hassle-free, in three steps.",
+    "s1Title": "Tell us what you need",
+    "s1Text": "A WhatsApp message or a phone call — tell us who you're looking for, or which job fits you.",
+    "s2Title": "We propose the match",
+    "s2Text": "Within 24–48 hours you get vetted candidates, or an interview for the job you want.",
+    "s3Title": "Sign and start",
+    "s3Text": "Official contract, paperwork in order — and we stay by your side after the hire too."
+  },
+  "founder": {
+    "eyebrow": "Who is behind the agency",
+    "title": "Over 15 years of experience in human resources",
+    "quote": "HR is not about procedures, it's about people. The interview is a dialogue, not a test — and talent shows in practice.",
+    "name": "Diana Dina",
+    "role": "Founder of Full Work Services",
+    "text": "Diana built the agency around a simple idea: full transparency with companies and genuine respect for candidates. Over 10,000 interviews held and 2,500 employees placed in companies across Romania and Europe.",
+    "more": "Read her story"
+  },
+  "testimonials": {
+    "title": "What our clients say",
+    "subtitle": "Companies that trusted us with their teams.",
+    "t1Quote": "Working with the Full Work Services team was one of the most balanced recruitment experiences. The process was transparent, the communication was excellent, and the final selection perfectly reflected our company's values and needs.",
+    "t1Name": "Cătălina G.",
+    "t1Role": "IT Manager",
+    "t2Quote": "I greatly appreciated the fairness and attention to detail. Each candidate was evaluated not only for their skills, but also for their compatibility with the team. I have rarely encountered a recruitment process so humane and professional at the same time.",
+    "t2Name": "Ioana G.",
+    "t2Role": "Factory Manager",
+    "t3Quote": "From the first contact to signing the contract, I felt respected and listened to. Diana and her team guided me patiently, giving me real feedback and sincere support.",
+    "t3Name": "Beatrice G.",
+    "t3Role": "Law Firm Manager",
+    "t4Quote": "Diana has a unique way of connecting the right people with the right organizations. She doesn't just deliver candidates, she delivers team solutions.",
+    "t4Name": "Raluca V.",
+    "t4Role": "HR Director"
+  },
+  "jobsPreview": {
+    "title": "Latest open jobs",
+    "subtitle": "Positions active right now, in Romania and across Europe.",
+    "viewAll": "See all jobs"
+  },
+  "finalCta": {
+    "title": "Let's talk.",
+    "subtitle": "Message us on WhatsApp or give us a call — we reply the same day, Monday to Friday.",
+    "whatsapp": "Message us on WhatsApp",
+    "call": "Call {phone}"
+  },
+  "jobsBoard": {
+    "title": "Open jobs",
+    "subtitle": "Verified positions with official contracts — in Romania and across Europe. No fees for you.",
+    "all": "All",
+    "byCountry": "By country",
+    "byDomain": "By industry",
+    "empty": "No open jobs match this filter right now. Message us on WhatsApp — new positions appear weekly.",
+    "count": "{count, plural, one {# job found} other {# jobs found}}",
+    "reset": "See all jobs"
+  },
+  "jobPage": {
+    "back": "All jobs",
+    "benefits": "What you get",
+    "requirements": "What we're looking for",
+    "location": "Where you'll work",
+    "responsibilities": "What you'll do",
+    "applyTitle": "Apply now",
+    "applySubtitle": "You'll get an answer and an interview within 24 hours.",
+    "closedTitle": "This position has been filled",
+    "closedText": "Browse the open jobs or leave your details — we'll contact you when something suitable appears.",
+    "formName": "Your name",
+    "formPhone": "Phone",
+    "formEmail": "Email (optional)",
+    "formMessage": "Message (optional)",
+    "formCv": "Your CV (PDF or Word, optional)",
+    "formCvButton": "Choose file",
+    "formSubmit": "Send application",
+    "formSending": "Sending...",
+    "formSuccess": "Thank you! We received your application and will call you within 24 hours.",
+    "formError": "Something went wrong. Try again or message us directly on WhatsApp.",
+    "formPrivacy": "By submitting you agree to the processing of your data according to our privacy policy.",
+    "orWhatsapp": "or apply directly on",
+    "whatsappText": "Hello! I would like to apply for the job: {title}",
+    "applyNow": "Apply now"
+  },
+  "servicesHub": {
+    "title": "Services",
+    "subtitle": "One partner for people, paperwork and bureaucracy — pick the service you need.",
+    "ctaTitle": "Not sure what fits your situation?",
+    "ctaText": "Message us on WhatsApp with your problem and we'll tell you how we can help — no strings attached.",
+    "ctaButton": "Message us on WhatsApp"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "We reply the same day, Monday to Friday. Choose whatever is easiest for you.",
+    "phoneTitle": "Call us",
+    "whatsappTitle": "Message us on WhatsApp",
+    "whatsappText": "The fastest way — we reply from our phone.",
+    "emailTitle": "Send us an email",
+    "addressTitle": "Address",
+    "addressAction": "View on map",
+    "formTitle": "Leave us a message",
+    "formSubtitle": "Takes 30 seconds — we'll get back to you.",
+    "formName": "Your name",
+    "formCompany": "Company (if applicable)",
+    "formPhone": "Phone",
+    "formEmail": "Email (optional)",
+    "formType": "What are you interested in?",
+    "typeContact": "I have a question",
+    "typeOffer": "I want an offer for my company",
+    "formMessage": "Your message",
+    "formSubmit": "Send message",
+    "formSending": "Sending...",
+    "formSuccess": "Thank you! We received your message and will contact you the same business day.",
+    "formError": "Something went wrong. Try again or call us directly.",
+    "formPrivacy": "By submitting you agree to the processing of your data according to our privacy policy."
+  },
+  "blogPage": {
+    "title": "Blog",
+    "subtitle": "Simple guides about work, hiring, permits and paperwork — explained for everyone.",
+    "readMore": "Read the article",
+    "empty": "New articles coming soon.",
+    "backToBlog": "All articles",
+    "allCategories": "All",
+    "featured": "Featured",
+    "readTime": "{min} min read",
+    "relatedTitle": "Related articles",
+    "ctaTitle": "Have a specific question?",
+    "ctaText": "Message us on WhatsApp — we'll answer right away, no strings attached.",
+    "ctaButton": "Message us on WhatsApp",
+    "author": "The Full Work Services team",
+    "published": "Published"
+  },
+  "svcRecrutare": {
+    "eyebrow": "For companies",
+    "title": "Staff recruitment, from A to Z",
+    "subtitle": "We find the right people for you, from defining the role to the final interview. You run your business — we handle the entire recruitment flow.",
+    "includesTitle": "What's included",
+    "includes": [
+      {
+        "title": "Profile analysis and initial consulting",
+        "text": "We talk with you, understand exactly who you need and define the role clearly before the search begins."
+      },
+      {
+        "title": "Active candidate sourcing",
+        "text": "We don't wait for applications. We go out and find the right candidates where they are."
+      },
+      {
+        "title": "Rigorous screening with structured interviews",
+        "text": "Every candidate goes through structured interviews, so only serious people reach your desk."
+      },
+      {
+        "title": "You stay involved in the final selection",
+        "text": "Your hiring manager and team take part in the final choice. The decision always stays with you."
+      },
+      {
+        "title": "Support across the whole flow, up to hiring",
+        "text": "Scheduling, candidate communication, feedback — we handle it all, so your internal resources stay free."
+      },
+      {
+        "title": "30-day replacement guarantee",
+        "text": "If the person you hire leaves within the first 30 days, we replace them."
+      }
+    ],
+    "forWhoTitle": "Who it's for",
+    "forWho": [
+      "You run a construction or production company and people leave faster than you can hire.",
+      "You've been searching for months for a key role and can't find the right person.",
+      "You have no HR department and recruitment eats up time you should spend on your business.",
+      "You once hired in a hurry and paid for it. This time you want the selection done properly."
+    ],
+    "stepsTitle": "How we work",
+    "steps": [
+      {
+        "title": "Tell us who you need",
+        "text": "We discuss the role, the team and your expectations, and define the right candidate profile together."
+      },
+      {
+        "title": "We search and screen",
+        "text": "Active sourcing and structured interviews. We only bring you candidates worth meeting."
+      },
+      {
+        "title": "You hire with peace of mind",
+        "text": "You join the final interview and make the choice. If the person leaves within 30 days, we replace them."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "How long does it take to find a candidate?",
+        "a": "It depends on the role and how in-demand that profile is. After our first talk, we give you a realistic timeline for your situation."
+      },
+      {
+        "q": "What happens if the new hire leaves quickly?",
+        "a": "You're covered by the replacement guarantee: if the person leaves within the first 30 days, we search again and bring you another candidate."
+      },
+      {
+        "q": "Do I have to run the interviews myself?",
+        "a": "Only the final one, if you wish. We handle the screening and structured interviews — you only meet the right candidates. You're involved exactly as much as you want."
+      },
+      {
+        "q": "How much does recruitment cost?",
+        "a": "The price depends on the role and how complex the search is. Tell us what you're looking for and we'll send you a concrete offer."
+      }
+    ],
+    "ctaTitle": "Let's find your people",
+    "ctaText": "Tell us which role you need to fill and we'll come back with a concrete proposal.",
+    "ctaButton": "Request a quote"
+  },
+  "svcHr": {
+    "eyebrow": "For companies",
+    "title": "Your external HR partner",
+    "subtitle": "We take over the HR processes that eat your time: contracts, paperwork, compliance, assessments. Like having an HR department — without hiring one.",
+    "includesTitle": "What's included",
+    "includes": [
+      {
+        "title": "HR Administration",
+        "text": "Employment contracts, onboarding and offboarding, job descriptions. Your paperwork stays up to date, without the headache."
+      },
+      {
+        "title": "Legal Compliance",
+        "text": "Internal audit, support with labor legislation and internal policies set up properly, so there are no surprises."
+      },
+      {
+        "title": "Performance and Retention",
+        "text": "Assessments, team feedback and employer branding strategies, so your good people stay with you."
+      }
+    ],
+    "forWhoTitle": "Who it's for",
+    "forWho": [
+      "Your company is growing and HR paperwork is starting to overwhelm you.",
+      "You can't justify a full-time HR person yet, but you feel you need one.",
+      "Good people keep leaving and you're not sure why.",
+      "You want to be sure you're in line with labor legislation, without studying it yourself."
+    ],
+    "stepsTitle": "How we work",
+    "steps": [
+      {
+        "title": "We look at where you are",
+        "text": "Together we review your current HR: documents, contracts, policies, team."
+      },
+      {
+        "title": "We agree on what we take over",
+        "text": "You choose what to hand over: administration, compliance, assessments — or the full package."
+      },
+      {
+        "title": "We run it, you stay informed",
+        "text": "We do the work and keep you updated step by step. You decide, we execute."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "Can you fully replace an HR department?",
+        "a": "We can take over the essential HR processes: personnel administration, compliance, assessments. You choose whether to outsource everything or just a part."
+      },
+      {
+        "q": "My company is small. Does this make sense for me?",
+        "a": "Yes. Small companies rarely have a dedicated HR person, and paperwork and legislation need constant attention. You outsource exactly as much as you need, without hiring anyone."
+      },
+      {
+        "q": "What does an internal HR audit mean?",
+        "a": "We review your HR documents and processes — contracts, job descriptions, internal policies — and tell you clearly what's fine and what needs fixing."
+      },
+      {
+        "q": "How much does HR consulting cost?",
+        "a": "It depends on your team size and on which processes we take over. Message us and we'll send an offer for your situation."
+      }
+    ],
+    "ctaTitle": "Take HR off your plate",
+    "ctaText": "Tell us what you're struggling with on the people side and we'll propose a concrete plan.",
+    "ctaButton": "Request a quote"
+  },
+  "svcPermise": {
+    "eyebrow": "For employers",
+    "title": "Work permits for non-EU employees",
+    "subtitle": "Bringing in workers from abroad or negotiating with your employees? We handle the files, the authorities and the paperwork, in full compliance with legal requirements.",
+    "includesTitle": "What's included",
+    "includes": [
+      {
+        "title": "Work Permit Services",
+        "text": "We manage the whole work permit process for your foreign employees, from start to finish."
+      },
+      {
+        "title": "Eligibility assessment",
+        "text": "We check upfront whether the role and the candidate meet the conditions, so you don't waste time and money on a rejected file."
+      },
+      {
+        "title": "IGI file preparation",
+        "text": "We prepare the file for the General Inspectorate for Immigration (IGI): complete, correct and submitted on time."
+      },
+      {
+        "title": "Communication with the authorities",
+        "text": "We deal with the institutions on your behalf and follow the file through to the result."
+      },
+      {
+        "title": "Labor Negotiations",
+        "text": "We represent you in collective negotiations and draft the Collective Labor Agreement."
+      }
+    ],
+    "forWhoTitle": "Who it's for",
+    "forWho": [
+      "You run a construction, hospitality or production company and can't find workers locally anymore.",
+      "You want to hire workers from abroad, but the bureaucracy and the queues put you off.",
+      "You've already submitted a file and it got stuck with the authorities.",
+      "Your company has grown and it's time for collective negotiations with your employees."
+    ],
+    "stepsTitle": "How we work",
+    "steps": [
+      {
+        "title": "We assess your situation",
+        "text": "Tell us who you want to hire or what you're negotiating. We check the conditions and tell you clearly what needs to be done."
+      },
+      {
+        "title": "We prepare the paperwork",
+        "text": "We put together the complete file and submit it to the authorities. No queues for you."
+      },
+      {
+        "title": "We follow through",
+        "text": "We stay in touch with the institutions and update you at every step, until the documents are in your hands."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "What is the IGI file?",
+        "a": "It's the file submitted to the General Inspectorate for Immigration when hiring a foreign citizen. We prepare it and manage all communication with the authorities."
+      },
+      {
+        "q": "How long does a work permit take?",
+        "a": "Timelines depend on the authorities and on each individual case. After assessing your situation, we tell you realistically what to expect."
+      },
+      {
+        "q": "Do you also handle the Collective Labor Agreement?",
+        "a": "Yes. We represent you in collective negotiations and draft the Collective Labor Agreement."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "It depends on the number of people and the complexity of the files. Tell us what you need and we'll send a concrete offer."
+      }
+    ],
+    "ctaTitle": "Skip the queues and the paperwork",
+    "ctaText": "Tell us what you need — work permits or collective bargaining — and we'll reply with the concrete steps and an offer.",
+    "ctaButton": "Request a quote"
+  },
+  "svcInfiintare": {
+    "eyebrow": "For Expanding Companies",
+    "title": "Company formation in Romania",
+    "subtitle": "You want to enter the Romanian market, but the paperwork, the institutions and the language feel like a wall. We take care of the whole process, step by step — you focus on your business.",
+    "includesTitle": "What we handle for you",
+    "includes": [
+      {
+        "title": "Company Formation & Registration",
+        "desc": "We handle the complete incorporation process: company registration, legal documentation and coordination with the Romanian authorities."
+      },
+      {
+        "title": "Legal Documentation Assistance",
+        "desc": "We prepare and check every legal document, so everything complies with Romanian corporate rules and institutional requirements."
+      },
+      {
+        "title": "Tax Registration & Compliance",
+        "desc": "We assist with VAT registration and tax identification procedures, and explain clearly what fiscal obligations you have as a foreign business owner."
+      },
+      {
+        "title": "Registered Office & Administrative Support",
+        "desc": "We help you find a registered office solution and sort out the administrative steps your company needs to operate."
+      },
+      {
+        "title": "Banking & Financial Setup Guidance",
+        "desc": "We guide you through opening a business bank account and preparing the financial documents the bank will ask for."
+      },
+      {
+        "title": "Translation & Apostille Management",
+        "desc": "We coordinate certified translations, legalisation and apostille services, so your documents are recognised in Romania."
+      },
+      {
+        "title": "Business Consulting & Market Entry Guidance",
+        "desc": "Practical advice on the Romanian business environment, how to structure your company and the first decisions you need to make."
+      },
+      {
+        "title": "Power of Attorney Representation",
+        "desc": "We can represent you at institutions through power of attorney — fewer trips to Romania and faster procedures."
+      }
+    ],
+    "forWhoTitle": "Who this is for",
+    "forWho": [
+      "Foreign entrepreneurs who want to open a company in Romania",
+      "Companies expanding into the Romanian market",
+      "Business owners who can't travel often and need someone on the ground",
+      "Anyone who doesn't want to face Romanian bureaucracy alone"
+    ],
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "Tell us your plan",
+        "desc": "Write to us on WhatsApp. We listen, ask a few questions and tell you exactly what your company setup needs."
+      },
+      {
+        "title": "We prepare everything",
+        "desc": "Documents, translations, registrations, visits to institutions — we handle the paperwork and keep you updated at every step."
+      },
+      {
+        "title": "Your company is ready",
+        "desc": "You get your registered company, with the tax side, registered office and bank account sorted, ready to do business."
+      }
+    ],
+    "faqTitle": "Frequently Asked Questions",
+    "faq": [
+      {
+        "q": "Do I need to travel to Romania to open the company?",
+        "a": "Not for every step. In many situations we can represent you through power of attorney, which greatly reduces the need for physical presence. If any step does require you in person, we tell you exactly which one from the start."
+      },
+      {
+        "q": "I don't speak Romanian. Is that a problem?",
+        "a": "No. We communicate with you in English and coordinate certified translations for all the documents that need them."
+      },
+      {
+        "q": "What about taxes and VAT?",
+        "a": "We assist with tax and VAT registration and explain, in plain words, what fiscal obligations your company will have in Romania — so there are no surprises."
+      },
+      {
+        "q": "Do I need an address in Romania for the company?",
+        "a": "Yes, every Romanian company needs a registered office. We support you in finding a solution and handle the related administrative steps."
+      }
+    ],
+    "ctaTitle": "Ready to start in Romania?",
+    "ctaText": "Send us a message on WhatsApp and tell us what you want to build. We reply with the exact steps for your situation.",
+    "ctaButton": "Request an Offer"
+  },
+  "svcCetatenie": {
+    "eyebrow": "For Foreign Citizens",
+    "title": "Romanian citizenship reacquisition",
+    "subtitle": "Reclaiming or obtaining Romanian citizenship means archives, apostilles, translations and a lot of waiting. We guide your file from the first document all the way to the oath.",
+    "includesTitle": "What we handle for you",
+    "includes": [
+      {
+        "title": "File Audit & Eligibility Verification",
+        "desc": "We carefully analyse the documents you already have, check their accuracy and eligibility, spot what's missing and tell you how to fix it."
+      },
+      {
+        "title": "Archival Research",
+        "desc": "We search the archives for the certificates and historical records your file needs — essential when reclaiming Romanian citizenship."
+      },
+      {
+        "title": "Apostille & Certified Translation Management",
+        "desc": "We manage the complete legalisation and translation process, so your documents are officially accepted where they need to go."
+      },
+      {
+        "title": "International Background Checks",
+        "desc": "We support you in obtaining and verifying the international criminal record, guiding you through the required steps and helping you avoid common mistakes."
+      },
+      {
+        "title": "ANC Status Tracking",
+        "desc": "We monitor your file at the National Authority for Citizenship (ANC), keep you constantly updated and step in when delays or blockages appear."
+      },
+      {
+        "title": "Oath Preparation & Language Guidance",
+        "desc": "We prepare you for the final stage with Romanian language support and oath simulations, so you walk in calm and ready."
+      },
+      {
+        "title": "Post-Citizenship Registration",
+        "desc": "We handle the transcription of your civil status documents (birth, marriage) into the Romanian registry, so they are officially recognised in Romania."
+      },
+      {
+        "title": "Power of Attorney Representation",
+        "desc": "We can represent you at institutions through power of attorney — we handle the administrative steps and reduce the need for you to travel."
+      }
+    ],
+    "forWhoTitle": "Who this is for",
+    "forWho": [
+      "Descendants of Romanian citizens who want to reclaim their citizenship",
+      "Foreign citizens starting the Romanian citizenship process",
+      "People with a file already submitted who need tracking and support",
+      "Anyone living abroad who can't manage the Romanian paperwork alone"
+    ],
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "We check your file",
+        "desc": "You tell us your situation on WhatsApp. We audit your documents and tell you honestly where you stand and what's still missing."
+      },
+      {
+        "title": "We build the file together",
+        "desc": "Archive research, translations, apostilles, criminal records — we gather and prepare everything, then track your file at the ANC."
+      },
+      {
+        "title": "You take the oath",
+        "desc": "We prepare you for the oath, then register your civil documents in Romania. You are officially a Romanian citizen."
+      }
+    ],
+    "faqTitle": "Frequently Asked Questions",
+    "faq": [
+      {
+        "q": "How long does the citizenship process take?",
+        "a": "There is no fixed term — it depends on your case, how complete your file is and the processing pace at the authorities. What we can do: prepare a correct file from day one, track its status at the ANC and intervene when it gets stuck, so you avoid the delays that can be avoided."
+      },
+      {
+        "q": "What documents do I need?",
+        "a": "Typically: civil status certificates (birth, marriage), documents proving your connection to Romania, and a criminal record — all translated and apostilled. Every case is different, so we start with a file audit and give you the exact list for your situation."
+      },
+      {
+        "q": "Do I have to come to Romania in person?",
+        "a": "Not for every step. For many administrative procedures we can represent you through power of attorney. Certain key moments, such as the citizenship oath, do require your presence — we tell you from the start exactly when you'll need to travel."
+      },
+      {
+        "q": "Do I need to speak Romanian for the oath?",
+        "a": "The oath is taken in Romanian, and basic knowledge of the language helps a lot. That's exactly why we offer language support and oath simulations — so you arrive prepared and confident."
+      }
+    ],
+    "ctaTitle": "Ready to start your citizenship journey?",
+    "ctaText": "Send us a message on WhatsApp with your situation. We'll tell you honestly what your file needs and how we can help.",
+    "ctaButton": "Request an Offer"
+  },
+  "svcMediere": {
+    "eyebrow": "Mediation services",
+    "title": "Mediation for workplace disputes",
+    "subtitle": "When a conflict appears between an employee and an employer, court is not the only way. Mediation is a calmer path: you sit down with a neutral mediator, talk openly and look for a solution that works for both sides.",
+    "includesTitle": "What the service includes",
+    "includes": [
+      "Mediation for employee–employer conflicts, with a neutral, impartial mediator",
+      "Guided negotiation, built on the real needs of both sides, not on rigid positions",
+      "A mediation agreement with legal value — it can become enforceable through notarial authentication or court approval",
+      "Full confidentiality: what is said in mediation stays in mediation",
+      "Tax benefit: if a court case is already under way, you can recover 50% of the stamp duty"
+    ],
+    "forWhoTitle": "Who mediation is for",
+    "forWho": [
+      "Employees in conflict with their employer who want a quick solution, without a trial",
+      "Employers who want to settle a dispute without drama and without going to court",
+      "Companies that prefer dialogue over a long, tiring legal battle"
+    ],
+    "stepsTitle": "How it works",
+    "steps": [
+      {
+        "title": "You tell us your situation",
+        "text": "Message us on WhatsApp or give us a call. We listen to what happened and tell you honestly whether mediation fits your case."
+      },
+      {
+        "title": "The mediation session",
+        "text": "You sit down at the table with the mediator. The discussion is voluntary, confidential and focused on a solution where both sides win."
+      },
+      {
+        "title": "The mediation agreement",
+        "text": "If you reach an understanding, we put it in writing as a mediation agreement. If needed, it can become enforceable through a notary or the court."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "What exactly is mediation?",
+        "a": "It is a structured conversation between you and the other side, guided by a neutral, impartial mediator. Nobody imposes a solution: you decide together, and the mediator helps you understand each other. Everything is voluntary and confidential."
+      },
+      {
+        "q": "How long does mediation take compared to court?",
+        "a": "A court case can take a long time. Mediation is usually much faster: it can be settled in a few meetings, at the parties' own pace. That is why it is worth trying before going to court."
+      },
+      {
+        "q": "Do I have to bring a lawyer?",
+        "a": "No. In mediation, the mediator is neutral and takes no one's side. You can bring a lawyer if it makes you feel safer, but it is not mandatory."
+      },
+      {
+        "q": "What legal value does the mediation agreement have?",
+        "a": "The agreement signed in mediation is a private document. To become enforceable, it can be authenticated by a notary or approved by the court through a ruling. We explain step by step which option fits your situation."
+      }
+    ],
+    "ctaTitle": "Facing a conflict at work?",
+    "ctaText": "Message us on WhatsApp and tell us your situation. We will tell you honestly whether mediation can help and what the next steps would be.",
+    "ctaButton": "Message us on WhatsApp"
+  },
+  "about": {
+    "title": "About us",
+    "intro": "Full Work Services is a recruitment and HR firm based in Bucharest. We handle the whole process, from finding the right candidates to the final interview, with a focus on transparency and collaboration. Behind the firm is Diana Dina, our founder, with over 15 years of experience in human resources — and the belief that HR is first of all about relationships between people, not just processes.",
+    "visionTitle": "Our vision",
+    "vision": [
+      "We believe something simple: people work well where they are treated with respect. That's why we tell companies the truth from the first conversation, and give candidates real answers instead of silence.",
+      "We don't rush to \"deliver CVs\". We'd rather understand the role, the team and the person first — and only then make a recommendation we can stand behind.",
+      "And our job doesn't end when the contract is signed. We stay close after the hire too, because a good match shows over time, not on interview day."
+    ],
+    "valuesTitle": "Our values",
+    "values": [
+      {
+        "title": "Transparency",
+        "text": "We tell it like it is, from the very first message. No inflated promises and no hidden conditions — you always know where you stand and what comes next."
+      },
+      {
+        "title": "Respect for the candidate",
+        "text": "You are not a CV in a pile. We listen to you, give you real feedback and treat you as a person, not a file."
+      },
+      {
+        "title": "Long-term partnership",
+        "text": "We don't disappear once the contract is signed. We stay close to both companies and people, because good relationships are built over time."
+      }
+    ],
+    "visionEyebrow": "Our vision"
+  },
+  "candidates": {
+    "title": "For candidates",
+    "subtitle": "Looking for a job in Romania or abroad? We take care of the journey: from your first message to your first day at work.",
+    "stepsTitle": "How you get the job, step by step",
+    "steps": [
+      {
+        "title": "You apply",
+        "text": "Send us a WhatsApp message or apply to one of our open jobs. You don't need anything complicated to get started."
+      },
+      {
+        "title": "We call you and talk",
+        "text": "We contact you within 24 hours. We discuss what you can do and what you want, match you with the right jobs and prepare you for the interview."
+      },
+      {
+        "title": "Paperwork and contract",
+        "text": "We guide you through all the required documents and make sure you sign an official work contract, with clear conditions, before you start."
+      },
+      {
+        "title": "First day and beyond",
+        "text": "We don't leave you on your own at the start. We keep in touch, see how you are settling in, and we are one phone call away if anything comes up."
+      }
+    ],
+    "safetyTitle": "You are in good hands",
+    "safety": [
+      {
+        "title": "No fees for candidates",
+        "text": "You never pay for our services. If someone asks you for money to get hired, that's a bad sign — it never happens with us."
+      },
+      {
+        "title": "Official work contract",
+        "text": "You work legally, with a contract signed before your first day. You know exactly the salary, the schedule and the conditions."
+      },
+      {
+        "title": "Housing and transport for jobs abroad",
+        "text": "For jobs abroad, where applicable, housing and transport are arranged in advance, so you never leave into the unknown."
+      },
+      {
+        "title": "We stay by your side after hiring",
+        "text": "The relationship doesn't end when the contract is signed. You can call us any time you have a question or a problem at your new job."
+      }
+    ],
+    "faqTitle": "Frequently asked questions",
+    "faq": [
+      {
+        "q": "Does it cost me anything to apply or get hired through you?",
+        "a": "No. For candidates, our services are free — from the first message until you are hired."
+      },
+      {
+        "q": "How long until I get hired?",
+        "a": "It depends on the job and the employer, but we never leave you guessing: we contact you within 24 hours of applying and keep you updated at every step."
+      },
+      {
+        "q": "What documents do I need?",
+        "a": "Usually your ID card or passport, plus diplomas or qualifications if the job requires them. Don't worry in advance: we tell you exactly what is needed and help you prepare everything."
+      },
+      {
+        "q": "Is a job abroad safe?",
+        "a": "Yes, when it is done right. You only leave with an official work contract and conditions known in advance, and where applicable, housing and transport are arranged. We also stay in touch after you arrive."
+      },
+      {
+        "q": "Can I apply without a CV?",
+        "a": "Of course. Write to us, we talk on the phone, and if needed, we help you put your experience on paper."
+      }
+    ],
+    "ctaTitle": "Let's find you the right job",
+    "ctaText": "Send us a WhatsApp message with what you can do and what you are looking for. We will contact you within 24 hours.",
+    "ctaButton": "See the open jobs"
+  },
+  "legalPrivacy": {
+    "title": "Privacy Policy",
+    "updated": "18 July 2026",
+    "sections": [
+      {
+        "h": "In short",
+        "p": [
+          "We respect your data. We only collect what you share with us through our forms — name, phone, email, message and, if you apply for a job, your CV. We never sell your data and we do not send you ads.",
+          "Below you will find a plain-language explanation of what we do with your data and what rights you have."
+        ]
+      },
+      {
+        "h": "Who we are (the data controller)",
+        "p": [
+          "The controller of your data is FULL WORK SERVICES S.R.L., with its registered office at Str. Grigore Ionescu no. 63, Sector 2, Bucharest, Romania, Trade Register no. J2021020993406, tax ID (CUI) 45291775.",
+          "For any question about your data, write to us at office@fullworkservices.com or call +40 723 147 723."
+        ]
+      },
+      {
+        "h": "What data we collect",
+        "p": [
+          "Through the contact or quote request form: your name, phone, email and message.",
+          "When you apply for a job on the site: your name, phone, email and the CV you upload.",
+          "If you message us on WhatsApp, the conversation takes place in the WhatsApp app, at your initiative, and is also subject to WhatsApp's privacy policy.",
+          "That is all. We do not collect data behind your back and we do not use tracking or marketing cookies."
+        ]
+      },
+      {
+        "h": "Why we use your data (purposes)",
+        "p": [
+          "To reply to your messages and quote requests.",
+          "To help you find a job: we read your CV, contact you for an interview and present your application to the employer for the job you applied to.",
+          "To keep a basic record of the requests we receive and to meet our legal obligations."
+        ]
+      },
+      {
+        "h": "Legal basis for processing",
+        "p": [
+          "When you contact us or request a quote, we process your data to take steps at your request before a possible contract (Art. 6(1)(b) GDPR).",
+          "When you apply for a job, we process your data based on your consent and on the steps taken at your request with a view to employment (Art. 6(1)(a) and (b) GDPR).",
+          "For keeping basic records we rely on our legitimate interest (Art. 6(1)(f) GDPR) — for example, being able to show that we answered your request."
+        ]
+      },
+      {
+        "h": "How long we keep your data",
+        "p": [
+          "CVs and job application data: a maximum of 12 months from the date you apply. After that we delete them, unless you explicitly ask us to keep them for future opportunities.",
+          "Messages from the contact form: for as long as needed to handle your request, plus a reasonable record-keeping period.",
+          "You can ask us to delete your data earlier at any time — see the section on your rights."
+        ]
+      },
+      {
+        "h": "Who else has access to your data",
+        "p": [
+          "Like any modern website, we work with a few technical providers that process data on our behalf, under contract:",
+          "Supabase — database hosting, on servers located in the European Union. This is where form messages and job applications are stored.",
+          "Vercel — website hosting.",
+          "Google Fonts are served directly from our own server, so your visit does not send any data to Google.",
+          "If you choose to message us on WhatsApp, the communication goes through the WhatsApp service, at your initiative.",
+          "When you apply for a job, we share your CV and contact details with the respective employer — only for the job you applied to. We never sell or rent your data to anyone."
+        ]
+      },
+      {
+        "h": "Your rights",
+        "p": [
+          "You have the right to know what data we hold about you (access), to correct it if it is wrong, to ask us to delete it, to restrict processing, to object to processing and to receive your data in a portable format.",
+          "Where processing is based on your consent, you can withdraw it at any time. Withdrawal does not affect the processing carried out before that moment.",
+          "To exercise any of these rights, write to us at office@fullworkservices.com. We will reply as soon as we can, and no later than one month."
+        ]
+      },
+      {
+        "h": "Where you can complain",
+        "p": [
+          "If something about the way we handle your data does not seem right, please write to us first — most issues can be solved quickly.",
+          "You also have the right, at any time, to lodge a complaint with the Romanian data protection authority (ANSPDCP): www.dataprotection.ro."
+        ]
+      },
+      {
+        "h": "Updates to this policy and contact",
+        "p": [
+          "If we make an important change to this policy — for example, if we add an analytics tool to the site — we will update the date above and publish the new version here.",
+          "Questions? Write to office@fullworkservices.com, call +40 723 147 723 or visit us at Str. Grigore Ionescu no. 63, Sector 2, Bucharest, Romania."
+        ]
+      }
+    ]
+  },
+  "legalCookies": {
+    "title": "Cookie Policy",
+    "updated": "18 July 2026",
+    "sections": [
+      {
+        "h": "What cookies are",
+        "p": [
+          "Cookies are small text files that a website saves in your browser. Some are needed for the site to work; others are used by other websites for ads and tracking.",
+          "Good news: this site only uses the first kind — the strictly necessary ones."
+        ]
+      },
+      {
+        "h": "What cookies we use",
+        "p": [
+          "Just one type: strictly necessary session cookies, used to sign in to the site's admin panel. These only matter for our team, who update the jobs and the content.",
+          "As a regular visitor, you can browse the site without receiving any tracking cookies."
+        ]
+      },
+      {
+        "h": "What we do not use",
+        "p": [
+          "No marketing cookies. No tracking cookies. No analytics tools at this time.",
+          "Fonts are served directly from our own server, so no data is sent to third parties even at that level.",
+          "If we ever add an analytics tool, we will update this policy first and, where the law requires it, ask for your consent."
+        ]
+      },
+      {
+        "h": "How you can control cookies",
+        "p": [
+          "In your browser settings you can view, block or delete cookies at any time. Every browser (Chrome, Safari, Firefox, Edge) has a dedicated section, usually under Privacy.",
+          "Blocking strictly necessary cookies does not affect you as a visitor — it would only prevent signing in to the admin panel, which only our team uses anyway."
+        ]
+      },
+      {
+        "h": "Questions",
+        "p": [
+          "If anything about cookies or your data is unclear, write to us at office@fullworkservices.com or call +40 723 147 723."
+        ]
+      }
+    ]
+  },
+  "legalTerms": {
+    "title": "Terms and Conditions",
+    "updated": "18 July 2026",
+    "sections": [
+      {
+        "h": "Who we are",
+        "p": [
+          "The website fullworkservices.com is owned and operated by FULL WORK SERVICES S.R.L., with its registered office at Str. Grigore Ionescu no. 63, Sector 2, Bucharest, Romania, Trade Register no. J2021020993406, tax ID (CUI) 45291775.",
+          "By using this site, you agree to the terms below. We wrote them in plain language and kept them short, so you can actually read them."
+        ]
+      },
+      {
+        "h": "What this website does",
+        "p": [
+          "The site presents our recruitment and HR services, lists the jobs available through us and lets you get in touch: by form, email or WhatsApp.",
+          "Companies can request a quote, and candidates can apply online to the jobs listed.",
+          "Using the site is free. You do not need an account and you are never asked to pay to browse or apply."
+        ]
+      },
+      {
+        "h": "The jobs listed",
+        "p": [
+          "The job ads on this site are for information and are updated regularly. A job may be closed once the position is filled, even if the ad remains visible for a short while.",
+          "The final details of a job — salary, schedule, benefits, and accommodation or transport where applicable — are confirmed directly with us and with the employer, at the interview and in the employment contract you sign.",
+          "We do our best to keep the ads accurate as of their publication date, but details may be changed by the employer in the meantime."
+        ]
+      },
+      {
+        "h": "Job applications",
+        "p": [
+          "When you apply for a job, you send us your contact details and CV, and we use them to contact you and present your application to the employer for that job. Your data is processed according to our Privacy Policy, and your CV is kept for a maximum of 12 months.",
+          "Applying creates no obligation: not for you to accept a position, and not for us or the employer to offer you one. The final hiring decision always belongs to the employer.",
+          "Please send real, up-to-date information — an accurate CV helps us recommend you for the right job."
+        ]
+      },
+      {
+        "h": "Liability",
+        "p": [
+          "We work to keep the site running properly and the information up to date, but the site is provided as is. We cannot guarantee there will never be errors, technical interruptions or outdated information.",
+          "The site may contain links to websites run by other companies (for example, WhatsApp). We are not responsible for their content or practices.",
+          "The information published on this site, including blog articles, is general in nature. It does not replace advice tailored to your situation — for that, contact us directly."
+        ]
+      },
+      {
+        "h": "Intellectual property",
+        "p": [
+          "The content of this site — texts, logo, images, page structure — belongs to FULL WORK SERVICES S.R.L. or is used with the owners' permission.",
+          "You are welcome to read, save and share links to our pages. You may not copy the content for commercial purposes or republish it as your own without our written consent."
+        ]
+      },
+      {
+        "h": "Governing law",
+        "p": [
+          "These terms are governed by Romanian law. If a disagreement arises, we first try to solve it amicably — write to us and let's talk. If that fails, the competent courts are those of Romania.",
+          "If you are a consumer, you may also contact the Romanian consumer protection authority (ANPC — anpc.ro) or the EU online dispute resolution platform (ODR)."
+        ]
+      },
+      {
+        "h": "Contact",
+        "p": [
+          "FULL WORK SERVICES S.R.L. — Str. Grigore Ionescu no. 63, Sector 2, Bucharest, Romania. Tax ID (CUI) 45291775, Trade Register no. J2021020993406.",
+          "Email: office@fullworkservices.com · Phone and WhatsApp: +40 723 147 723.",
+          "If anything in these terms is unclear, just ask. We prefer to keep things simple and direct."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "This page doesn't exist",
+    "text": "The link is wrong or the page has moved. No worries — we'll get you where you need to be.",
+    "ctaJobs": "See open jobs",
+    "ctaHome": "Go to the homepage"
+  },
+  "errorPage": {
+    "title": "Something went wrong",
+    "text": "A technical error occurred. Try again — and if it persists, call us or message us on WhatsApp.",
+    "retry": "Try again"
+  },
+  "faqAside": {
+    "text": "Didn't find your answer? Message us on WhatsApp and we'll tell you right away, no strings attached.",
+    "cta": "Ask on WhatsApp"
+  }
+}

@@ -1,0 +1,196 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter);
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-poppins);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+
+  /* Brand Full Work Services — sky. Reguli de contrast (WCAG):
+     - brand (#0EA5E9): DOAR blocuri/decor/badge-uri; text pe el = foreground (slate-900). NICIODATĂ text alb pe brand.
+     - primary (#0369A1 = sky-700): butoane primare & linkuri, text alb OK (5.93:1).
+     - brand-dark (#0C4A6E = sky-900): secțiuni de impact, text alb OK (9.46:1). */
+  --color-brand: var(--brand);
+  --color-brand-foreground: var(--brand-foreground);
+  --color-brand-dark: var(--brand-dark);
+  --color-brand-dark-foreground: var(--brand-dark-foreground);
+  --color-brand-tint: var(--brand-tint);
+  --color-brand-tint-2: var(--brand-tint-2);
+  --color-whatsapp: var(--whatsapp);
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a; /* slate-900 — titluri & text */
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #0369a1; /* sky-700 — butoane/linkuri, text alb AA */
+  --primary-foreground: #ffffff;
+  --secondary: #f0f9ff; /* sky-50 */
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9; /* slate-100 */
+  --muted-foreground: #475569; /* slate-600 — text secundar AA */
+  --accent: #e0f2fe; /* sky-100 */
+  --accent-foreground: #0f172a;
+  --destructive: #b91c1c;
+  --border: #e2e8f0; /* slate-200 */
+  --input: #cbd5e1; /* slate-300 — bordură vizibilă pt. public 40+ */
+  --ring: #0ea5e9;
+  --chart-1: #0ea5e9;
+  --chart-2: #0369a1;
+  --chart-3: #0c4a6e;
+  --chart-4: #475569;
+  --chart-5: #94a3b8;
+  --radius: 0.625rem;
+  --sidebar: #f8fafc;
+  --sidebar-foreground: #0f172a;
+  --sidebar-primary: #0369a1;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #e0f2fe;
+  --sidebar-accent-foreground: #0f172a;
+  --sidebar-border: #e2e8f0;
+  --sidebar-ring: #0ea5e9;
+
+  --brand: #0ea5e9; /* sky-500 — blocuri color-block & decor */
+  --brand-foreground: #0f172a; /* singurul text permis pe brand */
+  --brand-dark: #0c4a6e; /* sky-900 — secțiuni dark */
+  --brand-dark-foreground: #ffffff;
+  --brand-tint: #f0f9ff; /* sky-50 — fundal secțiuni alternate */
+  --brand-tint-2: #e0f2fe; /* sky-100 */
+  --whatsapp: #128c7e; /* verde WhatsApp închis — text alb AA */
+}
+
+.dark {
+  --background: #0b1220;
+  --foreground: #e2e8f0;
+  --card: #0f1a2e;
+  --card-foreground: #e2e8f0;
+  --popover: #0f1a2e;
+  --popover-foreground: #e2e8f0;
+  --primary: #38bdf8;
+  --primary-foreground: #0f172a;
+  --secondary: #17233a;
+  --secondary-foreground: #e2e8f0;
+  --muted: #17233a;
+  --muted-foreground: #94a3b8;
+  --accent: #17233a;
+  --accent-foreground: #e2e8f0;
+  --destructive: #f87171;
+  --border: #1e293b;
+  --input: #334155;
+  --ring: #38bdf8;
+  --chart-1: #38bdf8;
+  --chart-2: #0ea5e9;
+  --chart-3: #7dd3fc;
+  --chart-4: #94a3b8;
+  --chart-5: #475569;
+  --sidebar: #0f1a2e;
+  --sidebar-foreground: #e2e8f0;
+  --sidebar-primary: #38bdf8;
+  --sidebar-primary-foreground: #0f172a;
+  --sidebar-accent: #17233a;
+  --sidebar-accent-foreground: #e2e8f0;
+  --sidebar-border: #1e293b;
+  --sidebar-ring: #38bdf8;
+
+  --brand: #0ea5e9;
+  --brand-foreground: #0f172a;
+  --brand-dark: #0c4a6e;
+  --brand-dark-foreground: #ffffff;
+  --brand-tint: #0f1a2e;
+  --brand-tint-2: #17233a;
+  --whatsapp: #128c7e;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    /* clip, nu hidden — hidden omoară position:sticky (gotcha Lenis) */
+    overflow-x: clip;
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    /* public 40+: body 18px, line-height 1.6 */
+    font-size: 1.125rem;
+    line-height: 1.6;
+    overflow-x: clip;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold tracking-tight text-balance;
+  }
+  ::selection {
+    background: var(--brand-tint-2);
+    color: var(--foreground);
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer utilities {
+  /* Ritm vertical color-block: alb → sky-50 → alb → sky-900 */
+  .section-pad {
+    @apply py-16 md:py-24 lg:py-28;
+  }
+  .container-site {
+    @apply mx-auto w-full max-w-7xl px-5 md:px-8;
+  }
+  /* Paragrafe lizibile: max ~65ch */
+  .prose-measure {
+    max-width: 65ch;
+  }
+}

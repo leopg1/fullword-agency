@@ -1,0 +1,986 @@
+{
+  "nav": {
+    "home": "Acasă",
+    "jobs": "Joburi",
+    "services": "Servicii",
+    "about": "Despre noi",
+    "contact": "Contact",
+    "whatsapp": "Scrie-ne pe WhatsApp",
+    "callUs": "Sună-ne",
+    "menu": "Meniu",
+    "closeMenu": "Închide meniul",
+    "mainMenu": "Meniu principal",
+    "mobileMenu": "Meniu mobil",
+    "forCandidates": "Pentru candidați",
+    "blog": "Blog"
+  },
+  "hero": {
+    "eyebrow": "Agenție de recrutare · București",
+    "titleStart": "Oamenii",
+    "titleHighlight": "potriviți,",
+    "titleEnd": " la locul potrivit.",
+    "subtitle": "Găsim personal de încredere pentru firma ta sau un loc de muncă sigur pentru tine — în România și în Europa.",
+    "ctaCompanies": "Caut personal",
+    "ctaCandidates": "Caut un job",
+    "trust1": "Interviu în maxim 24 de ore",
+    "trust2": "Garanție de înlocuire 30 de zile",
+    "trust3": "Fără taxe pentru candidați"
+  },
+  "stats": {
+    "title": "Experiență pe care te poți baza",
+    "subtitle": "Diana Dina, fondatoarea agenției, lucrează în resurse umane de peste 15 ani.",
+    "interviews": "interviuri susținute",
+    "companies": "companii partenere",
+    "placements": "angajați plasați"
+  },
+  "footer": {
+    "description": "Agenție de recrutare și partener complet de HR în București. Recrutare, permise de muncă, înființare firmă, cetățenie română și mediere.",
+    "servicesTitle": "Servicii",
+    "companyTitle": "Companie",
+    "candidatesTitle": "Candidați",
+    "legalTitle": "Legal",
+    "contactTitle": "Contact",
+    "recruitment": "Recrutare personal",
+    "hrOutsourcing": "Partener HR extern",
+    "workPermits": "Permise de muncă",
+    "marketEntry": "Înființare firmă în România",
+    "citizenship": "Cetățenie română",
+    "mediation": "Mediere",
+    "openJobs": "Joburi deschise",
+    "forCandidates": "Cum funcționează",
+    "aboutUs": "Despre noi",
+    "blog": "Blog",
+    "contact": "Contact",
+    "privacy": "Politica de confidențialitate",
+    "cookies": "Politica de cookies",
+    "terms": "Termeni și condiții",
+    "companyData": "FULL WORK SERVICES S.R.L. · CUI 45291775 · Reg. Com. J2021020993406",
+    "sol": "Soluționarea online a litigiilor (SOL)",
+    "address": "Str. Grigore Ionescu nr. 63, Sector 2, București",
+    "rights": "Toate drepturile rezervate."
+  },
+  "common": {
+    "seeMore": "Vezi mai multe",
+    "apply": "Aplică acum",
+    "requestOffer": "Cere ofertă",
+    "openJob": "Job deschis",
+    "closedJob": "Poziție ocupată",
+    "perHour": "pe oră",
+    "perWeek": "pe săptămână",
+    "perMonth": "pe lună",
+    "net": "net",
+    "gross": "brut"
+  },
+  "audience": {
+    "title": "Cu ce te putem ajuta?",
+    "subtitle": "Alege drumul tău — durează 30 de secunde.",
+    "companiesTitle": "Sunt o companie",
+    "companiesText": "Ai nevoie de oameni și nu ai timp de zeci de interviuri. Preluăm noi tot procesul, de la anunț până la angajare.",
+    "companiesB1": "Primele CV-uri în 48 de ore",
+    "companiesB2": "Înlocuim gratuit persoana în primele 30 de zile",
+    "companiesB3": "Administrare HR și acte complet acoperite",
+    "companiesCta": "Cere ofertă",
+    "candidatesTitle": "Caut un loc de muncă",
+    "candidatesText": "Joburi verificate, în România și în Europa, cu contract oficial și plată la timp. Fără nicio taxă din partea ta.",
+    "candidatesB1": "Interviu în maxim 24 de ore",
+    "candidatesB2": "Cazare și transport asigurate la joburile din străinătate",
+    "candidatesB3": "Te însoțim până în prima zi de muncă",
+    "candidatesCta": "Vezi joburile deschise"
+  },
+  "services": {
+    "title": "Serviciile noastre",
+    "subtitle": "De la primul interviu până la actele finale — un singur partener pentru tot ce ține de oameni.",
+    "recruitmentTitle": "Recrutare personal",
+    "recruitmentText": "Găsim și verificăm candidații potriviți pentru firma ta, de la muncitori calificați la manageri.",
+    "hrTitle": "Partener HR extern",
+    "hrText": "Contracte, pontaje, fișe de post și conformitate legală — externalizezi tot HR-ul la noi.",
+    "permitsTitle": "Permise de muncă",
+    "permitsText": "Aducem legal angajați din afara UE: dosare IGI, avize și toată birocrația, rezolvate de noi.",
+    "marketTitle": "Înființare firmă în România",
+    "marketText": "Pentru antreprenori străini: firmă înregistrată, cont bancar și acte în regulă, fără drumuri.",
+    "citizenshipTitle": "Cetățenie română",
+    "citizenshipText": "Redobândirea cetățeniei: dosar, arhive, traduceri și depunere la ANC, pas cu pas.",
+    "mediationTitle": "Mediere",
+    "mediationText": "Rezolvăm conflicte de muncă pe cale amiabilă, rapid și confidențial, fără instanță.",
+    "cta": "Află mai multe"
+  },
+  "domains": {
+    "title": "Joburi pe domenii",
+    "subtitle": "Lucrăm cu angajatori din industriile unde se caută cei mai mulți oameni.",
+    "construction": "Construcții & industrie",
+    "logistics": "Depozit & logistică",
+    "transport": "Transport",
+    "horeca": "HoReCa & curățenie",
+    "office": "Birou & vânzări",
+    "medical": "Medical",
+    "jobsCount": "{count, plural, =0 {niciun job deschis} one {# job deschis} few {# joburi deschise} other {# de joburi deschise}}"
+  },
+  "process": {
+    "title": "Cum funcționează",
+    "subtitle": "Simplu și fără bătăi de cap, în trei pași.",
+    "s1Title": "Ne spui ce cauți",
+    "s1Text": "Un mesaj pe WhatsApp sau un telefon — ne spui ce oameni cauți sau ce job ți se potrivește.",
+    "s2Title": "Îți propunem potrivirea",
+    "s2Text": "În 24–48 de ore primești candidați verificați sau interviu pentru jobul dorit.",
+    "s3Title": "Semnezi și începi",
+    "s3Text": "Contract oficial, acte în regulă, iar noi rămânem alături de tine și după angajare."
+  },
+  "founder": {
+    "eyebrow": "Cine e în spatele agenției",
+    "title": "Peste 15 ani de experiență în resurse umane",
+    "quote": "HR-ul nu înseamnă proceduri, ci oameni. Interviul e un dialog, nu un test — iar talentul se vede în practică.",
+    "name": "Diana Dina",
+    "role": "Fondatoarea Full Work Services",
+    "text": "Diana a construit agenția în jurul unei idei simple: transparență totală față de companii și respect real față de candidați. Peste 10.000 de interviuri susținute și 2.500 de angajați plasați în companii din România și Europa.",
+    "more": "Citește povestea ei"
+  },
+  "testimonials": {
+    "title": "Ce spun clienții noștri",
+    "subtitle": "Companii care ne-au încredințat echipele lor.",
+    "t1Quote": "Colaborarea cu echipa Full Work Services a fost una dintre cele mai echilibrate experiențe din zona de recrutare. Procesul a fost transparent, comunicarea excelentă, iar selecția finală a reflectat perfect valorile și nevoile companiei noastre.",
+    "t1Name": "Cătălina G.",
+    "t1Role": "Manager IT",
+    "t2Quote": "Am apreciat enorm corectitudinea și atenția la detalii. Fiecare candidat a fost evaluat nu doar după competențe, ci și după compatibilitatea cu echipa. Rareori am întâlnit un proces de recrutare atât de uman și profesionist în același timp.",
+    "t2Name": "Ioana G.",
+    "t2Role": "Manager fabrică",
+    "t3Quote": "De la primul contact până la semnarea contractului, m-am simțit respectată și ascultată. Diana și echipa ei m-au ghidat cu răbdare, oferindu-mi feedback real și sprijin sincer.",
+    "t3Name": "Beatrice G.",
+    "t3Role": "Manager cabinet avocatură",
+    "t4Quote": "Diana are un mod unic de a conecta oamenii potriviți cu organizațiile potrivite. Nu livrează doar candidați, ci soluții de echipă.",
+    "t4Name": "Raluca V.",
+    "t4Role": "Director HR"
+  },
+  "jobsPreview": {
+    "title": "Ultimele joburi deschise",
+    "subtitle": "Poziții active acum, în România și în Europa.",
+    "viewAll": "Vezi toate joburile"
+  },
+  "finalCta": {
+    "title": "Hai să vorbim.",
+    "subtitle": "Scrie-ne pe WhatsApp sau sună-ne — răspundem în aceeași zi, de luni până vineri.",
+    "whatsapp": "Scrie-ne pe WhatsApp",
+    "call": "Sună la {phone}"
+  },
+  "jobsBoard": {
+    "title": "Joburi deschise",
+    "subtitle": "Poziții verificate, cu contract oficial — în România și în Europa. Fără nicio taxă pentru tine.",
+    "all": "Toate",
+    "byCountry": "După țară",
+    "byDomain": "După domeniu",
+    "empty": "Momentan nu avem joburi deschise pe acest filtru. Scrie-ne pe WhatsApp — poziții noi apar săptămânal.",
+    "count": "{count, plural, one {# job găsit} few {# joburi găsite} other {# de joburi găsite}}",
+    "reset": "Vezi toate joburile"
+  },
+  "jobPage": {
+    "back": "Toate joburile",
+    "benefits": "Ce primești",
+    "requirements": "Ce căutăm",
+    "location": "Unde vei lucra",
+    "responsibilities": "Ce vei face",
+    "applyTitle": "Aplică acum",
+    "applySubtitle": "Primești răspuns și interviu în maxim 24 de ore.",
+    "closedTitle": "Poziția a fost ocupată",
+    "closedText": "Vezi joburile deschise sau lasă-ne datele tale — te contactăm când apare ceva potrivit.",
+    "formName": "Numele tău",
+    "formPhone": "Telefon",
+    "formEmail": "Email (opțional)",
+    "formMessage": "Mesaj (opțional)",
+    "formCv": "CV-ul tău (PDF sau Word, opțional)",
+    "formCvButton": "Alege fișierul",
+    "formSubmit": "Trimite aplicarea",
+    "formSending": "Se trimite...",
+    "formSuccess": "Mulțumim! Am primit aplicarea ta și te sunăm în cel mult 24 de ore.",
+    "formError": "Ceva n-a mers. Încearcă din nou sau scrie-ne direct pe WhatsApp.",
+    "formPrivacy": "Prin trimitere ești de acord cu prelucrarea datelor conform politicii de confidențialitate.",
+    "orWhatsapp": "sau aplică direct pe",
+    "whatsappText": "Bună ziua! Aș dori să aplic pentru jobul: {title}",
+    "applyNow": "Aplică acum"
+  },
+  "servicesHub": {
+    "title": "Servicii",
+    "subtitle": "Un singur partener pentru oameni, acte și birocrație — alege serviciul de care ai nevoie.",
+    "ctaTitle": "Nu știi exact ce ți se potrivește?",
+    "ctaText": "Scrie-ne pe WhatsApp ce problemă ai și îți spunem noi cum te putem ajuta — fără obligații.",
+    "ctaButton": "Scrie-ne pe WhatsApp"
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "Răspundem în aceeași zi, de luni până vineri. Alege cum îți e mai ușor.",
+    "phoneTitle": "Sună-ne",
+    "whatsappTitle": "Scrie-ne pe WhatsApp",
+    "whatsappText": "Cel mai rapid mod — răspundem de pe telefon.",
+    "emailTitle": "Trimite-ne un email",
+    "addressTitle": "Adresa",
+    "addressAction": "Vezi pe hartă",
+    "formTitle": "Lasă-ne un mesaj",
+    "formSubtitle": "Completezi în 30 de secunde — te contactăm noi.",
+    "formName": "Numele tău",
+    "formCompany": "Firma (dacă e cazul)",
+    "formPhone": "Telefon",
+    "formEmail": "Email (opțional)",
+    "formType": "Ce te interesează?",
+    "typeContact": "Am o întrebare",
+    "typeOffer": "Vreau ofertă pentru firma mea",
+    "formMessage": "Mesajul tău",
+    "formSubmit": "Trimite mesajul",
+    "formSending": "Se trimite...",
+    "formSuccess": "Mulțumim! Am primit mesajul și te contactăm în aceeași zi lucrătoare.",
+    "formError": "Ceva n-a mers. Încearcă din nou sau sună-ne direct.",
+    "formPrivacy": "Prin trimitere ești de acord cu prelucrarea datelor conform politicii de confidențialitate."
+  },
+  "blogPage": {
+    "title": "Blog",
+    "subtitle": "Ghiduri simple despre muncă, angajări, permise și acte — explicate pe înțelesul tuturor.",
+    "readMore": "Citește articolul",
+    "empty": "Articole noi în curând.",
+    "backToBlog": "Toate articolele",
+    "allCategories": "Toate",
+    "featured": "Recomandat",
+    "readTime": "{min} min de citit",
+    "relatedTitle": "Articole similare",
+    "ctaTitle": "Ai o întrebare concretă?",
+    "ctaText": "Scrie-ne pe WhatsApp — îți răspundem pe loc, fără obligații.",
+    "ctaButton": "Scrie-ne pe WhatsApp",
+    "author": "Echipa Full Work Services",
+    "published": "Publicat"
+  },
+  "svcRecrutare": {
+    "eyebrow": "Pentru companii",
+    "title": "Recrutare de personal, de la A la Z",
+    "subtitle": "Îți găsim oamenii potriviți, de la definirea postului până la interviul final. Tu îți vezi de firmă, noi ne ocupăm de tot procesul de recrutare.",
+    "includesTitle": "Ce include serviciul",
+    "includes": [
+      {
+        "title": "Analiza profilului și consultanță inițială",
+        "text": "Stăm de vorbă cu tine, înțelegem ce fel de om îți trebuie și definim clar postul înainte să începem căutarea."
+      },
+      {
+        "title": "Căutare activă de candidați",
+        "text": "Nu așteptăm să aplice oamenii. Mergem noi după candidații potriviți, acolo unde sunt ei."
+      },
+      {
+        "title": "Selecție riguroasă, cu interviuri structurate",
+        "text": "Fiecare candidat trece prin interviuri structurate, ca la tine să ajungă doar oamenii serioși."
+      },
+      {
+        "title": "Implicarea ta în selecția finală",
+        "text": "Managerul direct și echipa ta participă la alegerea finală. Decizia rămâne mereu la tine."
+      },
+      {
+        "title": "Suport pe tot fluxul, până la angajare",
+        "text": "Programări, comunicare cu candidații, feedback — ne ocupăm noi de tot, ca să nu-ți consumi resursele interne."
+      },
+      {
+        "title": "Garanție de înlocuire 30 de zile",
+        "text": "Dacă persoana angajată pleacă în primele 30 de zile, o înlocuim noi."
+      }
+    ],
+    "forWhoTitle": "Pentru cine e",
+    "forWho": [
+      "Ai firmă de construcții sau producție și îți pleacă oamenii mai repede decât reușești să angajezi.",
+      "Cauți de luni de zile un om pe un post cheie și nu găsești pe nimeni potrivit.",
+      "Nu ai departament de HR și recrutarea îți mănâncă timpul pe care ar trebui să-l pui în afacere.",
+      "Ai angajat pe grabă și ai plătit scump greșeala. Acum vrei o selecție făcută ca la carte."
+    ],
+    "stepsTitle": "Cum lucrăm",
+    "steps": [
+      {
+        "title": "Ne spui ce om cauți",
+        "text": "Discutăm despre post, echipă și așteptări. Definim împreună profilul candidatului potrivit."
+      },
+      {
+        "title": "Căutăm și selectăm",
+        "text": "Facem căutare activă și interviuri structurate. Îți aducem doar candidații care merită văzuți."
+      },
+      {
+        "title": "Angajezi liniștit",
+        "text": "Participi la interviul final și alegi. Dacă omul pleacă în primele 30 de zile, îl înlocuim."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Cât durează să găsiți un candidat?",
+        "a": "Depinde de post și de cât de căutați sunt oamenii din domeniul tău. După prima discuție îți spunem un termen realist pentru situația ta."
+      },
+      {
+        "q": "Ce se întâmplă dacă omul angajat pleacă repede?",
+        "a": "Ai garanție de înlocuire: dacă persoana pleacă în primele 30 de zile, căutăm din nou și îți aducem alt candidat."
+      },
+      {
+        "q": "Trebuie să mă ocup eu de interviuri?",
+        "a": "Doar de cel final, dacă vrei. Noi facem trierea și interviurile structurate, iar tu vezi doar candidații potriviți. Te implicăm exact cât îți dorești."
+      },
+      {
+        "q": "Cât costă serviciul de recrutare?",
+        "a": "Prețul depinde de post și de complexitatea căutării. Scrie-ne ce cauți și îți facem o ofertă concretă, pe situația ta."
+      }
+    ],
+    "ctaTitle": "Hai să-ți găsim oamenii",
+    "ctaText": "Spune-ne ce post vrei să ocupi și îți răspundem cu o propunere concretă.",
+    "ctaButton": "Cere ofertă"
+  },
+  "svcHr": {
+    "eyebrow": "Pentru companii",
+    "title": "Partener HR extern pentru firma ta",
+    "subtitle": "Preluăm procesele de HR care îți mănâncă timpul: contracte, acte, conformitate, evaluări. Ca un departament de HR, dar fără să angajezi unul.",
+    "includesTitle": "Ce include serviciul",
+    "includes": [
+      {
+        "title": "Administrare de personal",
+        "text": "Contracte de muncă, angajări și plecări (onboarding și offboarding), fișe de post. Actele stau la zi, fără bătăi de cap."
+      },
+      {
+        "title": "Conformitate legală",
+        "text": "Audit intern, sprijin pe legislația muncii și politici interne puse la punct, ca să nu ai surprize."
+      },
+      {
+        "title": "Performanță și retenție",
+        "text": "Evaluări, feedback pentru echipă și strategii de employer branding, ca oamenii buni să rămână la tine."
+      }
+    ],
+    "forWhoTitle": "Pentru cine e",
+    "forWho": [
+      "Ai o firmă în creștere și actele de personal au început să te depășească.",
+      "Nu-ți permiți încă un om de HR cu normă întreagă, dar simți că ai nevoie de unul.",
+      "Îți pleacă oamenii buni și nu știi exact de ce.",
+      "Vrei să fii sigur că ești în regulă cu legislația muncii, fără să o studiezi tu."
+    ],
+    "stepsTitle": "Cum lucrăm",
+    "steps": [
+      {
+        "title": "Vedem unde ești acum",
+        "text": "Analizăm împreună procesele tale de HR: acte, contracte, politici, echipă."
+      },
+      {
+        "title": "Stabilim ce preluăm",
+        "text": "Alegi ce lași pe mâna noastră: administrare, conformitate, evaluări — sau tot pachetul."
+      },
+      {
+        "title": "Ne ocupăm noi, tu ești la curent",
+        "text": "Preluăm treaba și te ținem la curent pas cu pas. Tu decizi, noi executăm."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Puteți înlocui complet un departament de HR?",
+        "a": "Putem prelua procesele esențiale de HR: administrare de personal, conformitate, evaluări. Tu alegi dacă externalizezi tot sau doar o parte."
+      },
+      {
+        "q": "Firma mea e mică. Are sens pentru mine?",
+        "a": "Da. Tocmai firmele mici nu au un om dedicat de HR, iar actele și legislația cer atenție constantă. Externalizezi exact cât ai nevoie, fără să angajezi pe cineva."
+      },
+      {
+        "q": "Ce înseamnă audit intern de HR?",
+        "a": "Verificăm actele și procesele tale de personal — contracte, fișe de post, politici interne — și îți spunem clar ce e în regulă și ce trebuie pus la punct."
+      },
+      {
+        "q": "Cât costă consultanța de HR?",
+        "a": "Depinde de mărimea echipei și de ce procese preluăm. Scrie-ne și îți facem o ofertă pe situația ta."
+      }
+    ],
+    "ctaTitle": "Scapă de grija HR-ului",
+    "ctaText": "Spune-ne cu ce te lupți acum în zona de personal și îți propunem un plan concret.",
+    "ctaButton": "Cere ofertă"
+  },
+  "svcPermise": {
+    "eyebrow": "Pentru angajatori",
+    "title": "Permise de muncă pentru angajați non-UE",
+    "subtitle": "Aduci muncitori din străinătate sau negociezi cu angajații? Ne ocupăm noi de dosare, autorități și acte, cu respectarea tuturor cerințelor legale.",
+    "includesTitle": "Ce include serviciul",
+    "includes": [
+      {
+        "title": "Servicii de permise de muncă",
+        "text": "Gestionăm procesul de obținere a permiselor de muncă pentru angajații străini, de la un capăt la altul."
+      },
+      {
+        "title": "Evaluarea eligibilității",
+        "text": "Verificăm de la început dacă postul și candidatul îndeplinesc condițiile, ca să nu pierzi timp și bani cu un dosar respins."
+      },
+      {
+        "title": "Pregătirea dosarului IGI",
+        "text": "Întocmim dosarul pentru Inspectoratul General pentru Imigrări: acte complete, corecte, depuse la timp."
+      },
+      {
+        "title": "Comunicarea cu autoritățile",
+        "text": "Ținem legătura cu instituțiile în locul tău și urmărim dosarul până la rezultat."
+      },
+      {
+        "title": "Negocieri colective",
+        "text": "Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
+      }
+    ],
+    "forWhoTitle": "Pentru cine e",
+    "forWho": [
+      "Ai firmă de construcții, HoReCa sau producție și nu mai găsești oameni în țară.",
+      "Vrei să angajezi muncitori din străinătate, dar te sperie birocrația și drumurile pe la ghișee.",
+      "Ai depus deja un dosar și s-a împotmolit pe la autorități.",
+      "Firma ta a crescut și a venit momentul negocierilor colective cu angajații."
+    ],
+    "stepsTitle": "Cum lucrăm",
+    "steps": [
+      {
+        "title": "Evaluăm situația",
+        "text": "Ne spui pe cine vrei să angajezi sau ce ai de negociat. Verificăm condițiile și îți spunem clar ce e de făcut."
+      },
+      {
+        "title": "Pregătim actele",
+        "text": "Întocmim dosarul complet și îl depunem la autorități. Tu nu stai la cozi."
+      },
+      {
+        "title": "Urmărim până la final",
+        "text": "Ținem legătura cu instituțiile și te anunțăm la fiecare pas, până când ai documentele în mână."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Ce este dosarul IGI?",
+        "a": "E dosarul care se depune la Inspectoratul General pentru Imigrări pentru angajarea unui cetățean străin. Noi îl întocmim și gestionăm comunicarea cu autoritățile."
+      },
+      {
+        "q": "Cât durează obținerea unui permis de muncă?",
+        "a": "Termenele depind de autorități și de fiecare caz în parte. După ce îți evaluăm situația, îți spunem realist la ce să te aștepți."
+      },
+      {
+        "q": "Vă ocupați și de Contractul Colectiv de Muncă?",
+        "a": "Da. Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
+      },
+      {
+        "q": "Cât costă serviciul?",
+        "a": "Depinde de numărul de persoane și de complexitatea dosarelor. Scrie-ne ce ai nevoie și îți facem o ofertă concretă."
+      }
+    ],
+    "ctaTitle": "Scapă de drumuri și dosare",
+    "ctaText": "Spune-ne ce ai nevoie — permise de muncă sau negocieri colective — și îți răspundem cu pașii concreți și o ofertă.",
+    "ctaButton": "Cere ofertă"
+  },
+  "svcInfiintare": {
+    "eyebrow": "Pentru companii în extindere",
+    "title": "Înființare de firmă în România",
+    "subtitle": "Vrei să intri pe piața din România, dar actele, instituțiile și birocrația par un zid. Ne ocupăm noi de tot procesul, pas cu pas — tu te concentrezi pe afacerea ta.",
+    "includesTitle": "De ce ne ocupăm pentru tine",
+    "includes": [
+      {
+        "title": "Înființare și înregistrare firmă",
+        "desc": "Ne ocupăm de tot procesul de înființare: înregistrarea firmei, documentele legale și relația cu autoritățile din România."
+      },
+      {
+        "title": "Asistență la documentele legale",
+        "desc": "Pregătim și verificăm fiecare document, ca totul să fie în regulă cu cerințele legale și instituționale din România."
+      },
+      {
+        "title": "Înregistrare fiscală și conformitate",
+        "desc": "Te ajutăm cu înregistrarea în scopuri de TVA, cu procedurile de identificare fiscală și îți explicăm clar ce obligații fiscale ai ca proprietar străin de firmă."
+      },
+      {
+        "title": "Sediu social și suport administrativ",
+        "desc": "Te sprijinim să găsești o soluție de sediu social și rezolvăm pașii administrativi de care firma ta are nevoie ca să funcționeze."
+      },
+      {
+        "title": "Ghidaj pentru cont bancar",
+        "desc": "Te îndrumăm pas cu pas la deschiderea contului bancar de firmă și la pregătirea documentelor financiare cerute de bancă."
+      },
+      {
+        "title": "Traduceri și apostilă",
+        "desc": "Coordonăm traducerile autorizate, legalizările și apostilarea, ca documentele tale să fie recunoscute în România."
+      },
+      {
+        "title": "Consultanță pentru intrarea pe piață",
+        "desc": "Sfaturi practice despre mediul de afaceri din România, structura firmei și primele decizii pe care le ai de luat."
+      },
+      {
+        "title": "Reprezentare prin procură",
+        "desc": "Te putem reprezenta la instituții prin procură — mai puține drumuri în România și proceduri mai rapide."
+      }
+    ],
+    "forWhoTitle": "Pentru cine e serviciul",
+    "forWho": [
+      "Antreprenori străini care vor să deschidă o firmă în România",
+      "Companii care se extind pe piața românească",
+      "Proprietari de afaceri care nu pot călători des și au nevoie de cineva la fața locului",
+      "Oricine nu vrea să se lupte singur cu birocrația românească"
+    ],
+    "stepsTitle": "Cum lucrăm",
+    "steps": [
+      {
+        "title": "Ne spui planul tău",
+        "desc": "Ne scrii pe WhatsApp. Te ascultăm, punem câteva întrebări și îți spunem exact de ce are nevoie firma ta ca să pornească."
+      },
+      {
+        "title": "Pregătim noi totul",
+        "desc": "Documente, traduceri, înregistrări, drumuri la instituții — ne ocupăm de acte și te ținem la curent la fiecare pas."
+      },
+      {
+        "title": "Firma ta e gata",
+        "desc": "Primești firma înregistrată, cu partea fiscală, sediul și contul bancar puse la punct, gata de treabă."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Trebuie să vin în România ca să deschid firma?",
+        "a": "Nu la fiecare pas. În multe situații te putem reprezenta prin procură, ceea ce reduce mult nevoia de prezență fizică. Dacă vreun pas cere totuși prezența ta, îți spunem de la început exact care."
+      },
+      {
+        "q": "Nu vorbesc română. E o problemă?",
+        "a": "Nu. Comunicăm cu tine în engleză și coordonăm traducerile autorizate pentru toate documentele care au nevoie de ele."
+      },
+      {
+        "q": "Cum stau cu taxele și TVA-ul?",
+        "a": "Te ajutăm cu înregistrarea fiscală și în scopuri de TVA și îți explicăm, pe înțelesul tău, ce obligații fiscale va avea firma în România, ca să nu ai surprize."
+      },
+      {
+        "q": "Am nevoie de o adresă în România pentru firmă?",
+        "a": "Da, orice firmă din România are nevoie de un sediu social. Te sprijinim să găsești o soluție de sediu și ne ocupăm de pașii administrativi legați de el."
+      }
+    ],
+    "ctaTitle": "Gata să pornești în România?",
+    "ctaText": "Trimite-ne un mesaj pe WhatsApp și spune-ne ce vrei să construiești. Îți răspundem cu pașii exacți pentru situația ta.",
+    "ctaButton": "Cere ofertă"
+  },
+  "svcCetatenie": {
+    "eyebrow": "Pentru cetățeni străini",
+    "title": "Redobândirea cetățeniei române",
+    "subtitle": "Redobândirea sau obținerea cetățeniei române înseamnă arhive, apostile, traduceri și multă așteptare. Îți ghidăm dosarul de la primul act până la jurământ.",
+    "includesTitle": "De ce ne ocupăm pentru tine",
+    "includes": [
+      {
+        "title": "Audit de dosar și verificarea eligibilității",
+        "desc": "Analizăm cu atenție documentele pe care le ai deja, verificăm dacă sunt corecte și eligibile, vedem ce lipsește și îți spunem cum se rezolvă."
+      },
+      {
+        "title": "Cercetare în arhive",
+        "desc": "Căutăm în arhive certificatele și documentele istorice de care are nevoie dosarul tău — esențiale mai ales la redobândirea cetățeniei române."
+      },
+      {
+        "title": "Apostilă și traduceri autorizate",
+        "desc": "Gestionăm tot procesul de legalizare și traducere a documentelor, ca ele să fie acceptate oficial acolo unde trebuie."
+      },
+      {
+        "title": "Cazier judiciar internațional",
+        "desc": "Te sprijinim să obții și să verifici cazierul judiciar internațional, te ghidăm prin pașii necesari și te ajutăm să eviți greșelile frecvente."
+      },
+      {
+        "title": "Urmărirea dosarului la ANC",
+        "desc": "Monitorizăm stadiul dosarului tău la Autoritatea Națională pentru Cetățenie (ANC), te ținem la curent constant și intervenim când apar întârzieri sau blocaje."
+      },
+      {
+        "title": "Pregătire pentru jurământ și sprijin lingvistic",
+        "desc": "Te pregătim pentru etapa finală cu sprijin la limba română și simulări de jurământ, ca să mergi acolo liniștit și pregătit."
+      },
+      {
+        "title": "Transcrierea actelor după cetățenie",
+        "desc": "Ne ocupăm de transcrierea actelor tale de stare civilă (naștere, căsătorie) în registrele românești, ca să fie recunoscute oficial în România."
+      },
+      {
+        "title": "Reprezentare prin procură",
+        "desc": "Te putem reprezenta la instituții prin procură — ne ocupăm noi de pașii administrativi și reducem nevoia să călătorești."
+      }
+    ],
+    "forWhoTitle": "Pentru cine e serviciul",
+    "forWho": [
+      "Urmașii cetățenilor români care vor să redobândească cetățenia",
+      "Cetățeni străini care pornesc procesul de obținere a cetățeniei române",
+      "Oameni cu dosar deja depus, care au nevoie de urmărire și sprijin",
+      "Oricine locuiește în străinătate și nu poate gestiona singur actele din România"
+    ],
+    "stepsTitle": "Cum lucrăm",
+    "steps": [
+      {
+        "title": "Îți verificăm dosarul",
+        "desc": "Ne spui situația ta pe WhatsApp. Îți analizăm documentele și îți spunem sincer unde ești și ce mai lipsește."
+      },
+      {
+        "title": "Construim dosarul împreună",
+        "desc": "Cercetare în arhive, traduceri, apostile, cazier — adunăm și pregătim totul, apoi urmărim dosarul la ANC."
+      },
+      {
+        "title": "Depui jurământul",
+        "desc": "Te pregătim pentru jurământ, apoi transcriem actele tale în registrele din România. Ești oficial cetățean român."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Cât durează procesul de cetățenie?",
+        "a": "Nu există un termen fix — durata depinde de situația ta, de cât de complet e dosarul și de ritmul de lucru al autorităților. Ce putem face noi: pregătim un dosar corect de la început, îi urmărim stadiul la ANC și intervenim când apar blocaje, ca să eviți întârzierile care se pot evita."
+      },
+      {
+        "q": "Ce acte îmi trebuie?",
+        "a": "De regulă: acte de stare civilă (naștere, căsătorie), documente care dovedesc legătura cu România, cazier judiciar — toate traduse și apostilate. Fiecare caz e diferit, așa că începem cu un audit de dosar și îți dăm lista exactă pentru situația ta."
+      },
+      {
+        "q": "Trebuie să vin fizic în România?",
+        "a": "Nu la fiecare pas. Pentru multe proceduri administrative te putem reprezenta prin procură. Anumite momente-cheie, cum e jurământul de credință, cer însă prezența ta — îți spunem de la început exact când va trebui să vii."
+      },
+      {
+        "q": "Trebuie să vorbesc română la jurământ?",
+        "a": "Jurământul se depune în limba română, iar cunoștințele de bază de limbă te ajută mult. Tocmai de aceea oferim sprijin lingvistic și simulări de jurământ, ca să ajungi acolo pregătit și încrezător."
+      }
+    ],
+    "ctaTitle": "Gata să pornești spre cetățenie?",
+    "ctaText": "Trimite-ne un mesaj pe WhatsApp cu situația ta. Îți spunem sincer de ce are nevoie dosarul tău și cum te putem ajuta.",
+    "ctaButton": "Cere ofertă"
+  },
+  "svcMediere": {
+    "eyebrow": "Servicii de mediere",
+    "title": "Mediere pentru conflicte de muncă",
+    "subtitle": "Când apare un conflict între angajat și angajator, nu trebuie să ajungi direct în instanță. Medierea e o cale mai calmă: stai la masă cu un mediator neutru, discuți deschis și cauți o soluție bună pentru ambele părți.",
+    "includesTitle": "Ce include serviciul",
+    "includes": [
+      "Mediere pentru conflicte între angajat și angajator, cu un mediator neutru și imparțial",
+      "Negociere ghidată, pornind de la nevoile reale ale ambelor părți, nu de la poziții rigide",
+      "Acord de mediere cu valoare legală — poate deveni titlu executoriu prin autentificare la notar sau consfințire în instanță",
+      "Confidențialitate totală: ce se discută la mediere rămâne la mediere",
+      "Beneficii fiscale: dacă există deja un proces pe rol, poți recupera 50% din taxa de timbru"
+    ],
+    "forWhoTitle": "Pentru cine e medierea",
+    "forWho": [
+      "Angajați care au un conflict cu angajatorul și vor o rezolvare rapidă, fără proces",
+      "Angajatori care vor să încheie un diferend fără scandal și fără drumuri la tribunal",
+      "Companii care preferă dialogul în locul unui litigiu lung și obositor"
+    ],
+    "stepsTitle": "Cum decurge",
+    "steps": [
+      {
+        "title": "Ne povestești situația",
+        "text": "Ne scrii pe WhatsApp sau ne suni. Ascultăm ce s-a întâmplat și îți spunem sincer dacă medierea e potrivită pentru cazul tău."
+      },
+      {
+        "title": "Ședința de mediere",
+        "text": "Vă așezați la masă cu mediatorul. Discuția e voluntară, confidențială și orientată spre o soluție în care ambele părți câștigă."
+      },
+      {
+        "title": "Acordul de mediere",
+        "text": "Dacă ajungeți la o înțelegere, o punem pe hârtie într-un acord de mediere. La nevoie, acesta poate căpăta putere de titlu executoriu prin notar sau instanță."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Ce este, de fapt, medierea?",
+        "a": "E o discuție organizată între tine și cealaltă parte, condusă de un mediator neutru și imparțial. Nimeni nu impune o soluție: voi decideți împreună, iar mediatorul vă ajută să vă înțelegeți. Totul e voluntar și confidențial."
+      },
+      {
+        "q": "Cât durează medierea față de un proces în instanță?",
+        "a": "Un proces în instanță poate dura mult. Medierea e, de regulă, mult mai rapidă: totul se poate încheia în câteva întâlniri, în ritmul părților. De aceea merită încercată înainte de a ajunge la tribunal."
+      },
+      {
+        "q": "E obligatoriu să vin cu avocat?",
+        "a": "Nu. La mediere, mediatorul e neutru și nu ține partea nimănui. Poți veni însoțit de un avocat dacă te simți mai în siguranță așa, dar prezența lui nu e obligatorie."
+      },
+      {
+        "q": "Ce valoare are acordul de mediere?",
+        "a": "Acordul semnat la mediere este un înscris sub semnătură privată. Ca să capete putere de executare, el poate fi autentificat la notar sau consfințit de instanță printr-o hotărâre. Îți explicăm pas cu pas varianta potrivită pentru situația ta."
+      }
+    ],
+    "ctaTitle": "Ai un conflict la locul de muncă?",
+    "ctaText": "Scrie-ne pe WhatsApp și povestește-ne situația. Îți spunem sincer dacă medierea te poate ajuta și care ar fi pașii.",
+    "ctaButton": "Scrie-ne pe WhatsApp"
+  },
+  "about": {
+    "title": "Despre noi",
+    "intro": "Full Work Services este o firmă de recrutare și resurse umane din București. Ne ocupăm de tot procesul, de la găsirea candidaților potriviți până la interviul final, cu accent pe transparență și colaborare. În spatele firmei stă Diana Dina, fondatoarea, cu peste 15 ani de experiență în resurse umane — și convingerea că HR-ul înseamnă în primul rând relații între oameni, nu doar procese.",
+    "visionTitle": "Viziunea noastră",
+    "vision": [
+      "Credem un lucru simplu: oamenii lucrează bine acolo unde sunt tratați cu respect. De asta le spunem companiilor adevărul de la prima discuție și le dăm candidaților răspunsuri reale, nu tăcere.",
+      "Nu ne grăbim să „livrăm CV-uri”. Preferăm să înțelegem întâi postul, echipa și omul — și abia apoi să facem o recomandare pe care s-o putem susține.",
+      "Iar treaba noastră nu se termină la semnarea contractului. Rămânem aproape și după angajare, pentru că o potrivire bună se vede în timp, nu în ziua interviului."
+    ],
+    "valuesTitle": "Valorile noastre",
+    "values": [
+      {
+        "title": "Transparență",
+        "text": "Spunem lucrurilor pe nume, de la primul mesaj. Fără promisiuni umflate și fără condiții ascunse — știi mereu în ce stadiu ești și ce urmează."
+      },
+      {
+        "title": "Respect pentru candidat",
+        "text": "Nu ești un CV într-un teanc. Te ascultăm, îți dăm feedback real și te tratăm ca pe un om, nu ca pe un dosar."
+      },
+      {
+        "title": "Parteneriat pe termen lung",
+        "text": "Nu dispărem după semnarea contractului. Rămânem aproape și de companii, și de oameni, pentru că relațiile bune se construiesc în timp."
+      }
+    ],
+    "visionEyebrow": "Viziunea noastră"
+  },
+  "candidates": {
+    "title": "Pentru candidați",
+    "subtitle": "Cauți un loc de muncă în România sau în străinătate? Ne ocupăm noi de drum: de la primul mesaj până la prima zi de lucru.",
+    "stepsTitle": "Cum ajungi la job, pas cu pas",
+    "steps": [
+      {
+        "title": "Aplici",
+        "text": "Ne trimiți un mesaj pe WhatsApp sau aplici la unul dintre joburile deschise. Nu-ți trebuie nimic complicat ca să începi."
+      },
+      {
+        "title": "Te sunăm și stăm de vorbă",
+        "text": "Te contactăm în 24 de ore. Discutăm ce știi să faci și ce îți dorești, îți propunem joburile potrivite și te pregătim pentru interviu."
+      },
+      {
+        "title": "Acte și contract",
+        "text": "Te ghidăm cu toate documentele necesare și ne asigurăm că semnezi un contract oficial de muncă, cu condiții clare, înainte să începi."
+      },
+      {
+        "title": "Prima zi și după",
+        "text": "Nu te lăsăm singur la început de drum. Ținem legătura, vedem cum te acomodezi și suntem la un telefon distanță dacă apare orice problemă."
+      }
+    ],
+    "safetyTitle": "Ești pe mâini bune",
+    "safety": [
+      {
+        "title": "Fără taxe pentru candidați",
+        "text": "Nu plătești nimic pentru serviciile noastre. Niciodată. Dacă cineva îți cere bani ca să te angajezi, e semn rău — la noi nu se întâmplă."
+      },
+      {
+        "title": "Contract oficial de muncă",
+        "text": "Lucrezi legal, cu contract semnat înainte de prima zi. Știi exact salariul, programul și condițiile."
+      },
+      {
+        "title": "Cazare și transport la joburile din străinătate",
+        "text": "La joburile externe, acolo unde e cazul, cazarea și transportul sunt aranjate dinainte, ca să nu pleci în necunoscut."
+      },
+      {
+        "title": "Rămânem alături și după angajare",
+        "text": "Relația nu se termină la semnarea contractului. Ne poți suna oricând ai o nelămurire sau o problemă la noul loc de muncă."
+      }
+    ],
+    "faqTitle": "Întrebări frecvente",
+    "faq": [
+      {
+        "q": "Mă costă ceva să aplic sau să mă angajez prin voi?",
+        "a": "Nu. Pentru candidați, serviciile noastre sunt gratuite — de la primul mesaj până la angajare."
+      },
+      {
+        "q": "Cât durează până mă angajez?",
+        "a": "Depinde de job și de angajator, dar nu te lăsăm să aștepți în ceață: te contactăm în 24 de ore de la aplicare și te ținem la curent la fiecare pas."
+      },
+      {
+        "q": "Ce acte îmi trebuie?",
+        "a": "De regulă, actul de identitate sau pașaportul, plus diplome ori calificări dacă jobul le cere. Nu-ți face griji dinainte: îți spunem exact ce trebuie și te ajutăm să pregătești tot."
+      },
+      {
+        "q": "E sigur un job în străinătate?",
+        "a": "Da, dacă e făcut cu cap. Pleci doar cu contract oficial de muncă și cu condițiile știute dinainte, iar acolo unde e cazul, cazarea și transportul sunt aranjate. Și rămânem în legătură și după ce ajungi."
+      },
+      {
+        "q": "Pot aplica dacă nu am CV?",
+        "a": "Sigur că da. Ne scrii, stăm de vorbă la telefon și, dacă e nevoie, te ajutăm noi să-ți punem experiența pe hârtie."
+      }
+    ],
+    "ctaTitle": "Hai să-ți găsim jobul potrivit",
+    "ctaText": "Trimite-ne un mesaj pe WhatsApp cu ce știi să faci și ce cauți. Te contactăm în 24 de ore.",
+    "ctaButton": "Vezi joburile deschise"
+  },
+  "legalPrivacy": {
+    "title": "Politica de confidențialitate",
+    "updated": "18 iulie 2026",
+    "sections": [
+      {
+        "h": "Pe scurt",
+        "p": [
+          "Îți respectăm datele. Colectăm doar ce ne dai tu prin formulare — nume, telefon, email, mesaj și, dacă aplici la un job, CV-ul tău. Nu vindem datele nimănui și nu îți trimitem reclame.",
+          "Mai jos îți explicăm, pe înțelesul oricui, ce facem cu datele tale și ce drepturi ai. Fără jargon juridic acolo unde nu e nevoie."
+        ]
+      },
+      {
+        "h": "Cine suntem (operatorul de date)",
+        "p": [
+          "Operatorul datelor tale este FULL WORK SERVICES S.R.L., cu sediul în Str. Grigore Ionescu nr. 63, Sector 2, București, înregistrată la Registrul Comerțului cu nr. J2021020993406, CUI 45291775.",
+          "Pentru orice întrebare legată de datele tale ne poți scrie la office@fullworkservices.com sau ne poți suna la +40 723 147 723."
+        ]
+      },
+      {
+        "h": "Ce date colectăm",
+        "p": [
+          "Prin formularul de contact sau de cerere de ofertă: nume, telefon, email și mesajul tău.",
+          "Când aplici la un job prin site: nume, telefon, email și CV-ul pe care îl încarci.",
+          "Dacă ne scrii pe WhatsApp, conversația are loc în aplicația WhatsApp, la inițiativa ta, și este supusă și politicii de confidențialitate WhatsApp.",
+          "Atât. Nu colectăm date pe ascuns și nu folosim cookie-uri de urmărire sau de marketing."
+        ]
+      },
+      {
+        "h": "De ce folosim datele (scopuri)",
+        "p": [
+          "Ca să îți răspundem la mesaje și la cererile de ofertă.",
+          "Ca să te ajutăm să găsești un loc de muncă: îți citim CV-ul, te contactăm pentru interviu și îți prezentăm candidatura angajatorului pentru jobul la care ai aplicat.",
+          "Ca să ținem o evidență a cererilor primite și să ne respectăm obligațiile legale."
+        ]
+      },
+      {
+        "h": "Temeiul legal al prelucrării",
+        "p": [
+          "Când ne contactezi sau ne ceri o ofertă, prelucrăm datele pentru a face demersuri la cererea ta, înainte de un eventual contract (art. 6 alin. 1 lit. b din GDPR).",
+          "Când aplici la un job, prelucrăm datele pe baza consimțământului tău și pentru demersurile făcute la cererea ta în vederea angajării (art. 6 alin. 1 lit. a și b din GDPR).",
+          "Pentru păstrarea unor evidențe de bază avem un interes legitim (art. 6 alin. 1 lit. f din GDPR) — de exemplu, să putem dovedi că ți-am răspuns la o solicitare."
+        ]
+      },
+      {
+        "h": "Cât timp păstrăm datele",
+        "p": [
+          "CV-urile și datele din aplicările la joburi: maximum 12 luni de la aplicare. După acest termen le ștergem, dacă nu ne ceri tu explicit să le păstrăm pentru alte oportunități.",
+          "Mesajele din formularul de contact: atât cât e nevoie ca să rezolvăm cererea ta, plus o perioadă rezonabilă de evidență.",
+          "Poți cere ștergerea datelor tale mai devreme, oricând — vezi secțiunea despre drepturile tale."
+        ]
+      },
+      {
+        "h": "Cine mai are acces la datele tale",
+        "p": [
+          "Ca orice site modern, lucrăm cu câțiva furnizori tehnici care prelucrează datele în numele nostru, pe bază de contract:",
+          "Supabase — găzduirea bazei de date, pe servere din Uniunea Europeană. Aici se stochează mesajele din formulare și aplicările la joburi.",
+          "Vercel — găzduirea site-ului.",
+          "Fonturile Google sunt servite direct de pe serverul nostru, deci vizita ta pe site nu trimite date către Google.",
+          "Dacă alegi să ne scrii pe WhatsApp, comunicarea trece prin serviciul WhatsApp, la inițiativa ta.",
+          "Când aplici la un job, transmitem CV-ul și datele tale de contact angajatorului respectiv — doar pentru jobul la care ai aplicat. Nu vindem și nu închiriem datele tale nimănui."
+        ]
+      },
+      {
+        "h": "Drepturile tale",
+        "p": [
+          "Ai dreptul să afli ce date avem despre tine (acces), să le corectezi dacă sunt greșite, să ceri ștergerea lor, să limitezi prelucrarea, să te opui prelucrării și să primești datele într-un format pe care îl poți lua cu tine (portabilitate).",
+          "Acolo unde prelucrarea se bazează pe consimțământul tău, ți-l poți retrage oricând. Retragerea nu afectează prelucrările făcute până în acel moment.",
+          "Ca să îți exerciți oricare dintre aceste drepturi, scrie-ne la office@fullworkservices.com. Îți răspundem cât de repede putem, cel târziu în termen de o lună."
+        ]
+      },
+      {
+        "h": "Unde poți depune o plângere",
+        "p": [
+          "Dacă ceva ți se pare în neregulă cu felul în care îți prelucrăm datele, scrie-ne mai întâi nouă — de cele mai multe ori rezolvăm rapid.",
+          "Ai însă oricând dreptul să depui o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP): www.dataprotection.ro."
+        ]
+      },
+      {
+        "h": "Actualizări ale politicii și contact",
+        "p": [
+          "Dacă schimbăm ceva important în această politică — de exemplu, dacă adăugăm un instrument de statistici pe site — actualizăm data de mai sus și publicăm aici noua versiune.",
+          "Întrebări? Scrie-ne la office@fullworkservices.com, sună-ne la +40 723 147 723 sau vino să discutăm: Str. Grigore Ionescu nr. 63, Sector 2, București."
+        ]
+      }
+    ]
+  },
+  "legalCookies": {
+    "title": "Politica de cookie-uri",
+    "updated": "18 iulie 2026",
+    "sections": [
+      {
+        "h": "Ce sunt cookie-urile",
+        "p": [
+          "Cookie-urile sunt fișiere mici de text pe care un site le salvează în browserul tău. Unele sunt necesare ca site-ul să funcționeze, altele sunt folosite de alte site-uri pentru reclame și urmărire.",
+          "Vestea bună: acest site folosește doar prima categorie — strictul necesar."
+        ]
+      },
+      {
+        "h": "Ce cookie-uri folosim",
+        "p": [
+          "Un singur tip: cookie-uri strict necesare de sesiune, folosite pentru autentificarea în panoul de administrare al site-ului. Acestea sunt relevante doar pentru echipa noastră, care actualizează joburile și conținutul.",
+          "Ca vizitator obișnuit, poți naviga pe site fără să primești cookie-uri de urmărire."
+        ]
+      },
+      {
+        "h": "Ce nu folosim",
+        "p": [
+          "Fără cookie-uri de marketing. Fără cookie-uri de urmărire. Fără instrumente de statistici (analytics) în acest moment.",
+          "Fonturile sunt servite direct de pe serverul nostru, deci nici măcar la acest nivel nu se trimit date către terți.",
+          "Dacă vreodată vom adăuga un instrument de statistici, vom actualiza această politică înainte și, dacă legea o cere, îți vom cere acordul."
+        ]
+      },
+      {
+        "h": "Cum poți controla cookie-urile",
+        "p": [
+          "Din setările browserului tău poți vedea, bloca sau șterge cookie-urile oricând. Fiecare browser (Chrome, Safari, Firefox, Edge) are o secțiune dedicată în meniul de setări, de obicei la Confidențialitate.",
+          "Blocarea cookie-urilor strict necesare nu te afectează ca vizitator — ar împiedica doar autentificarea în panoul de administrare, pe care oricum îl folosim doar noi."
+        ]
+      },
+      {
+        "h": "Întrebări",
+        "p": [
+          "Dacă ai orice nelămurire despre cookie-uri sau despre datele tale, scrie-ne la office@fullworkservices.com sau sună-ne la +40 723 147 723."
+        ]
+      }
+    ]
+  },
+  "legalTerms": {
+    "title": "Termeni și condiții",
+    "updated": "18 iulie 2026",
+    "sections": [
+      {
+        "h": "Cine suntem",
+        "p": [
+          "Site-ul fullworkservices.com este deținut și administrat de FULL WORK SERVICES S.R.L., cu sediul în Str. Grigore Ionescu nr. 63, Sector 2, București, înregistrată la Registrul Comerțului cu nr. J2021020993406, CUI 45291775.",
+          "Folosind acest site, ești de acord cu termenii de mai jos. I-am scris simplu și pe scurt, ca să îi poți citi cu adevărat."
+        ]
+      },
+      {
+        "h": "Ce face acest site",
+        "p": [
+          "Site-ul prezintă serviciile noastre de recrutare și resurse umane, afișează joburile disponibile prin noi și îți permite să ne contactezi: prin formular, pe email sau pe WhatsApp.",
+          "Companiile pot cere o ofertă, iar candidații pot aplica online la joburile afișate.",
+          "Folosirea site-ului este gratuită. Nu îți cerem cont și nu îți cerem plăți pentru a naviga sau a aplica."
+        ]
+      },
+      {
+        "h": "Joburile afișate",
+        "p": [
+          "Anunțurile de pe site au caracter informativ și sunt actualizate periodic. Un job poate fi închis atunci când postul s-a ocupat, chiar dacă anunțul mai apare pe site pentru scurt timp.",
+          "Detaliile finale ale unui loc de muncă — salariul, programul, beneficiile, condițiile de cazare sau transport acolo unde e cazul — se confirmă direct în discuția cu noi și cu angajatorul, la interviu și prin contractul de muncă pe care îl semnezi.",
+          "Ne străduim ca informațiile din anunțuri să fie corecte la data publicării, dar ele pot fi modificate de angajator între timp."
+        ]
+      },
+      {
+        "h": "Aplicările la joburi",
+        "p": [
+          "Când aplici la un job, ne trimiți datele tale de contact și CV-ul, iar noi le folosim ca să te contactăm și să prezentăm candidatura ta angajatorului pentru acel job. Datele sunt prelucrate conform Politicii de confidențialitate, iar CV-ul este păstrat maximum 12 luni.",
+          "Aplicarea nu creează nicio obligație: nici pentru tine de a accepta un post, nici pentru noi sau angajator de a-ți oferi unul. Decizia finală de angajare aparține întotdeauna angajatorului.",
+          "Te rugăm să trimiți informații reale și actuale — un CV corect ne ajută să te recomandăm pentru jobul potrivit."
+        ]
+      },
+      {
+        "h": "Răspundere",
+        "p": [
+          "Ne străduim ca site-ul să funcționeze corect și informațiile să fie la zi, dar site-ul este oferit așa cum este. Nu putem garanta că nu vor exista niciodată erori, întreruperi tehnice sau informații rămase în urmă.",
+          "Site-ul poate conține linkuri către site-uri ale altor companii (de exemplu, WhatsApp). Nu răspundem pentru conținutul sau practicile acestora.",
+          "Informațiile publicate pe site, inclusiv articolele de blog, au caracter general și informativ. Ele nu înlocuiesc o consultanță dedicată situației tale — pentru asta, contactează-ne direct."
+        ]
+      },
+      {
+        "h": "Proprietate intelectuală",
+        "p": [
+          "Conținutul site-ului — texte, logo, imagini, structura paginilor — aparține FULL WORK SERVICES S.R.L. sau este folosit cu acordul deținătorilor.",
+          "Poți citi, salva și distribui linkuri către paginile noastre fără nicio problemă. Nu ai voie să copiezi conținutul pentru scopuri comerciale sau să îl republici ca fiind al tău fără acordul nostru scris."
+        ]
+      },
+      {
+        "h": "Legea aplicabilă",
+        "p": [
+          "Acești termeni sunt guvernați de legea română. Orice neînțelegere încercăm mai întâi să o rezolvăm pe cale amiabilă — scrie-ne și discutăm. Dacă nu reușim, competente sunt instanțele din România.",
+          "Dacă ești consumator, te poți adresa și Autorității Naționale pentru Protecția Consumatorilor (ANPC — anpc.ro) sau platformei europene de soluționare online a litigiilor (SOL)."
+        ]
+      },
+      {
+        "h": "Contact",
+        "p": [
+          "FULL WORK SERVICES S.R.L. — Str. Grigore Ionescu nr. 63, Sector 2, București. CUI 45291775, Reg. Com. J2021020993406.",
+          "Email: office@fullworkservices.com · Telefon și WhatsApp: +40 723 147 723.",
+          "Dacă ceva din acești termeni nu e clar, întreabă-ne. Preferăm să lămurim lucrurile simplu și direct."
+        ]
+      }
+    ]
+  },
+  "notFound": {
+    "title": "Pagina asta nu există",
+    "text": "Linkul e greșit sau pagina a fost mutată. Nu-i nimic — te ducem unde trebuie.",
+    "ctaJobs": "Vezi joburile deschise",
+    "ctaHome": "Mergi la prima pagină"
+  },
+  "errorPage": {
+    "title": "Ceva n-a mers cum trebuia",
+    "text": "A apărut o eroare tehnică. Încearcă din nou — iar dacă persistă, sună-ne sau scrie-ne pe WhatsApp.",
+    "retry": "Încearcă din nou"
+  },
+  "faqAside": {
+    "text": "Nu ai găsit răspunsul? Scrie-ne pe WhatsApp și îți spunem pe loc, fără obligații.",
+    "cta": "Întreabă pe WhatsApp"
+  }
+}
