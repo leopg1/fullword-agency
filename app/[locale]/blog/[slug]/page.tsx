@@ -8,6 +8,9 @@ import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { PostCard } from "@/components/site/post-card";
+import { ShareButtons } from "@/components/site/share-buttons";
+import { contentVersion, postShareText } from "@/lib/share";
+import { absoluteUrl } from "@/lib/site";
 import { WhatsappIcon } from "@/components/site/whatsapp-icon";
 import { getPostBySlug, getPosts, categoryLabel, readingMinutes } from "@/lib/posts";
 import { whatsappLink } from "@/lib/site";
@@ -29,9 +32,24 @@ export async function generateMetadata({
     title,
     description,
     alternates: alternatesFor({ pathname: "/blog/[slug]", params: { slug } }, locale),
-    openGraph: post.cover_image
-      ? { title, description, images: [{ url: post.cover_image }], type: "article" }
-      : { title, description, type: "article" },
+    // Imaginea de share vine din `opengraph-image.tsx` (PNG generat). NU folosim
+    // coperta articolului: e .webp, iar Facebook nu randează WebP în previzualizări.
+    // `?v=` se schimbă când se schimbă titlul/rezumatul, altfel Facebook ar servi
+    // la nesfârșit cardul vechi din cache (cache-ul lui e după URL).
+    openGraph: {
+      title,
+      description,
+      type: "article",
+      images: [
+        {
+          url: absoluteUrl(
+            `/${locale}/blog/${slug}/opengraph-image?v=${contentVersion(title, description, post.category)}`
+          ),
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
@@ -132,6 +150,11 @@ export default async function BlogArticlePage({
         <div className="container-site max-w-3xl">
           <div className="space-y-5 text-lg leading-relaxed text-foreground [&_a]:text-primary [&_a]:underline [&_a]:underline-offset-4 [&_h2]:mt-10 [&_h2]:font-heading [&_h2]:text-2xl [&_h2]:font-semibold md:[&_h2]:text-3xl [&_h3]:mt-8 [&_h3]:font-heading [&_h3]:text-xl [&_h3]:font-semibold [&_li]:leading-relaxed [&_ol]:list-decimal [&_ol]:space-y-2 [&_ol]:pl-6 [&_strong]:font-semibold [&_ul]:list-disc [&_ul]:space-y-2 [&_ul]:pl-6 [&_blockquote]:border-l-4 [&_blockquote]:border-brand [&_blockquote]:pl-5 [&_blockquote]:italic [&_blockquote]:text-muted-foreground">
             <Markdown>{body}</Markdown>
+          </div>
+
+          {/* Share — textul postării e gata scris */}
+          <div className="mt-10">
+            <ShareButtons postText={postShareText(post, locale)} />
           </div>
 
           {/* CTA în articol */}

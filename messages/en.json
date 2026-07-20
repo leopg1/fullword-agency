@@ -982,5 +982,13 @@
   "faqAside": {
     "text": "Didn't find your answer? Message us on WhatsApp and we'll tell you right away, no strings attached.",
     "cta": "Ask on WhatsApp"
+  },
+  "share": {
+    "title": "Share this listing",
+    "facebook": "Share on Facebook",
+    "whatsapp": "Send on WhatsApp",
+    "copyText": "Copy the listing text",
+    "copiedText": "Text copied",
+    "hint": "For Facebook: first tap “Copy the listing text”, then “Share on Facebook” and paste it into the post box (Ctrl+V, or right click → Paste). The image and title appear automatically. On WhatsApp the text is filled in for you."
   }
 }

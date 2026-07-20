@@ -29,6 +29,8 @@ export type JobRecord = {
   content_ro: JobContent;
   content_en: JobContent;
   created_at?: string;
+  /** Folosit ca versiune la imaginea de share, ca Facebook să nu servească un card vechi. */
+  updated_at?: string;
 };
 
 /** Fallback din datele statice (dacă Supabase nu răspunde) — site-ul nu pică. */

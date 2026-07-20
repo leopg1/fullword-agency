@@ -5,7 +5,7 @@ import { NextIntlClientProvider, hasLocale } from "next-intl";
 import { setRequestLocale } from "next-intl/server";
 import { routing } from "@/i18n/routing";
 import { organizationJsonLd } from "@/lib/seo";
-import { site } from "@/lib/site";
+import { site, siteUrl } from "@/lib/site";
 import { LenisProvider } from "@/components/providers/lenis-provider";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
@@ -33,7 +33,7 @@ export async function generateMetadata({
   const { locale } = await params;
   const ro = locale === "ro";
   return {
-    metadataBase: new URL(site.url),
+    metadataBase: new URL(siteUrl()),
     title: {
       default: ro
         ? "Full Work Services — Partenerul tău în oameni și performanță"

@@ -982,5 +982,13 @@
   "faqAside": {
     "text": "Nu ai găsit răspunsul? Scrie-ne pe WhatsApp și îți spunem pe loc, fără obligații.",
     "cta": "Întreabă pe WhatsApp"
+  },
+  "share": {
+    "title": "Trimite anunțul mai departe",
+    "facebook": "Dă share pe Facebook",
+    "whatsapp": "Trimite pe WhatsApp",
+    "copyText": "Copiază textul anunțului",
+    "copiedText": "Text copiat",
+    "hint": "Pentru Facebook: apasă întâi „Copiază textul anunțului”, apoi „Dă share pe Facebook” și lipește textul în căsuța de scris (Ctrl+V, sau clic dreapta → Lipește). Poza și titlul apar automat. Pe WhatsApp textul se completează singur."
   }
 }

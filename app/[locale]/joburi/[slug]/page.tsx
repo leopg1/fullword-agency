@@ -14,11 +14,13 @@ import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { ApplyForm } from "@/components/site/apply-form";
+import { ShareButtons } from "@/components/site/share-buttons";
+import { jobShareText } from "@/lib/share";
 import { WhatsappIcon } from "@/components/site/whatsapp-icon";
 import { getJobBySlug, getJobs, type JobContent } from "@/lib/jobs";
 import { countryInfo } from "@/lib/jobs-data";
 import { cityLabel } from "@/lib/geo";
-import { site, whatsappLink } from "@/lib/site";
+import { absoluteUrl, site, whatsappLink } from "@/lib/site";
 import { alternatesFor } from "@/lib/seo";
 
 export const revalidate = 300;
@@ -34,13 +36,37 @@ export async function generateMetadata({
   const title = locale === "ro" ? job.title_ro : job.title_en;
   const salary = locale === "ro" ? job.salary_ro : job.salary_en;
   const country = countryInfo(job.country_code)[locale === "ro" ? "ro" : "en"];
+  const fullTitle = `${title} — ${cityLabel(job.city, locale)}${cityLabel(job.city, locale) !== country ? `, ${country}` : ""}`;
+  const description =
+    locale === "ro"
+      ? `Job deschis: ${title}. ${salary ? `Salariu: ${salary}. ` : ""}Contract oficial, interviu în 24h, fără taxe pentru candidați.`
+      : `Open job: ${title}. ${salary ? `Salary: ${salary}. ` : ""}Official contract, interview within 24h, no candidate fees.`;
   return {
-    title: `${title} — ${cityLabel(job.city, locale)}${cityLabel(job.city, locale) !== country ? `, ${country}` : ""}`,
-    description:
-      locale === "ro"
-        ? `Job deschis: ${title}. ${salary ? `Salariu: ${salary}. ` : ""}Contract oficial, interviu în 24h, fără taxe pentru candidați.`
-        : `Open job: ${title}. ${salary ? `Salary: ${salary}. ` : ""}Official contract, interview within 24h, no candidate fees.`,
+    title: fullTitle,
+    description,
     alternates: alternatesFor({ pathname: "/joburi/[slug]", params: { slug } }, locale),
+    // Cardul de share (Facebook/WhatsApp). Imaginea e afișul generat de
+    // `opengraph-image.tsx`, dar o declarăm explicit cu `?v=<updated_at>`:
+    // Facebook ține imaginile în cache DUPĂ URL, iar URL-ul generat de Next are
+    // un hash din fișier (identic pentru toate joburile, neschimbat la editare).
+    // Fără versionare, un job editat ar rămâne cu cardul vechi la nesfârșit.
+    openGraph: {
+      title: fullTitle,
+      description,
+      type: "article",
+      url: absoluteUrl(locale === "en" ? `/en/jobs/${slug}` : `/joburi/${slug}`),
+      images: [
+        {
+          url: absoluteUrl(
+            `/${locale}/joburi/${slug}/opengraph-image?v=${encodeURIComponent(
+              job.updated_at ?? job.created_at ?? "1"
+            )}`
+          ),
+          width: 1200,
+          height: 630,
+        },
+      ],
+    },
   };
 }
 
@@ -186,6 +212,11 @@ export default async function JobPage({
                 </BlurFade>
               );
             })}
+
+            {/* Share — textul anunțului e gata scris pentru postare */}
+            <BlurFade inView>
+              <ShareButtons postText={jobShareText(job, content, locale)} />
+            </BlurFade>
           </div>
 
           {/* Card aplicare — sticky pe desktop */}

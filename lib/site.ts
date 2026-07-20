@@ -15,6 +15,27 @@ export const site = {
   founder: "Diana Dina",
 } as const;
 
+/**
+ * URL-ul public real al site-ului, folosit pentru metadataBase / Open Graph.
+ * Facebook trebuie să poată descărca imaginea de share de pe un domeniu care
+ * chiar există — altfel cardul apare rupt. Ordinea:
+ *   1. NEXT_PUBLIC_SITE_URL (setat manual când domeniul final e live)
+ *   2. domeniul de producție de pe Vercel (automat, fără configurare)
+ *   3. domeniul final din `site.url` (fallback)
+ */
+export function siteUrl(): string {
+  const explicit = process.env.NEXT_PUBLIC_SITE_URL;
+  if (explicit) return explicit.replace(/\/$/, "");
+  const vercel = process.env.VERCEL_PROJECT_PRODUCTION_URL;
+  if (vercel) return `https://${vercel}`;
+  return site.url;
+}
+
+/** Transformă o cale relativă într-un URL absolut (necesar pentru share). */
+export function absoluteUrl(path: string): string {
+  return path.startsWith("http") ? path : `${siteUrl()}${path.startsWith("/") ? "" : "/"}${path}`;
+}
+
 /** Link WhatsApp cu mesaj pre-completat. */
 export function whatsappLink(text?: string) {
   return text
