@@ -987,8 +987,8 @@
     "title": "Share this listing",
     "facebook": "Share on Facebook",
     "whatsapp": "Send on WhatsApp",
+    "linkedin": "Share on LinkedIn",
     "copyText": "Copy the listing text",
-    "copiedText": "Text copied",
-    "hint": "For Facebook: first tap “Copy the listing text”, then “Share on Facebook” and paste it into the post box (Ctrl+V, or right click → Paste). The image and title appear automatically. On WhatsApp the text is filled in for you."
+    "copiedText": "Text copied"
   }
 }

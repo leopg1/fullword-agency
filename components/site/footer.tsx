@@ -2,20 +2,13 @@ import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import type { StaticAppPathname } from "@/i18n/routing";
 import { site } from "@/lib/site";
-
-const SERVICE_LINKS: { key: string; href: StaticAppPathname }[] = [
-  { key: "recruitment", href: "/servicii/recrutare" },
-  { key: "hrOutsourcing", href: "/servicii/hr-outsourcing" },
-  { key: "workPermits", href: "/servicii/permise-de-munca" },
-  { key: "marketEntry", href: "/servicii/infiintare-firma" },
-  { key: "citizenship", href: "/servicii/cetatenie" },
-  { key: "mediation", href: "/servicii/mediere" },
-];
+import { getServices } from "@/lib/services";
 
 export async function Footer() {
   const t = await getTranslations("footer");
+  // doar serviciile vizibile, în ordinea aleasă din admin
+  const SERVICE_LINKS = (await getServices()).map((s) => ({ key: s.footerKey, href: s.href }));
 
   return (
     <footer className="border-t border-white/10 bg-brand-dark text-brand-dark-foreground">

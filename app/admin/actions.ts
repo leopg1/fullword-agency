@@ -3,7 +3,10 @@
 import { revalidatePath, revalidateTag } from "next/cache";
 import { redirect } from "next/navigation";
 import { createClient } from "@/lib/supabase/server";
-import { CONTENT_TAG } from "@/lib/content";
+import { CONTENT_TAG, defaultMessage } from "@/lib/content";
+import { SERVICE_DEFS, serviceNameKeys } from "@/lib/services";
+import roMessages from "@/messages/ro.json";
+import enMessages from "@/messages/en.json";
 
 /** Revalidează paginile publice care afișează joburi/articole. */
 function revalidatePublic() {
@@ -188,6 +191,88 @@ export async function savePost(_prev: SaveState | null, formData: FormData): Pro
   revalidatePath("/admin/blog");
   revalidatePublic();
   redirect("/admin/blog");
+}
+
+/* ---------- Servicii: vizibilitate + ordine ---------- */
+
+/** Arată/ascunde un serviciu pe site (pagina lui devine 404 când e ascuns). */
+export async function toggleServicePublished(key: string, current: boolean) {
+  const supabase = await createClient();
+  await supabase
+    .from("fw_services")
+    .update({ published: !current, updated_at: new Date().toISOString() })
+    .eq("key", key);
+  revalidatePath("/admin/servicii");
+  revalidatePath("/", "layout");
+}
+
+/** Mută un serviciu mai sus/mai jos, interschimbând ordinea cu vecinul. */
+export async function moveService(key: string, direction: "up" | "down") {
+  const supabase = await createClient();
+  const { data } = await supabase
+    .from("fw_services")
+    .select("key, sort_order")
+    .order("sort_order", { ascending: true });
+  if (!data) return;
+
+  const i = data.findIndex((s) => s.key === key);
+  const j = direction === "up" ? i - 1 : i + 1;
+  if (i < 0 || j < 0 || j >= data.length) return;
+
+  // interschimbă pozițiile celor doi vecini
+  await supabase
+    .from("fw_services")
+    .update({ sort_order: data[j].sort_order })
+    .eq("key", data[i].key);
+  await supabase
+    .from("fw_services")
+    .update({ sort_order: data[i].sort_order })
+    .eq("key", data[j].key);
+
+  revalidatePath("/admin/servicii");
+  revalidatePath("/", "layout");
+}
+
+/**
+ * Redenumește un serviciu (RO + EN).
+ *
+ * Scrie în ACELAȘI loc ca editorul „Texte site" (tabelul fw_content), deci
+ * numele rămâne sincronizat automat între cele două ecrane. Actualizează ambele
+ * chei ale numelui — cardul din grilă și link-ul din subsol — care trebuie să
+ * rămână identice. Dacă numele revine la cel original, ștergem suprascrierea.
+ */
+export async function renameService(
+  key: string,
+  nameRo: string,
+  nameEn: string
+): Promise<ContentSaveState> {
+  const def = SERVICE_DEFS.find((d) => d.key === key);
+  if (!def) return { ok: false, count: 0 };
+
+  const ro = nameRo.trim();
+  const en = nameEn.trim();
+  if (!ro || !en) return { ok: false, count: 0 };
+  if (ro.length > 80 || en.length > 80) return { ok: false, count: 0 };
+
+  const changes: ContentChange[] = [];
+  for (const contentKey of serviceNameKeys(def)) {
+    changes.push({
+      locale: "ro",
+      key: contentKey,
+      value: ro,
+      isDefault: ro === defaultMessage(roMessages, contentKey),
+    });
+    changes.push({
+      locale: "en",
+      key: contentKey,
+      value: en,
+      isDefault: en === defaultMessage(enMessages, contentKey),
+    });
+  }
+
+  const res = await saveContent(changes);
+  if (res.ok) revalidatePath("/admin/servicii");
+  return res;
 }
 
 /* ---------- Texte site (fw_content) ---------- */

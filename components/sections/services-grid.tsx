@@ -9,21 +9,18 @@ import {
   Building2,
 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
-import type { StaticAppPathname } from "@/i18n/routing";
 import { BlurFade } from "@/components/ui/blur-fade";
+import { getServices } from "@/lib/services";
 
-const SERVICES: {
-  key: string;
-  href: StaticAppPathname;
-  icon: React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>;
-}[] = [
-  { key: "recruitment", href: "/servicii/recrutare", icon: Search },
-  { key: "hr", href: "/servicii/hr-outsourcing", icon: Handshake },
-  { key: "permits", href: "/servicii/permise-de-munca", icon: FileCheck2 },
-  { key: "market", href: "/servicii/infiintare-firma", icon: Building2 },
-  { key: "citizenship", href: "/servicii/cetatenie", icon: Flag },
-  { key: "mediation", href: "/servicii/mediere", icon: Scale },
-];
+/** Iconița fiecărui serviciu — structura rămâne în cod, ordinea și vizibilitatea vin din admin. */
+const ICONS: Record<string, React.ComponentType<{ className?: string; "aria-hidden"?: boolean }>> = {
+  recruitment: Search,
+  hr: Handshake,
+  permits: FileCheck2,
+  market: Building2,
+  citizenship: Flag,
+  mediation: Scale,
+};
 
 /** Grila de servicii — carduri simple, un mesaj pe card, tot cardul clickabil. */
 export async function ServicesGrid({
@@ -34,6 +31,7 @@ export async function ServicesGrid({
   className?: string;
 } = {}) {
   const t = await getTranslations("services");
+  const services = await getServices();
 
   return (
     <section
@@ -48,7 +46,9 @@ export async function ServicesGrid({
         )}
 
         <div className={hideHeading ? "grid gap-5 sm:grid-cols-2 lg:grid-cols-3" : "mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3"}>
-          {SERVICES.map(({ key, href, icon: Icon }, i) => (
+          {services.map(({ key, href }, i) => {
+            const Icon = ICONS[key] ?? Search;
+            return (
             <BlurFade key={key} inView delay={0.06 * i} className="h-full">
               <Link
                 href={href}
@@ -73,7 +73,8 @@ export async function ServicesGrid({
                 </span>
               </Link>
             </BlurFade>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

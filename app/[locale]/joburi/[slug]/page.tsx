@@ -220,7 +220,17 @@ export default async function JobPage({
           </div>
 
           {/* Card aplicare — sticky pe desktop */}
-          <aside id="aplica" className="scroll-mt-24 lg:sticky lg:top-28 lg:self-start">
+          {/*
+            Cardul de aplicare e înalt (~864px). Fixat de sus pe un ecran mai mic,
+            partea lui de jos (butonul WhatsApp + marginea rotunjită) rămânea
+            tăiată sub ecran și inaccesibilă. De aceea îl fixăm DOAR când chiar
+            încape întreg (înălțime ecran ≥ 1000px = 112px offset + card + aer);
+            pe ecrane mai mici derulează normal cu pagina, fără nicio tăietură.
+          */}
+          <aside
+            id="aplica"
+            className="scroll-mt-24 lg:self-start lg:[@media(min-height:1000px)]:sticky lg:[@media(min-height:1000px)]:top-28"
+          >
             <BlurFade inView>
               <div className="rounded-3xl border border-border bg-card p-6 shadow-lg md:p-8">
                 {isOpen ? (

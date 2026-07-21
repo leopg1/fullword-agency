@@ -6,7 +6,7 @@ export const site = {
   regCom: "J2021020993406",
   address: "Str. Grigore Ionescu nr. 63, Sector 2, București",
   addressEn: "63 Grigore Ionescu St., District 2, Bucharest, Romania",
-  phoneDisplay: "0723 147 723",
+  phoneDisplay: "+40 723 147 723",
   phoneE164: "+40723147723",
   email: "office@fullworkservices.com",
   whatsappBase: "https://wa.me/40723147723",

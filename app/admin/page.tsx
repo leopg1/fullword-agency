@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Pencil, Plus } from "lucide-react";
 import { AdminShell } from "@/components/admin/admin-shell";
+import { AdminHelp } from "@/components/admin/admin-help";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { toggleJobStatus } from "@/app/admin/actions";
@@ -20,6 +21,18 @@ export default async function AdminJobsPage() {
 
   return (
     <AdminShell active="/admin">
+      <AdminHelp>
+        <p>Aici sunt joburile de pe site.</p>
+        <p>
+          <strong>Job nou</strong> — publici un anunț. <strong>Editează</strong> — schimbi textul unui
+          anunț.
+        </p>
+        <p>
+          Butonul <strong>Deschis / Închis</strong> arată dacă jobul se mai vede pe site. Când s-a
+          ocupat postul, apeși pe el și devine „Închis" — anunțul dispare de pe site, dar nu se pierde.
+        </p>
+      </AdminHelp>
+
       <div className="flex items-center justify-between gap-3">
         <h1 className="text-2xl">Joburi ({jobs?.length ?? 0})</h1>
         <Button asChild className="h-12 rounded-xl px-5 text-base font-semibold">

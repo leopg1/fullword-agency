@@ -17,7 +17,7 @@ export async function generateMetadata({
     ? {
         title: "Contact",
         description:
-          "Contactează Full Work Services: telefon 0723 147 723, WhatsApp, email office@fullworkservices.com. Răspundem în aceeași zi lucrătoare.",
+          "Contactează Full Work Services: telefon +40 723 147 723, WhatsApp, email office@fullworkservices.com. Răspundem în aceeași zi lucrătoare.",
       }
     : {
         title: "Contact",

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { getJobs } from "@/lib/jobs";
 import { getPosts } from "@/lib/posts";
+import { getServices } from "@/lib/services";
 import { site } from "@/lib/site";
 
 type Href = Parameters<typeof getPathname>[0]["href"];
@@ -22,17 +23,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry("/", 1, "weekly"),
     entry("/joburi", 0.9, "daily"),
     entry("/servicii", 0.8, "monthly"),
-    entry("/servicii/recrutare", 0.8, "monthly"),
-    entry("/servicii/hr-outsourcing", 0.7, "monthly"),
-    entry("/servicii/permise-de-munca", 0.7, "monthly"),
-    entry("/servicii/infiintare-firma", 0.7, "monthly"),
-    entry("/servicii/cetatenie", 0.7, "monthly"),
-    entry("/servicii/mediere", 0.6, "monthly"),
     entry("/despre-noi", 0.6, "monthly"),
     entry("/pentru-candidati", 0.7, "monthly"),
     entry("/blog", 0.5, "weekly"),
     entry("/contact", 0.6, "monthly"),
   ];
+
+  // doar serviciile vizibile — cele ascunse din admin dau 404, nu le anunțăm la Google
+  const services = (await getServices()).map((s) => entry(s.href, 0.7, "monthly"));
 
   const jobs = (await getJobs())
     .filter((j) => j.status === "open")
@@ -44,5 +42,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     entry({ pathname: "/blog/[slug]", params: { slug: p.slug } }, 0.5, "monthly")
   );
 
-  return [...staticEntries, ...jobs, ...posts];
+  return [...staticEntries, ...services, ...jobs, ...posts];
 }

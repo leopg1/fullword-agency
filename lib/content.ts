@@ -52,6 +52,16 @@ function setByPath(root: Record<string, unknown>, path: string, value: string) {
 
 type Messages = Record<string, unknown>;
 
+/** Citește valoarea implicită dintr-un set de mesaje, după o cale cu punct. */
+export function defaultMessage(messages: Messages, path: string): string | undefined {
+  let node: unknown = messages;
+  for (const part of path.split(".")) {
+    if (node == null || typeof node !== "object") return undefined;
+    node = (node as Record<string, unknown>)[part];
+  }
+  return typeof node === "string" ? node : undefined;
+}
+
 /** Aplică suprascrierile peste un set de mesaje (fără să mute originalul). */
 export function applyOverrides(messages: Messages, overrides: Record<string, string>): Messages {
   if (!overrides || Object.keys(overrides).length === 0) return messages;

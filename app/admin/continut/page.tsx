@@ -10,10 +10,10 @@ export const dynamic = "force-dynamic";
 export default async function AdminContentPage({
   searchParams,
 }: {
-  searchParams: Promise<{ lang?: string }>;
+  searchParams: Promise<{ lang?: string; sectiune?: string }>;
 }) {
   await requireAdmin();
-  const { lang } = await searchParams;
+  const { lang, sectiune } = await searchParams;
   const locale: "ro" | "en" = lang === "en" ? "en" : "ro";
 
   const defaults = (locale === "en" ? enMessages : roMessages) as Record<string, unknown>;
@@ -40,7 +40,8 @@ export default async function AdminContentPage({
 
   return (
     <AdminShell active="/admin/continut">
-      <ContentEditor locale={locale} groups={groups} />
+      {/* `sectiune` vine din pagina Servicii — deschide direct secțiunea cerută */}
+      <ContentEditor locale={locale} groups={groups} openSection={sectiune} />
     </AdminShell>
   );
 }

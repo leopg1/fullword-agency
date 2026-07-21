@@ -1,4 +1,5 @@
 import { AdminShell } from "@/components/admin/admin-shell";
+import { AdminHelp } from "@/components/admin/admin-help";
 import { createClient } from "@/lib/supabase/server";
 import { updateLeadStatus } from "@/app/admin/actions";
 import { requireAdmin } from "@/lib/admin-guard";
@@ -25,6 +26,17 @@ export default async function AdminLeadsPage() {
 
   return (
     <AdminShell active="/admin/leaduri">
+      <AdminHelp>
+        <p>Aici ajung mesajele trimise din formularul de contact și cererile de ofertă de la firme.</p>
+        <p>
+          Apeși direct pe telefon ca să suni, sau pe email ca să răspunzi — se deschid singure.
+        </p>
+        <p>
+          Din lista derulantă marchezi <em>Nou, Contactat</em> sau <em>Închis</em>, ca să știi pe cine
+          ai sunat deja.
+        </p>
+      </AdminHelp>
+
       <h1 className="text-2xl">Mesaje & cereri de ofertă ({leads?.length ?? 0})</h1>
       <ul className="mt-5 space-y-3">
         {leads?.length === 0 && (

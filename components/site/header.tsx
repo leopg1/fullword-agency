@@ -66,7 +66,7 @@ export function Header() {
                 <Link
                   href={href}
                   className={cn(
-                    "inline-flex min-h-12 items-center rounded-lg px-4 text-base font-medium transition-colors",
+                    "inline-flex min-h-12 items-center whitespace-nowrap rounded-lg px-3.5 text-base font-medium transition-colors",
                     isActive(href)
                       ? "bg-brand-tint-2 text-foreground"
                       : "text-muted-foreground hover:bg-muted hover:text-foreground"
@@ -93,16 +93,22 @@ export function Header() {
           </button>
 
           {/* Telefon — text de la md în sus, doar iconiță sub md */}
+          {/*
+            Numărul în format internațional e mai lung, iar meniul are 6 iteme:
+            între lg și xl textul nu mai încape (se rupea pe două rânduri), deci
+            acolo arătăm doar iconița. Text complet pe tabletă (nav ascuns) și de
+            la xl în sus.
+          */}
           <a
             href={`tel:${site.phoneE164}`}
-            className="hidden min-h-12 items-center gap-2 rounded-lg px-3 text-base font-semibold text-foreground hover:bg-muted md:inline-flex"
+            className="hidden min-h-12 items-center gap-2 whitespace-nowrap rounded-lg px-3 text-base font-semibold text-foreground hover:bg-muted md:inline-flex lg:hidden xl:inline-flex"
           >
             <Phone className="size-4 text-primary" aria-hidden />
             {site.phoneDisplay}
           </a>
           <a
             href={`tel:${site.phoneE164}`}
-            className="inline-flex size-12 items-center justify-center rounded-lg text-primary hover:bg-muted md:hidden"
+            className="inline-flex size-12 items-center justify-center rounded-lg text-primary hover:bg-muted md:hidden lg:inline-flex xl:hidden"
             aria-label={t("callUs")}
           >
             <Phone className="size-5.5" aria-hidden />

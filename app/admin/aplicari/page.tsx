@@ -1,4 +1,5 @@
 import { AdminShell } from "@/components/admin/admin-shell";
+import { AdminHelp } from "@/components/admin/admin-help";
 import { CvLink } from "@/components/admin/cv-link";
 import { createClient } from "@/lib/supabase/server";
 import { updateApplicationStatus } from "@/app/admin/actions";
@@ -22,6 +23,18 @@ export default async function AdminApplicationsPage() {
 
   return (
     <AdminShell active="/admin/aplicari">
+      <AdminHelp>
+        <p>Aici ajung oamenii care au aplicat la joburile de pe site.</p>
+        <p>
+          Vezi numele, telefonul și jobul la care au aplicat. Dacă au atașat CV, apeși pe link ca
+          să-l deschizi.
+        </p>
+        <p>
+          Din lista derulantă marchezi în ce stadiu e persoana — <em>Nouă, Contactat, Respins,
+          Angajat</em>. E doar pentru tine, candidatul nu vede nimic.
+        </p>
+      </AdminHelp>
+
       <h1 className="text-2xl">Aplicări ({applications?.length ?? 0})</h1>
       <ul className="mt-5 space-y-3">
         {applications?.length === 0 && (

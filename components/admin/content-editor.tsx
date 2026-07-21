@@ -20,9 +20,12 @@ const norm = (s: string) =>
 export function ContentEditor({
   locale,
   groups,
+  openSection,
 }: {
   locale: "ro" | "en";
   groups: ContentGroup[];
+  /** secțiune deschisă din start (ex. venind din pagina Servicii) */
+  openSection?: string;
 }) {
   // valori curente (controlate), plus referințe la valoarea inițială pt. „modificat"
   const initialValues = useMemo(() => {
@@ -42,7 +45,7 @@ export function ContentEditor({
   const [dirtyCount, setDirtyCount] = useState(0);
 
   const [query, setQuery] = useState("");
-  const [open, setOpen] = useState<Set<string>>(new Set());
+  const [open, setOpen] = useState<Set<string>>(() => new Set(openSection ? [openSection] : []));
   const [pending, startTransition] = useTransition();
   const [flash, setFlash] = useState<{ ok: boolean; text: string } | null>(null);
 

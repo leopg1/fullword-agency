@@ -987,8 +987,8 @@
     "title": "Trimite anunțul mai departe",
     "facebook": "Dă share pe Facebook",
     "whatsapp": "Trimite pe WhatsApp",
+    "linkedin": "Dă share pe LinkedIn",
     "copyText": "Copiază textul anunțului",
-    "copiedText": "Text copiat",
-    "hint": "Pentru Facebook: apasă întâi „Copiază textul anunțului”, apoi „Dă share pe Facebook” și lipește textul în căsuța de scris (Ctrl+V, sau clic dreapta → Lipește). Poza și titlul apar automat. Pe WhatsApp textul se completează singur."
+    "copiedText": "Text copiat"
   }
 }

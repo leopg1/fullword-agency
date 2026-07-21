@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Pencil, Plus, Star } from "lucide-react";
 import { AdminShell } from "@/components/admin/admin-shell";
+import { AdminHelp } from "@/components/admin/admin-help";
 import { Button } from "@/components/ui/button";
 import { createClient } from "@/lib/supabase/server";
 import { togglePostPublished, togglePostFeatured } from "@/app/admin/actions";
@@ -28,6 +29,18 @@ export default async function AdminBlogPage() {
 
   return (
     <AdminShell active="/admin/blog">
+      <AdminHelp>
+        <p>Articolele de pe site (secțiunea Blog).</p>
+        <p>
+          <strong>Articol nou</strong> — scrii unul. <strong>Editează</strong> — schimbi un articol
+          existent.
+        </p>
+        <p>
+          <strong>Publicat / Ciornă</strong> — dacă articolul se vede pe site sau nu. <strong>Steluța</strong>{" "}
+          îl pune mare, primul pe pagina de blog (doar unul poate fi așa).
+        </p>
+      </AdminHelp>
+
       <div className="flex items-center justify-between gap-3">
         <h1 className="text-2xl">Articole ({posts?.length ?? 0})</h1>
         <Button asChild className="h-12 rounded-xl px-5 text-base font-semibold">

@@ -1,6 +1,8 @@
 import { getTranslations } from "next-intl/server";
+import { notFound } from "next/navigation";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
+import { isServicePublished } from "@/lib/services";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { WhatsappIcon } from "@/components/site/whatsapp-icon";
@@ -16,6 +18,8 @@ type Faq = { q: string; a: string };
  * (svcRecrutare, svcHr, ...) cu structura standard.
  */
 export async function ServicePage({ namespace }: { namespace: string }) {
+  // Ascuns din admin → pagina nu mai e accesibilă nici pe link direct.
+  if (!(await isServicePublished(namespace))) notFound();
   const t = await getTranslations(namespace);
 
   const includes = t.raw("includes") as ServiceItem[];

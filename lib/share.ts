@@ -40,7 +40,7 @@ export function jobShareText(
 
   const tail = [
     "",
-    ro ? `📞 ${site.phoneDisplay}` : `📞 ${site.phoneDisplay}`,
+    `📞 ${site.phoneDisplay}`,
     ro
       ? "#angajam #joburi #recrutare #FullWorkServices"
       : "#hiring #jobs #recruitment #FullWorkServices",
