@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ArrowRight, ShieldCheck } from "lucide-react";
+import { ArrowRight, FileText, ShieldCheck } from "lucide-react";
 import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { BlurFade } from "@/components/ui/blur-fade";
@@ -37,6 +37,7 @@ export default async function CandidatesPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("candidates");
+  const tCv = await getTranslations("buildCv");
 
   const steps = t.raw("steps") as { title: string; text: string }[];
   const safety = t.raw("safety") as { title: string; text: string }[];
@@ -53,12 +54,20 @@ export default async function CandidatesPage({
               {t("subtitle")}
             </p>
             <p className="prose-measure mt-4 text-lg text-muted-foreground">{t("ctaText")}</p>
-            <Button asChild className="mt-8 h-14 w-full rounded-xl px-8 text-lg font-semibold sm:w-auto">
-              <Link href="/joburi">
-                {t("ctaButton")}
-                <ArrowRight className="size-5" aria-hidden />
-              </Link>
-            </Button>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild className="h-14 w-full rounded-xl px-8 text-lg font-semibold sm:w-auto">
+                <Link href="/joburi">
+                  {t("ctaButton")}
+                  <ArrowRight className="size-5" aria-hidden />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" className="h-14 w-full rounded-xl px-8 text-lg font-semibold sm:w-auto">
+                <Link href="/completeaza-cv">
+                  <FileText className="size-5" aria-hidden />
+                  {tCv("title")}
+                </Link>
+              </Button>
+            </div>
           </BlurFade>
         </div>
       </section>

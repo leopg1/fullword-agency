@@ -70,7 +70,12 @@ export default async function AdminApplicationsPage() {
                     {new Date(a.created_at).toLocaleString("ro-RO", { dateStyle: "medium", timeStyle: "short" })}
                   </p>
                 </div>
-                <div className="flex shrink-0 items-center gap-2">
+                <div className="flex shrink-0 flex-wrap items-center gap-2">
+                  {a.cv_path?.startsWith("cv-completat/") && (
+                    <span className="rounded-full bg-brand-tint-2 px-2.5 py-0.5 text-sm font-medium text-primary">
+                      CV completat pe site
+                    </span>
+                  )}
                   {a.cv_path && <CvLink path={a.cv_path} />}
                   <form
                     action={async (formData: FormData) => {

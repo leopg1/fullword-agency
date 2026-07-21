@@ -2,7 +2,8 @@
 
 import { useActionState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { CheckCircle2, Loader2, Send } from "lucide-react";
+import { CheckCircle2, FileText, Loader2, Send } from "lucide-react";
+import { Link } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -12,6 +13,7 @@ import { submitApplication, type ApplyState } from "@/app/[locale]/joburi/[slug]
 /** Formular de aplicare — 2 câmpuri obligatorii, restul opțional. */
 export function ApplyForm({ jobId }: { jobId: string }) {
   const t = useTranslations("jobPage");
+  const tCv = useTranslations("buildCv");
   const locale = useLocale();
   const [state, formAction, pending] = useActionState<ApplyState, FormData>(
     submitApplication,
@@ -84,6 +86,16 @@ export function ApplyForm({ jobId }: { jobId: string }) {
           accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           className="h-12 pt-2.5 text-base file:font-medium"
         />
+        <Link
+          href={{ pathname: "/completeaza-cv", query: jobId && !jobId.startsWith("static-") ? { job: jobId } : {} }}
+          className="mt-1 flex items-start gap-2 rounded-xl border border-brand/30 bg-brand-tint-2 p-3 text-base transition-colors hover:border-brand"
+        >
+          <FileText className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
+          <span>
+            <span className="font-semibold text-foreground">{tCv("entryTitle")}</span>{" "}
+            <span className="text-muted-foreground">{tCv("entryText")}</span>
+          </span>
+        </Link>
       </div>
 
       <div className="space-y-1.5">

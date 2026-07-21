@@ -20,6 +20,7 @@ export const routing = defineRouting({
     "/servicii/mediere": { ro: "/servicii/mediere", en: "/services/mediation" },
     "/despre-noi": { ro: "/despre-noi", en: "/about" },
     "/pentru-candidati": { ro: "/pentru-candidati", en: "/for-candidates" },
+    "/completeaza-cv": { ro: "/completeaza-cv", en: "/build-cv" },
     "/blog": { ro: "/blog", en: "/blog" },
     "/blog/[slug]": { ro: "/blog/[slug]", en: "/blog/[slug]" },
     "/contact": { ro: "/contact", en: "/contact" },

@@ -51,13 +51,16 @@ export function ShareButtons({ postText }: { postText?: string }) {
     window.open(url, "_blank", "noopener,noreferrer,width=660,height=700");
 
   const shareFacebook = () => {
-    openWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(cleanUrl())}`);
+    // Copiază ÎNTÂI (cât documentul are focus), apoi deschide fereastra: altfel
+    // popup-ul fură focusul și scrierea în clipboard eșuează în tăcere. Ambele
+    // rămân în același gest de click, deci fereastra nu e blocată.
     if (postText) copyText();
+    openWindow(`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(cleanUrl())}`);
   };
 
   const shareLinkedin = () => {
-    openWindow(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(cleanUrl())}`);
     if (postText) copyText();
+    openWindow(`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(cleanUrl())}`);
   };
 
   const shareWhatsapp = () => {
