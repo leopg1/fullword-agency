@@ -16,7 +16,7 @@ export type CvData = {
   licenses: string[]; // categorii permis
   machines: string[]; // utilaje
   certifications: string[];
-  languages: string[]; // ex. "Engleză — Bine"
+  languages: string[];
   availability?: string;
   schedule?: string;
   mobility?: string;
@@ -28,70 +28,102 @@ const L: Record<Locale, Record<string, string>> = {
   ro: {
     about: "Despre mine",
     experience: "Experiență de muncă",
+    contact: "Contact",
     licenses: "Permis de conducere",
-    machines: "Utilaje pe care le operez",
+    machines: "Utilaje și echipamente",
     certifications: "Calificări și autorizații",
     languages: "Limbi străine",
     availability: "Disponibilitate",
-    availableFrom: "Pot începe:",
-    schedule: "Program:",
-    mobility: "Deplasare:",
-    footer: "CV generat pe site — Full Work Services",
-    yearsExp: "ani experiență",
+    availableFrom: "Pot începe",
+    schedule: "Program",
+    mobility: "Deplasare",
+    phone: "Telefon",
+    email: "Email",
+    city: "Localitate",
+    footer: "CV întocmit prin Full Work Services",
+    page: "Pagina",
   },
   en: {
     about: "About me",
     experience: "Work experience",
+    contact: "Contact",
     licenses: "Driving licence",
-    machines: "Machinery I operate",
+    machines: "Machinery & equipment",
     certifications: "Qualifications & certificates",
     languages: "Languages",
     availability: "Availability",
-    availableFrom: "Can start:",
-    schedule: "Schedule:",
-    mobility: "Travel:",
-    footer: "CV created online — Full Work Services",
-    yearsExp: "years of experience",
+    availableFrom: "Can start",
+    schedule: "Schedule",
+    mobility: "Travel",
+    phone: "Phone",
+    email: "Email",
+    city: "Location",
+    footer: "CV created via Full Work Services",
+    page: "Page",
   },
 };
 
+/* Paletă — aceleași culori ca site-ul */
 const BRAND = rgb(14 / 255, 165 / 255, 233 / 255); // #0EA5E9
-const BRAND_DARK = rgb(3 / 255, 105 / 255, 161 / 255); // #0369A1
+const BRAND_LIGHT = rgb(125 / 255, 211 / 255, 252 / 255); // #7DD3FC
+const HEADER_BG = rgb(12 / 255, 42 / 255, 66 / 255); // bleumarin profund
 const INK = rgb(15 / 255, 23 / 255, 42 / 255); // #0F172A
-const MUTED = rgb(71 / 255, 85 / 255, 105 / 255); // #475569
-const PILL_BG = rgb(224 / 255, 242 / 255, 254 / 255); // #E0F2FE
-const HAIRLINE = rgb(226 / 255, 232 / 255, 240 / 255); // #E2E8F0
+const MUTED = rgb(90 / 255, 103 / 255, 120 / 255);
+const SIDEBAR_BG = rgb(243 / 255, 248 / 255, 252 / 255); // tentă foarte deschisă
+const HAIRLINE = rgb(214 / 255, 226 / 255, 238 / 255);
+const WHITE = rgb(1, 1, 1);
 
-/**
- * Normalizează textul înainte de desen: NFC + convertește sedila (ş/ţ) în
- * varianta cu virgulă (ș/ț), corectă pentru română, indiferent cum a tastat omul.
- */
+/** NFC + sedila (ş/ţ) → virgulă (ș/ț), corect pentru română oricum ar tasta omul. */
 function norm(s: string): string {
   if (!s) return "";
   return s
     .normalize("NFC")
-    .replace(/Ş/g, "Ș") // Ş → Ș
-    .replace(/ş/g, "ș") // ş → ș
-    .replace(/Ţ/g, "Ț") // Ţ → Ț
-    .replace(/ţ/g, "ț") // ţ → ț
-    .replace(/[\u0000-\u001f]/g, " ") // caractere de control → spațiu
+    .replace(/Ş/g, "Ș")
+    .replace(/ş/g, "ș")
+    .replace(/Ţ/g, "Ț")
+    .replace(/ţ/g, "ț")
+    .replace(/[\u0000-\u001f]/g, " ")
+    .replace(/\s+/g, " ")
     .trim();
 }
 
-const A4 = { w: 595.28, h: 841.89 };
-const M = 48; // margine
-const CW = A4.w - M * 2; // lățime conținut
+/** Prima literă mare — câmpurile vin scrise liber, adesea cu minusculă. */
+function cap(s: string): string {
+  const v = norm(s);
+  return v ? v.charAt(0).toUpperCase() + v.slice(1) : v;
+}
 
-/** Împarte un text pe linii care încap în lățimea dată. */
+/** Fiecare cuvânt cu majusculă — pentru nume tastate „ion popescu". */
+function titleCase(s: string): string {
+  return norm(s)
+    .split(" ")
+    .filter(Boolean)
+    .map((w) => (w.length > 1 ? w.charAt(0).toUpperCase() + w.slice(1) : w.toUpperCase()))
+    .join(" ");
+}
+
+/* Geometria paginii */
+const A4 = { w: 595.28, h: 841.89 };
+const HEADER_H = 138;
+const SIDE_W = 194; // lățimea coloanei din stânga
+const PAD = 30; // padding interior în bara laterală
+const GUT = 30; // spațiu între coloane
+const BOTTOM = 62; // margine de jos (loc pentru subsol)
+
+const SIDE_X = PAD;
+const SIDE_CW = SIDE_W - PAD * 2 + 8;
+const MAIN_X = SIDE_W + GUT;
+const MAIN_CW = A4.w - MAIN_X - 46;
+
+/** Împarte textul în linii care încap în lățimea dată. */
 function wrap(text: string, font: PDFFont, size: number, maxW: number): string[] {
-  const words = norm(text).split(/\s+/).filter(Boolean);
+  const words = norm(text).split(" ").filter(Boolean);
   const lines: string[] = [];
   let cur = "";
   for (const word of words) {
     const test = cur ? `${cur} ${word}` : word;
-    if (font.widthOfTextAtSize(test, size) <= maxW || !cur) {
-      cur = test;
-    } else {
+    if (font.widthOfTextAtSize(test, size) <= maxW || !cur) cur = test;
+    else {
       lines.push(cur);
       cur = word;
     }
@@ -107,194 +139,261 @@ export async function buildCvPdf(data: CvData, locale: Locale = "ro"): Promise<U
   const reg = await doc.embedFont(Buffer.from(DEJAVU_REGULAR_B64, "base64"), { subset: true });
   const bold = await doc.embedFont(Buffer.from(DEJAVU_BOLD_B64, "base64"), { subset: true });
 
-  doc.setTitle(`CV ${norm(data.name)}`);
+  const name = titleCase(data.name);
+  doc.setTitle(`CV ${name}`);
+  doc.setAuthor(name);
   doc.setCreator("Full Work Services");
 
   let page = doc.addPage([A4.w, A4.h]);
-  let y = A4.h - M;
 
-  /** Trece pe pagină nouă dacă nu mai e loc de `needed` puncte. */
-  const ensure = (needed: number) => {
-    if (y - needed < M) {
-      page = doc.addPage([A4.w, A4.h]);
-      y = A4.h - M;
+  /** Fundalul paginii: bandă de antet + coloana laterală. */
+  const paintChrome = (withHeader: boolean) => {
+    if (withHeader) {
+      page.drawRectangle({ x: 0, y: A4.h - HEADER_H, width: A4.w, height: HEADER_H, color: HEADER_BG });
+      // accent subțire sub antet
+      page.drawRectangle({ x: 0, y: A4.h - HEADER_H - 4, width: A4.w, height: 4, color: BRAND });
     }
+    const top = withHeader ? A4.h - HEADER_H - 4 : A4.h;
+    page.drawRectangle({ x: 0, y: 0, width: SIDE_W, height: top, color: SIDEBAR_BG });
   };
+  paintChrome(true);
 
-  const line = (
-    text: string,
-    opts: { size?: number; font?: PDFFont; color?: typeof INK; x?: number; gap?: number } = {}
-  ) => {
-    const size = opts.size ?? 10.5;
-    const font = opts.font ?? reg;
-    ensure(size + (opts.gap ?? 4));
-    page.drawText(norm(text), { x: opts.x ?? M, y: y - size, size, font, color: opts.color ?? INK });
-    y -= size + (opts.gap ?? 4);
-  };
+  /* ---------------- ANTET ---------------- */
+  {
+    const x = PAD;
+    let y = A4.h - 52;
+    // numele, micșorat dacă e foarte lung
+    let nameSize = 27;
+    while (bold.widthOfTextAtSize(name, nameSize) > A4.w - PAD * 2 && nameSize > 17) nameSize -= 1;
+    page.drawText(name, { x, y, size: nameSize, font: bold, color: WHITE });
 
-  const paragraph = (text: string, size = 10.5, color = MUTED) => {
-    for (const ln of wrap(text, reg, size, CW)) {
-      ensure(size + 4);
-      page.drawText(ln, { x: M, y: y - size, size, font: reg, color });
-      y -= size + 4;
+    y -= 24;
+    const sub = [cap(data.trade), data.years ? norm(data.years) : ""].filter(Boolean).join("  ·  ");
+    if (sub) {
+      page.drawText(sub, { x, y, size: 12.5, font: bold, color: BRAND_LIGHT });
+      y -= 22;
+    } else y -= 8;
+
+    // Antetul e singurul loc cu datele de contact (în bara laterală ar fi dublură).
+    // Telefonul stă cel mai mare — angajatorii de muncitori sună, nu scriu.
+    const phone = norm(data.phone);
+    page.drawText(phone, { x, y: y - 2, size: 16, font: bold, color: WHITE });
+    const after = x + bold.widthOfTextAtSize(phone, 16) + 16;
+    const rest = [data.city ? cap(data.city) : "", data.email ? norm(data.email) : ""]
+      .filter(Boolean)
+      .join("   ·   ");
+    if (rest) {
+      page.drawText(rest, { x: after, y: y + 1, size: 9.5, font: reg, color: BRAND_LIGHT });
     }
+  }
+
+  /* ---------------- Cursoare pe coloane ---------------- */
+  let sideY = A4.h - HEADER_H - 4 - 34;
+  let mainY = A4.h - HEADER_H - 4 - 34;
+
+  /** Pagină nouă când coloana principală nu mai are loc. */
+  const ensureMain = (needed: number) => {
+    if (mainY - needed >= BOTTOM) return;
+    page = doc.addPage([A4.w, A4.h]);
+    paintChrome(false);
+    mainY = A4.h - 52;
+    sideY = A4.h - 52;
   };
 
-  const heading = (text: string) => {
-    y -= 12;
-    ensure(24);
-    page.drawText(norm(text).toUpperCase(), {
-      x: M,
-      y: y - 11,
-      size: 11,
+  /* ---------- Bara laterală ---------- */
+  const sideHeading = (label: string) => {
+    if (sideY < BOTTOM + 40) return false;
+    sideY -= 10;
+    page.drawText(norm(label).toUpperCase(), {
+      x: SIDE_X,
+      y: sideY - 9,
+      size: 8.5,
       font: bold,
-      color: BRAND_DARK,
+      color: INK,
     });
-    y -= 16;
-    page.drawRectangle({ x: M, y: y + 2, width: CW, height: 1, color: HAIRLINE });
-    y -= 8;
+    // bara de accent, la distanță de descenderele textului
+    sideY -= 20;
+    page.drawRectangle({ x: SIDE_X, y: sideY, width: 22, height: 2, color: BRAND });
+    sideY -= 13;
+    return true;
   };
 
-  // ---- Antet: nume + meserie + telefon ----
-  line(data.name, { size: 26, font: bold, color: INK, gap: 4 });
-  // `years` e deja o frază completă din chip (ex. „Peste 10 ani" / „Over 10 years")
-  const tradeLine = [norm(data.trade), data.years ? norm(data.years) : ""]
-    .filter(Boolean)
-    .join(" · ");
-  if (tradeLine) line(tradeLine, { size: 13.5, font: bold, color: BRAND_DARK, gap: 8 });
+  const sideText = (text: string, opts: { size?: number; font?: PDFFont; color?: typeof INK } = {}) => {
+    const size = opts.size ?? 9.5;
+    for (const ln of wrap(text, opts.font ?? reg, size, SIDE_CW)) {
+      if (sideY < BOTTOM) return;
+      page.drawText(ln, { x: SIDE_X, y: sideY - size, size, font: opts.font ?? reg, color: opts.color ?? MUTED });
+      sideY -= size + 4;
+    }
+  };
 
-  // Telefon mare (angajatorii de muncitori sună)
-  ensure(20);
-  const telLabel = locale === "ro" ? "Telefon: " : "Phone: ";
-  const labelW = reg.widthOfTextAtSize(telLabel, 12);
-  page.drawText(telLabel, { x: M, y: y - 16, size: 12, font: reg, color: MUTED });
-  page.drawText(norm(data.phone), { x: M + labelW, y: y - 16, size: 16, font: bold, color: INK });
-  y -= 20;
-  const contact = [data.city ? norm(data.city) : "", data.email ? norm(data.email) : ""]
-    .filter(Boolean)
-    .join("  ·  ");
-  if (contact) line(contact, { size: 10.5, color: MUTED, gap: 6 });
+  /** Etichetă mică + valoare, pentru blocul de contact. */
+  const sidePair = (label: string, value: string) => {
+    if (sideY < BOTTOM + 26) return;
+    page.drawText(norm(label), { x: SIDE_X, y: sideY - 8, size: 7.8, font: reg, color: MUTED });
+    sideY -= 11;
+    sideText(value, { size: 9.8, font: bold, color: INK });
+    sideY -= 5;
+  };
 
-  // Bandă accent sub antet
-  y -= 2;
-  page.drawRectangle({ x: M, y: y, width: CW, height: 3, color: BRAND });
-  y -= 14;
+  /** Element de listă cu bulină în bara laterală. */
+  const sideBullet = (text: string) => {
+    const size = 9.5;
+    const lines = wrap(text, reg, size, SIDE_CW - 10);
+    if (sideY < BOTTOM + lines.length * (size + 3)) return;
+    page.drawCircle({ x: SIDE_X + 2, y: sideY - size + 3.5, size: 1.6, color: BRAND });
+    lines.forEach((ln) => {
+      page.drawText(ln, { x: SIDE_X + 10, y: sideY - size, size, font: reg, color: INK });
+      sideY -= size + 3;
+    });
+    sideY -= 2;
+  };
 
-  // ---- Rând de atuuri (badge-uri) ----
-  const badges: string[] = [];
-  if (data.years) badges.push(norm(data.years));
-  if (data.licenses.length) badges.push(`${t.licenses}: ${data.licenses.map(norm).join(", ")}`);
-  if (data.availability) badges.push(norm(data.availability));
-  if (badges.length) {
-    drawPills(page, badges, y, reg, bold);
-    // estimează înălțimea rândurilor de pill-uri
-    y -= pillsHeight(badges, reg) + 6;
+  // Disponibilitate
+  if (data.availability || data.schedule || data.mobility) {
+    sideHeading(t.availability);
+    if (data.availability) sidePair(t.availableFrom, cap(data.availability));
+    if (data.schedule) sidePair(t.schedule, cap(data.schedule));
+    if (data.mobility) sidePair(t.mobility, cap(data.mobility));
   }
 
-  // ---- Despre ----
+  // Permis
+  if (data.licenses.length) {
+    sideHeading(t.licenses);
+    sideText(cap(data.licenses.map(norm).join(", ")), { size: 9.8, font: bold, color: INK });
+    sideY -= 4;
+  }
+
+  // Utilaje
+  if (data.machines.length) {
+    sideHeading(t.machines);
+    for (const m of data.machines.flatMap((x) => norm(x).split(",").map((s) => s.trim()).filter(Boolean)))
+      sideBullet(cap(m));
+  }
+
+  // Limbi
+  if (data.languages.length) {
+    sideHeading(t.languages);
+    for (const lg of data.languages.flatMap((x) => norm(x).split(",").map((s) => s.trim()).filter(Boolean)))
+      sideBullet(cap(lg));
+  }
+
+  /* ---------- Coloana principală ---------- */
+  const mainHeading = (label: string) => {
+    ensureMain(46);
+    mainY -= 8;
+    // bară de accent în stânga titlului
+    page.drawRectangle({ x: MAIN_X, y: mainY - 13, width: 3.5, height: 15, color: BRAND });
+    page.drawText(norm(label).toUpperCase(), {
+      x: MAIN_X + 12,
+      y: mainY - 11,
+      size: 10.5,
+      font: bold,
+      color: INK,
+    });
+    mainY -= 22;
+    page.drawRectangle({ x: MAIN_X, y: mainY, width: MAIN_CW, height: 0.8, color: HAIRLINE });
+    mainY -= 14;
+  };
+
+  const mainText = (text: string, size = 10, color = MUTED) => {
+    for (const ln of wrap(text, reg, size, MAIN_CW)) {
+      ensureMain(size + 5);
+      page.drawText(ln, { x: MAIN_X, y: mainY - size, size, font: reg, color });
+      mainY -= size + 5;
+    }
+  };
+
+  // Despre mine
   if (data.about) {
-    heading(t.about);
-    paragraph(data.about, 10.5, INK);
+    mainHeading(t.about);
+    mainText(cap(data.about), 10, INK);
+    mainY -= 6;
   }
 
-  // ---- Experiență ----
+  // Experiență — cronologic, cu linie de timp în stânga
   const exp = data.experience.filter((e) => e.role || e.company);
   if (exp.length) {
-    heading(t.experience);
-    for (const e of exp) {
-      ensure(28);
-      const title = [norm(e.role), norm(e.company)].filter(Boolean).join(" — ");
-      for (const ln of wrap(title, bold, 11, CW - 90)) {
-        page.drawText(ln, { x: M, y: y - 11, size: 11, font: bold, color: INK });
-        y -= 15;
+    mainHeading(t.experience);
+    exp.forEach((e, i) => {
+      const role = cap(e.role);
+      const company = cap(e.company);
+      const roleLines = wrap(role || company, bold, 10.8, MAIN_CW - 18);
+      ensureMain(roleLines.length * 15 + 26);
+
+      const dotY = mainY - 8;
+      // punct + linie verticală care leagă intrările
+      page.drawCircle({ x: MAIN_X + 3.5, y: dotY, size: 3.2, color: BRAND });
+      const textX = MAIN_X + 18;
+
+      roleLines.forEach((ln) => {
+        page.drawText(ln, { x: textX, y: mainY - 11, size: 10.8, font: bold, color: INK });
+        mainY -= 15;
+      });
+
+      if (role && company) {
+        for (const ln of wrap(company, reg, 9.8, MAIN_CW - 18)) {
+          ensureMain(14);
+          page.drawText(ln, { x: textX, y: mainY - 10, size: 9.8, font: reg, color: MUTED });
+          mainY -= 13;
+        }
       }
       if (e.period) {
-        // perioada, discret sub titlu
-        page.drawText(norm(e.period), { x: M, y: y - 9, size: 9.5, font: reg, color: MUTED });
-        y -= 14;
+        ensureMain(14);
+        page.drawText(norm(e.period), { x: textX, y: mainY - 9, size: 9, font: reg, color: BRAND_DARKISH() });
+        mainY -= 13;
       }
-      y -= 4;
+
+      // linia verticală de la punct până la intrarea următoare
+      if (i < exp.length - 1) {
+        const lineBottom = mainY - 4;
+        if (lineBottom < dotY - 6) {
+          page.drawRectangle({
+            x: MAIN_X + 2.7,
+            y: lineBottom,
+            width: 1.2,
+            height: dotY - 6 - lineBottom,
+            color: HAIRLINE,
+          });
+        }
+      }
+      mainY -= 8;
+    });
+  }
+
+  // Calificări
+  if (data.certifications.length) {
+    mainHeading(t.certifications);
+    for (const c of data.certifications) {
+      const size = 10;
+      const lines = wrap(cap(c), reg, size, MAIN_CW - 16);
+      ensureMain(lines.length * (size + 4) + 2);
+      page.drawCircle({ x: MAIN_X + 3, y: mainY - size + 3.5, size: 1.8, color: BRAND });
+      lines.forEach((ln) => {
+        page.drawText(ln, { x: MAIN_X + 14, y: mainY - size, size, font: reg, color: INK });
+        mainY -= size + 4;
+      });
+      mainY -= 2;
     }
   }
 
-  // ---- Calificări / utilaje ----
-  if (data.certifications.length) {
-    heading(t.certifications);
-    for (const c of data.certifications) bullet(c);
-  }
-  if (data.machines.length) {
-    heading(t.machines);
-    paragraph(data.machines.map(norm).join(", "), 10.5, INK);
-  }
-
-  // ---- Limbi ----
-  if (data.languages.length) {
-    heading(t.languages);
-    paragraph(data.languages.map(norm).join("   ·   "), 10.5, INK);
-  }
-
-  // ---- Disponibilitate ----
-  if (data.availability || data.schedule || data.mobility) {
-    heading(t.availability);
-    if (data.availability) line(`${t.availableFrom} ${norm(data.availability)}`, { size: 10.5, color: INK, gap: 3 });
-    if (data.schedule) line(`${t.schedule} ${norm(data.schedule)}`, { size: 10.5, color: INK, gap: 3 });
-    if (data.mobility) line(`${t.mobility} ${norm(data.mobility)}`, { size: 10.5, color: INK, gap: 3 });
-  }
-
-  // ---- Footer pe fiecare pagină ----
+  /* ---------------- Subsol ---------------- */
+  const pages = doc.getPages();
   const stamp = `${t.footer} · ${new Date().toLocaleDateString(locale === "ro" ? "ro-RO" : "en-GB")}`;
-  for (const p of doc.getPages()) {
-    p.drawText(stamp, { x: M, y: M - 18, size: 8, font: reg, color: MUTED });
-  }
-
-  function bullet(text: string) {
-    const size = 10.5;
-    const lines = wrap(text, reg, size, CW - 14);
-    ensure(lines.length * (size + 3));
-    page.drawText("•", { x: M, y: y - size, size, font: bold, color: BRAND });
-    lines.forEach((ln, i) => {
-      page.drawText(ln, { x: M + 14, y: y - size, size, font: reg, color: INK });
-      y -= size + 3;
-      if (i < lines.length - 1) {
-        /* liniile următoare aliniate sub prima */
-      }
-    });
-  }
+  pages.forEach((p, i) => {
+    p.drawRectangle({ x: MAIN_X, y: 40, width: MAIN_CW, height: 0.8, color: HAIRLINE });
+    p.drawText(stamp, { x: MAIN_X, y: 27, size: 7.5, font: reg, color: MUTED });
+    if (pages.length > 1) {
+      const label = `${t.page} ${i + 1}/${pages.length}`;
+      const w = reg.widthOfTextAtSize(label, 7.5);
+      p.drawText(label, { x: MAIN_X + MAIN_CW - w, y: 27, size: 7.5, font: reg, color: MUTED });
+    }
+  });
 
   return doc.save();
 }
 
-/** Înălțimea estimată a rândului de pill-uri (pentru avans y). */
-function pillsHeight(items: string[], font: PDFFont): number {
-  const size = 9.5;
-  let x = 0;
-  let rows = 1;
-  for (const it of items) {
-    const w = font.widthOfTextAtSize(norm(it), size) + 20;
-    if (x + w > CW) {
-      rows++;
-      x = 0;
-    }
-    x += w + 6;
-  }
-  return rows * 24;
-}
-
-/** Desenează pill-uri (badge-uri) pe unul sau mai multe rânduri. */
-function drawPills(page: PDFPage, items: string[], topY: number, font: PDFFont, _bold: PDFFont) {
-  const size = 9.5;
-  const h = 18;
-  let x = M;
-  let rowY = topY - h;
-  for (const raw of items) {
-    const text = norm(raw);
-    const w = font.widthOfTextAtSize(text, size) + 20;
-    if (x + w > M + CW) {
-      x = M;
-      rowY -= 24;
-    }
-    page.drawRectangle({ x, y: rowY, width: w, height: h, color: PILL_BG, borderColor: BRAND, borderWidth: 0.5 });
-    page.drawText(text, { x: x + 10, y: rowY + 5, size, font, color: BRAND_DARK });
-    x += w + 6;
-  }
+/** Albastru închis pentru perioade — definit ca funcție ca să nu poluăm paleta. */
+function BRAND_DARKISH() {
+  return rgb(3 / 255, 105 / 255, 161 / 255);
 }

@@ -56,14 +56,15 @@ export async function submitCvApplication(
       city: clean(formData.get("city"), 120) || undefined,
       about: clean(formData.get("about"), 600) || undefined,
       experience,
-      licenses: list(formData, "license", 20, 8),
-      machines: list(formData, "machine", 60, 20),
+      // câmpuri libere: limitele trebuie să acopere un text scris de om, nu o etichetă scurtă
+      licenses: list(formData, "license", 120, 8),
+      machines: list(formData, "machine", 300, 20),
       certifications: String(formData.get("certs_raw") ?? "")
         .split("\n")
         .map((s) => s.trim().slice(0, 160))
         .filter(Boolean)
         .slice(0, 20),
-      languages: list(formData, "lang", 60, 12),
+      languages: list(formData, "lang", 200, 12),
       availability: clean(formData.get("availability"), 80) || undefined,
       schedule: clean(formData.get("schedule"), 80) || undefined,
       mobility: clean(formData.get("mobility"), 120) || undefined,

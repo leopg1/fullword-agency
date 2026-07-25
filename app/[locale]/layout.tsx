@@ -10,6 +10,7 @@ import { LenisProvider } from "@/components/providers/lenis-provider";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { WhatsappFab } from "@/components/site/whatsapp-fab";
+import { PageTracker } from "@/components/site/page-tracker";
 import "../globals.css";
 
 const poppins = Poppins({
@@ -86,6 +87,7 @@ export default async function LocaleLayout({
             <div className="flex-1">{children}</div>
             <Footer />
             <WhatsappFab />
+            <PageTracker />
           </LenisProvider>
         </NextIntlClientProvider>
       </body>

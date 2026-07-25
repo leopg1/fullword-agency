@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useActionState, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { CheckCircle2, Download, Loader2, Plus, Send, Trash2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -9,33 +9,69 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
 import { submitCvApplication, type CvApplyState } from "@/app/[locale]/completeaza-cv/actions";
-import { useActionState } from "react";
 
 type Exp = { role: string; company: string; period: string };
 
-const sectionCls = "rounded-2xl border border-border bg-card p-5 sm:p-6";
-
-/** Definită la nivel de modul (NU în render) ca inputurile necontrolate să nu
- *  se remonteze — altfel orice click pe un chip ștergea numele/telefonul. */
-function Section({ step, title, children }: { step: string; title: React.ReactNode; children: React.ReactNode }) {
+/**
+ * Definite la nivel de modul (NU în render): altfel React le remontează la
+ * fiecare tastare și inputurile necontrolate își pierd valoarea.
+ */
+function Section({
+  step,
+  title,
+  optional,
+  children,
+}: {
+  step: number;
+  title: string;
+  optional?: string;
+  children: React.ReactNode;
+}) {
   return (
-    <section className={sectionCls}>
-      <h2 className="flex items-baseline gap-2 font-heading text-xl font-semibold">
-        <span className="text-primary">{step}.</span>
-        {title}
-      </h2>
-      <div className="mt-5 space-y-5">{children}</div>
+    <section className="overflow-hidden rounded-2xl border border-border bg-card">
+      <header className="flex items-center gap-3.5 border-b border-border bg-muted/40 px-5 py-4 sm:px-6">
+        <span className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-primary font-heading text-lg font-semibold text-primary-foreground">
+          {step}
+        </span>
+        <h2 className="font-heading text-xl font-semibold leading-tight">
+          {title}
+          {optional && (
+            <span className="ml-2 text-base font-normal text-muted-foreground">({optional})</span>
+          )}
+        </h2>
+      </header>
+      <div className="space-y-6 p-5 sm:p-6">{children}</div>
     </section>
   );
 }
 
-const chipCls = (active: boolean) =>
-  cn(
-    "inline-flex min-h-11 items-center rounded-full border px-4 text-base font-medium transition-colors",
-    active
-      ? "border-brand bg-brand text-brand-foreground"
-      : "border-border bg-background text-foreground hover:bg-muted"
+/** Un câmp: etichetă mare, căsuță goală, text ajutător dedesubt. */
+function Field({
+  id,
+  label,
+  hint,
+  required,
+  children,
+}: {
+  id: string;
+  label: string;
+  hint?: string;
+  required?: boolean;
+  children: React.ReactNode;
+}) {
+  return (
+    <div className="space-y-2">
+      <Label htmlFor={id} className="text-base font-semibold leading-snug">
+        {label}
+        {required && <span className="ml-1 text-primary">*</span>}
+      </Label>
+      {children}
+      {hint && <p className="text-sm leading-relaxed text-muted-foreground">{hint}</p>}
+    </div>
   );
+}
+
+const inputCls = "h-13 rounded-xl text-base";
 
 export function BuildCvForm({ jobId }: { jobId?: string }) {
   const t = useTranslations("buildCv");
@@ -44,20 +80,10 @@ export function BuildCvForm({ jobId }: { jobId?: string }) {
     status: "idle",
   });
 
-  // selecții gestionate în state → randate ca hidden inputs în form
-  const [trade, setTrade] = useState("");
-  const [years, setYears] = useState("");
-  const [licenses, setLicenses] = useState<string[]>([]);
-  const [machines, setMachines] = useState<string[]>([]);
-  const [languages, setLanguages] = useState<string[]>([]);
-  const [availability, setAvailability] = useState("");
-  const [schedule, setSchedule] = useState("");
-  const [mobility, setMobility] = useState("");
+  // singurul lucru ținut în state: rândurile de experiență (se pot adăuga/șterge)
   const [experiences, setExperiences] = useState<Exp[]>([{ role: "", company: "", period: "" }]);
-
-  const arr = (key: string): string[] => (t.raw(key) as string[]) ?? [];
-  const toggle = (list: string[], set: (v: string[]) => void, v: string) =>
-    set(list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
+  const setExp = (i: number, key: keyof Exp, value: string) =>
+    setExperiences((prev) => prev.map((x, j) => (j === i ? { ...x, [key]: value } : x)));
 
   // ---- Ecran de succes ----
   if (state.status === "success") {
@@ -86,142 +112,114 @@ export function BuildCvForm({ jobId }: { jobId?: string }) {
     );
   }
 
-  const opt = <span className="ml-1 text-sm font-normal text-muted-foreground">({t("optional")})</span>;
-
   return (
     <form action={formAction} className="space-y-5">
       <input type="hidden" name="jobId" value={jobId ?? ""} />
       <input type="hidden" name="locale" value={locale} />
       {/* honeypot */}
-      <input type="text" name="website" tabIndex={-1} autoComplete="off" aria-hidden className="absolute -left-[9999px] h-0 w-0 opacity-0" />
+      <input
+        type="text"
+        name="website"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
 
-      {/* hidden inputs din selecții */}
-      {licenses.map((v) => <input key={`l${v}`} type="hidden" name="license" value={v} />)}
-      {machines.map((v) => <input key={`m${v}`} type="hidden" name="machine" value={v} />)}
-      {languages.map((v) => <input key={`g${v}`} type="hidden" name="lang" value={v} />)}
-      <input type="hidden" name="years" value={years} />
-      <input type="hidden" name="availability" value={availability} />
-      <input type="hidden" name="schedule" value={schedule} />
-      <input type="hidden" name="mobility" value={mobility} />
+      {/* ---- 1. Date personale ---- */}
+      <Section step={1} title={t("step1")}>
+        <Field id="cv-name" label={t("name")} required>
+          <Input id="cv-name" name="name" required maxLength={200} autoComplete="name" placeholder={t("namePh")} className={inputCls} />
+        </Field>
 
-      {/* ---- Pas 1: cine ești ---- */}
-      <Section step="1" title={t("step1")}>
-        <div className="space-y-1.5">
-          <Label htmlFor="cv-name" className="text-base font-medium">{t("name")} *</Label>
-          <Input id="cv-name" name="name" required maxLength={200} placeholder={t("namePh")} className="h-13 text-base" />
+        <Field id="cv-phone" label={t("phone")} hint={t("phoneHelp")} required>
+          <Input id="cv-phone" name="phone" type="tel" inputMode="tel" required maxLength={50} autoComplete="tel" placeholder={t("phonePh")} className={inputCls} />
+        </Field>
+
+        <Field id="cv-trade" label={t("trade")} hint={t("tradeHelp")} required>
+          <Input id="cv-trade" name="trade" required maxLength={120} placeholder={t("tradePh")} className={inputCls} />
+        </Field>
+
+        <div className="grid gap-6 sm:grid-cols-2">
+          <Field id="cv-years" label={t("years")} hint={t("yearsHelp")}>
+            <Input id="cv-years" name="years" maxLength={30} placeholder={t("yearsPh")} className={inputCls} />
+          </Field>
+          <Field id="cv-city" label={t("city")}>
+            <Input id="cv-city" name="city" maxLength={120} placeholder={t("cityPh")} className={inputCls} />
+          </Field>
         </div>
 
-        <div className="space-y-1.5">
-          <Label htmlFor="cv-phone" className="text-base font-medium">{t("phone")} *</Label>
-          <Input id="cv-phone" name="phone" type="tel" inputMode="tel" required maxLength={50} placeholder={t("phonePh")} className="h-13 text-base" />
-          <p className="text-sm text-muted-foreground">{t("phoneHelp")}</p>
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="cv-trade" className="text-base font-medium">{t("trade")} *</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("tradeChips").map((c) => (
-              <button key={c} type="button" onClick={() => setTrade(c)} className={chipCls(trade === c)}>
-                {c}
-              </button>
-            ))}
-          </div>
-          <Input
-            id="cv-trade"
-            name="trade"
-            required
-            maxLength={120}
-            value={trade}
-            onChange={(e) => setTrade(e.target.value)}
-            placeholder={t("tradePh")}
-            className="h-13 text-base"
-          />
-          <p className="text-sm text-muted-foreground">{t("tradeHelp")}</p>
-        </div>
-
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("years")} {opt}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("yearsChips").map((c) => (
-              <button key={c} type="button" onClick={() => setYears(years === c ? "" : c)} className={chipCls(years === c)}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div className="space-y-1.5">
-            <Label htmlFor="cv-city" className="text-base font-medium">{t("city")} {opt}</Label>
-            <Input id="cv-city" name="city" maxLength={120} placeholder={t("cityPh")} className="h-13 text-base" />
-          </div>
-          <div className="space-y-1.5">
-            <Label htmlFor="cv-email" className="text-base font-medium">{t("email")} {opt}</Label>
-            <Input id="cv-email" name="email" type="email" maxLength={320} placeholder={t("emailPh")} className="h-13 text-base" />
-            <p className="text-sm text-muted-foreground">{t("emailHelp")}</p>
-          </div>
-        </div>
+        <Field id="cv-email" label={t("email")} hint={t("emailHelp")}>
+          <Input id="cv-email" name="email" type="email" maxLength={320} autoComplete="email" placeholder={t("emailPh")} className={inputCls} />
+        </Field>
       </Section>
 
-      {/* ---- Pas 2: experiență ---- */}
-      <Section step="2" title={<>{t("step2")} {opt}</>}>
-        <p className="text-base text-muted-foreground">{t("experienceHelp")}</p>
+      {/* ---- 2. Experiență ---- */}
+      <Section step={2} title={t("step2")} optional={t("optional")}>
+        <p className="-mt-1 text-base leading-relaxed text-muted-foreground">{t("experienceHelp")}</p>
+
         {experiences.map((exp, i) => (
-          <div key={i} className="space-y-3 rounded-xl border border-border bg-background p-4">
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="space-y-1.5">
-                <Label className="text-sm font-medium text-muted-foreground">{t("expRole")}</Label>
-                <Input
-                  name="exp_role"
-                  maxLength={160}
-                  value={exp.role}
-                  onChange={(e) => setExperiences((p) => p.map((x, j) => (j === i ? { ...x, role: e.target.value } : x)))}
-                  placeholder={t("expRolePh")}
-                  className="h-12 text-base"
-                />
-              </div>
-              <div className="space-y-1.5">
-                <Label className="text-sm font-medium text-muted-foreground">{t("expCompany")}</Label>
-                <Input
-                  name="exp_company"
-                  maxLength={160}
-                  value={exp.company}
-                  onChange={(e) => setExperiences((p) => p.map((x, j) => (j === i ? { ...x, company: e.target.value } : x)))}
-                  placeholder={t("expCompanyPh")}
-                  className="h-12 text-base"
-                />
-              </div>
-            </div>
-            <div className="flex items-end gap-3">
-              <div className="flex-1 space-y-1.5">
-                <Label className="text-sm font-medium text-muted-foreground">{t("expPeriod")}</Label>
-                <Input
-                  name="exp_period"
-                  maxLength={60}
-                  value={exp.period}
-                  onChange={(e) => setExperiences((p) => p.map((x, j) => (j === i ? { ...x, period: e.target.value } : x)))}
-                  placeholder={t("expPeriodPh")}
-                  className="h-12 text-base"
-                />
-              </div>
+          <div key={i} className="space-y-4 rounded-xl border border-border bg-background p-4 sm:p-5">
+            <div className="flex items-center justify-between gap-3">
+              <span className="text-sm font-semibold uppercase tracking-wide text-muted-foreground">
+                {t("workplace")} {i + 1}
+              </span>
               {experiences.length > 1 && (
                 <button
                   type="button"
                   onClick={() => setExperiences((p) => p.filter((_, j) => j !== i))}
-                  aria-label={t("removeExperience")}
-                  className="inline-flex h-12 items-center gap-1.5 rounded-xl border border-border px-3 text-base font-medium text-muted-foreground hover:bg-muted"
+                  className="inline-flex min-h-9 items-center gap-1.5 rounded-lg px-2.5 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                 >
-                  <Trash2 className="size-4.5" aria-hidden />
+                  <Trash2 className="size-4" aria-hidden />
+                  {t("removeExperience")}
                 </button>
               )}
             </div>
+
+            <div className="grid gap-4 sm:grid-cols-2">
+              <Field id={`exp-role-${i}`} label={t("expRole")}>
+                <Input
+                  id={`exp-role-${i}`}
+                  name="exp_role"
+                  maxLength={160}
+                  value={exp.role}
+                  onChange={(e) => setExp(i, "role", e.target.value)}
+                  placeholder={t("expRolePh")}
+                  className="h-12 rounded-xl text-base"
+                />
+              </Field>
+              <Field id={`exp-company-${i}`} label={t("expCompany")}>
+                <Input
+                  id={`exp-company-${i}`}
+                  name="exp_company"
+                  maxLength={160}
+                  value={exp.company}
+                  onChange={(e) => setExp(i, "company", e.target.value)}
+                  placeholder={t("expCompanyPh")}
+                  className="h-12 rounded-xl text-base"
+                />
+              </Field>
+            </div>
+
+            <Field id={`exp-period-${i}`} label={t("expPeriod")}>
+              <Input
+                id={`exp-period-${i}`}
+                name="exp_period"
+                maxLength={60}
+                value={exp.period}
+                onChange={(e) => setExp(i, "period", e.target.value)}
+                placeholder={t("expPeriodPh")}
+                className="h-12 rounded-xl text-base"
+              />
+            </Field>
           </div>
         ))}
+
         {experiences.length < 8 && (
           <button
             type="button"
             onClick={() => setExperiences((p) => [...p, { role: "", company: "", period: "" }])}
-            className="inline-flex min-h-12 items-center gap-2 rounded-xl border border-dashed border-brand/50 px-5 text-base font-semibold text-primary hover:bg-brand-tint-2"
+            className="inline-flex min-h-13 w-full items-center justify-center gap-2 rounded-xl border-2 border-dashed border-brand/50 px-5 text-base font-semibold text-primary transition-colors hover:border-brand hover:bg-brand-tint-2"
           >
             <Plus className="size-5" aria-hidden />
             {t("addExperience")}
@@ -229,84 +227,43 @@ export function BuildCvForm({ jobId }: { jobId?: string }) {
         )}
       </Section>
 
-      {/* ---- Pas 3: competențe ---- */}
-      <Section step="3" title={<>{t("step3")} {opt}</>}>
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("license")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("licenseChips").map((c) => (
-              <button key={c} type="button" onClick={() => toggle(licenses, setLicenses, c)} className={chipCls(licenses.includes(c))}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
+      {/* ---- 3. Calificări ---- */}
+      <Section step={3} title={t("step3")} optional={t("optional")}>
+        <Field id="cv-license" label={t("license")} hint={t("licenseHelp")}>
+          <Input id="cv-license" name="license" maxLength={120} placeholder={t("licensePh")} className={inputCls} />
+        </Field>
 
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("machines")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("machineChips").map((c) => (
-              <button key={c} type="button" onClick={() => toggle(machines, setMachines, c)} className={chipCls(machines.includes(c))}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
+        <Field id="cv-machines" label={t("machines")} hint={t("machinesHelp")}>
+          <Input id="cv-machines" name="machine" maxLength={300} placeholder={t("machinesPh")} className={inputCls} />
+        </Field>
 
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("languages")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("langChips").map((c) => (
-              <button key={c} type="button" onClick={() => toggle(languages, setLanguages, c)} className={chipCls(languages.includes(c))}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
+        <Field id="cv-lang" label={t("languages")} hint={t("languagesHelp")}>
+          <Input id="cv-lang" name="lang" maxLength={200} placeholder={t("languagesPh")} className={inputCls} />
+        </Field>
 
-        <div className="space-y-1.5">
-          <Label htmlFor="cv-certs" className="text-base font-medium">{t("certs")}</Label>
-          <Textarea id="cv-certs" name="certs_raw" rows={3} maxLength={2000} placeholder={t("certsPh")} className="text-base" />
-          <p className="text-sm text-muted-foreground">{t("certsHelp")}</p>
-        </div>
+        <Field id="cv-certs" label={t("certs")} hint={t("certsHelp")}>
+          <Textarea id="cv-certs" name="certs_raw" rows={3} maxLength={2000} placeholder={t("certsPh")} className="rounded-xl text-base" />
+        </Field>
       </Section>
 
-      {/* ---- Pas 4: disponibilitate ---- */}
-      <Section step="4" title={<>{t("step4")} {opt}</>}>
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("availability")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("availabilityChips").map((c) => (
-              <button key={c} type="button" onClick={() => setAvailability(availability === c ? "" : c)} className={chipCls(availability === c)}>
-                {c}
-              </button>
-            ))}
-          </div>
+      {/* ---- 4. Disponibilitate ---- */}
+      <Section step={4} title={t("step4")} optional={t("optional")}>
+        <div className="grid gap-6 sm:grid-cols-2">
+          <Field id="cv-availability" label={t("availability")} hint={t("availabilityHelp")}>
+            <Input id="cv-availability" name="availability" maxLength={80} placeholder={t("availabilityPh")} className={inputCls} />
+          </Field>
+          <Field id="cv-schedule" label={t("schedule")} hint={t("scheduleHelp")}>
+            <Input id="cv-schedule" name="schedule" maxLength={80} placeholder={t("schedulePh")} className={inputCls} />
+          </Field>
         </div>
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("schedule")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("scheduleChips").map((c) => (
-              <button key={c} type="button" onClick={() => setSchedule(schedule === c ? "" : c)} className={chipCls(schedule === c)}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-2">
-          <Label className="text-base font-medium">{t("mobility")}</Label>
-          <div className="flex flex-wrap gap-2">
-            {arr("mobilityChips").map((c) => (
-              <button key={c} type="button" onClick={() => setMobility(mobility === c ? "" : c)} className={chipCls(mobility === c)}>
-                {c}
-              </button>
-            ))}
-          </div>
-        </div>
-        <div className="space-y-1.5">
-          <Label htmlFor="cv-about" className="text-base font-medium">{t("about")} {opt}</Label>
-          <Textarea id="cv-about" name="about" rows={3} maxLength={600} placeholder={t("aboutPh")} className="text-base" />
-        </div>
+
+        <Field id="cv-mobility" label={t("mobility")} hint={t("mobilityHelp")}>
+          <Input id="cv-mobility" name="mobility" maxLength={120} placeholder={t("mobilityPh")} className={inputCls} />
+        </Field>
+
+        <Field id="cv-about" label={t("about")} hint={t("aboutHelp")}>
+          <Textarea id="cv-about" name="about" rows={3} maxLength={600} placeholder={t("aboutPh")} className="rounded-xl text-base" />
+        </Field>
       </Section>
 
       {state.status === "error" && (

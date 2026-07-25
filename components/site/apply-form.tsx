@@ -1,13 +1,13 @@
 "use client";
 
-import { useActionState } from "react";
+import { useActionState, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { CheckCircle2, FileText, Loader2, Send } from "lucide-react";
-import { Link } from "@/i18n/navigation";
+import { ArrowLeft, CheckCircle2, FileText, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { BuildCvForm } from "@/components/site/build-cv-form";
 import { submitApplication, type ApplyState } from "@/app/[locale]/joburi/[slug]/actions";
 
 /** Formular de aplicare — 2 câmpuri obligatorii, restul opțional. */
@@ -15,10 +15,36 @@ export function ApplyForm({ jobId }: { jobId: string }) {
   const t = useTranslations("jobPage");
   const tCv = useTranslations("buildCv");
   const locale = useLocale();
+  // „Nu am CV" deschide întrebările chiar aici, fără să plece de pe pagina jobului
+  const [buildCv, setBuildCv] = useState(false);
+  const panelRef = useRef<HTMLDivElement>(null);
+  // după deschidere, aducem panoul sub bara de sus (altfel începe tăiat)
+  useEffect(() => {
+    if (buildCv) panelRef.current?.scrollIntoView({ block: "start", behavior: "smooth" });
+  }, [buildCv]);
   const [state, formAction, pending] = useActionState<ApplyState, FormData>(
     submitApplication,
     { status: "idle" }
   );
+
+  if (buildCv) {
+    return (
+      <div ref={panelRef} className="scroll-mt-24">
+        <button
+          type="button"
+          onClick={() => setBuildCv(false)}
+          className="mb-4 inline-flex min-h-11 items-center gap-1.5 text-base font-medium text-primary hover:underline"
+        >
+          <ArrowLeft className="size-4.5" aria-hidden />
+          {tCv("backToUpload")}
+        </button>
+        <p className="mb-5 rounded-xl bg-brand-tint-2 p-3.5 text-base text-foreground">
+          {tCv("inlineIntro")}
+        </p>
+        <BuildCvForm jobId={jobId} />
+      </div>
+    );
+  }
 
   if (state.status === "success") {
     return (
@@ -86,16 +112,17 @@ export function ApplyForm({ jobId }: { jobId: string }) {
           accept=".pdf,.doc,.docx,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document"
           className="h-12 pt-2.5 text-base file:font-medium"
         />
-        <Link
-          href={{ pathname: "/completeaza-cv", query: jobId && !jobId.startsWith("static-") ? { job: jobId } : {} }}
-          className="mt-1 flex items-start gap-2 rounded-xl border border-brand/30 bg-brand-tint-2 p-3 text-base transition-colors hover:border-brand"
+        <button
+          type="button"
+          onClick={() => setBuildCv(true)}
+          className="mt-1 flex w-full items-start gap-2 rounded-xl border border-brand/30 bg-brand-tint-2 p-3 text-left text-base transition-colors hover:border-brand"
         >
           <FileText className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
           <span>
             <span className="font-semibold text-foreground">{tCv("entryTitle")}</span>{" "}
             <span className="text-muted-foreground">{tCv("entryText")}</span>
           </span>
-        </Link>
+        </button>
       </div>
 
       <div className="space-y-1.5">
