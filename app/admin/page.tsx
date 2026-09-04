@@ -29,7 +29,7 @@ export default async function AdminJobsPage() {
         </p>
         <p>
           Butonul <strong>Deschis / Închis</strong> arată dacă jobul se mai vede pe site. Când s-a
-          ocupat postul, apeși pe el și devine „Închis" — anunțul dispare de pe site, dar nu se pierde.
+          ocupat postul, apeși pe el și devine „Închis” — anunțul dispare de pe site, dar nu se pierde.
         </p>
       </AdminHelp>
 

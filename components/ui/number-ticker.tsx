@@ -54,7 +54,7 @@ export function NumberTicker({
         clearTimeout(timer)
       }
     }
-  }, [motionValue, isInView, delay, value, direction, startValue])
+  }, [motionValue, springValue, isInView, delay, value, direction, startValue])
 
   useEffect(
     () =>

@@ -1,6 +1,6 @@
 import { cache } from "react";
 import { createPublicClient } from "@/lib/supabase/public";
-import { JOBS, type Job, type JobDomain } from "@/lib/jobs-data";
+import { JOBS, type JobDomain } from "@/lib/jobs-data";
 
 /** Structura conținutului unui job (jsonb în fw_jobs.content_ro / content_en). */
 export type JobContent = {

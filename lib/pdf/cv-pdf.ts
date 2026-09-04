@@ -1,4 +1,4 @@
-import { PDFDocument, PDFFont, PDFPage, rgb } from "pdf-lib";
+import { PDFDocument, PDFFont, rgb } from "pdf-lib";
 import fontkit from "@pdf-lib/fontkit";
 import { DEJAVU_BOLD_B64, DEJAVU_REGULAR_B64 } from "@/lib/pdf/fonts";
 

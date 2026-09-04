@@ -65,7 +65,7 @@ export default async function AdminApplicationsPage() {
                       </>
                     )}
                   </p>
-                  {a.message && <p className="mt-2 text-base text-muted-foreground">„{a.message}"</p>}
+                  {a.message && <p className="mt-2 text-base text-muted-foreground">„{a.message}”</p>}
                   <p className="mt-1.5 text-sm text-muted-foreground">
                     {new Date(a.created_at).toLocaleString("ro-RO", { dateStyle: "medium", timeStyle: "short" })}
                   </p>

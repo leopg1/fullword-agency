@@ -40,7 +40,7 @@ export function ContentEditor({
   }, [groups]);
 
   const [values, setValues] = useState<Record<string, string>>(() => ({ ...initialValues }));
-  const initialRef = useRef<Record<string, string>>({ ...initialValues });
+  const [initialVals, setInitialVals] = useState<Record<string, string>>(() => ({ ...initialValues }));
   const dirtyRef = useRef<Set<string>>(new Set());
   const [dirtyCount, setDirtyCount] = useState(0);
 
@@ -54,7 +54,7 @@ export function ContentEditor({
 
   const setField = (key: string, v: string) => {
     setValues((prev) => ({ ...prev, [key]: v }));
-    if (v !== initialRef.current[key]) dirtyRef.current.add(key);
+    if (v !== initialVals[key]) dirtyRef.current.add(key);
     else dirtyRef.current.delete(key);
     setDirtyCount(dirtyRef.current.size);
     setFlash(null);
@@ -63,7 +63,8 @@ export function ContentEditor({
   const toggle = (key: string) =>
     setOpen((prev) => {
       const n = new Set(prev);
-      n.has(key) ? n.delete(key) : n.add(key);
+      if (n.has(key)) n.delete(key);
+      else n.add(key);
       return n;
     });
 
@@ -91,7 +92,11 @@ export function ContentEditor({
     startTransition(async () => {
       const res = await saveContent(changes);
       if (res.ok) {
-        for (const key of dirtyRef.current) initialRef.current[key] = values[key] ?? "";
+        setInitialVals((prev) => {
+          const next = { ...prev };
+          for (const key of dirtyRef.current) next[key] = values[key] ?? "";
+          return next;
+        });
         dirtyRef.current.clear();
         setDirtyCount(0);
         setFlash({ ok: true, text: `S-au salvat ${res.count} modificări. Sunt live pe site.` });
@@ -147,7 +152,7 @@ export function ContentEditor({
       {dirtyCount > 0 && (
         <p className="mt-3 rounded-xl bg-brand-tint-2 px-4 py-3 text-base font-medium text-foreground">
           Ai {dirtyCount} {dirtyCount === 1 ? "modificare nesalvată" : "modificări nesalvate"}. Nu uita să apeși
-          „Salvează". Dacă schimbi limba înainte de salvare, se pierd.
+          „Salvează”. Dacă schimbi limba înainte de salvare, se pierd.
         </p>
       )}
 
@@ -176,7 +181,7 @@ export function ContentEditor({
                 <div className="space-y-5 border-t border-border px-5 py-5">
                   {g.fields.map((f) => {
                     const val = values[f.key] ?? f.current;
-                    const dirty = val !== initialRef.current[f.key];
+                    const dirty = val !== initialVals[f.key];
                     const changedFromDefault = val !== f.default;
                     return (
                       <div key={f.key}>
@@ -231,7 +236,7 @@ export function ContentEditor({
 
         {filteredGroups.length === 0 && (
           <p className="rounded-2xl border border-border bg-card p-6 text-base text-muted-foreground">
-            Niciun text nu conține „{query}". Încearcă alt cuvânt.
+            Niciun text nu conține „{query}”. Încearcă alt cuvânt.
           </p>
         )}
       </div>

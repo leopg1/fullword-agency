@@ -1,4 +1,5 @@
-import Image from "next/image";
+import Image, { getImageProps } from "next/image";
+import { preload } from "react-dom";
 import { getLocale, getTranslations } from "next-intl/server";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link } from "@/i18n/navigation";
@@ -16,6 +17,22 @@ export async function Hero() {
   const tStats = await getTranslations("stats");
   const locale = await getLocale();
   const numberLocale = locale === "ro" ? "ro-RO" : "en-US";
+
+  // Preload pentru elementul LCP — imaginea hero pornește odată cu HTML-ul,
+  // nu după ce browserul o descoperă în DOM.
+  const heroImg = getImageProps({
+    src: "/images/hero/santier.webp",
+    alt: "",
+    fill: true,
+    priority: true,
+    sizes: "(max-width: 1024px) 100vw, 45vw",
+  });
+  preload(heroImg.props.src, {
+    as: "image",
+    imageSrcSet: heroImg.props.srcSet,
+    imageSizes: heroImg.props.sizes,
+    fetchPriority: "high",
+  });
 
   const stats = [
     { value: 10000, label: tStats("interviews") },
@@ -98,6 +115,7 @@ export async function Hero() {
             alt="Muncitori în construcții pe un șantier — echipa pe care o plasăm în Europa"
             fill
             priority
+            fetchPriority="high"
             sizes="(max-width: 1024px) 100vw, 45vw"
             className="object-cover object-[50%_35%]"
           />

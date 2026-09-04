@@ -102,7 +102,6 @@ export function BlurFade({
       clearTimeout(failsafe)
     }
     // doar la mount
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   const axis = direction === "left" || direction === "right" ? "x" : "y"

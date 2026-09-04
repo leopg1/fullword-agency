@@ -121,7 +121,7 @@ export default async function AdminBlogPage() {
         ))}
         {posts?.length === 0 && (
           <li className="rounded-2xl border border-border bg-card p-6 text-base text-muted-foreground">
-            Niciun articol încă. Apasă „Articol nou" ca să scrii primul.
+            Niciun articol încă. Apasă „Articol nou” ca să scrii primul.
           </li>
         )}
       </ul>
