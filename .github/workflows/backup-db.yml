@@ -1,0 +1,86 @@
+# Backup săptămânal Supabase (bază de date + CV-urile din storage).
+# Rulează luni la 03:00 UTC sau manual (Run workflow).
+#
+# Secrete necesare (Settings → Secrets and variables → Actions):
+#   SUPABASE_DB_URL        — connection string-ul (Dashboard → Connect → Session pooler URI, cu parola)
+#   BACKUP_PASSPHRASE      — o parolă lungă aleasă de tine; criptează arhivele (OBLIGATORIU cât timp repo-ul e public)
+#   SUPABASE_SERVICE_KEY   — (opțional) cheia secret/service_role, DOAR pentru backup-ul fișierelor CV
+#
+# Restaurare bază:  openssl enc -d -aes-256-cbc -pbkdf2 -in db.sql.gz.enc -pass pass:PAROLA | gunzip > db.sql
+name: Backup Supabase
+
+on:
+  schedule:
+    - cron: "0 3 * * 1"
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verifică secretele
+        id: check
+        run: |
+          if [ -z "${{ secrets.SUPABASE_DB_URL }}" ] || [ -z "${{ secrets.BACKUP_PASSPHRASE }}" ]; then
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+            echo "::warning::SUPABASE_DB_URL sau BACKUP_PASSPHRASE lipsesc — backup sărit. Adaugă-le în Settings → Secrets."
+          else
+            echo "skip=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Instalează clientul Postgres 17
+        if: steps.check.outputs.skip == 'false'
+        run: |
+          sudo sh -c 'echo "deb https://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
+          curl -fsSL https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /etc/apt/trusted.gpg.d/pgdg.gpg
+          sudo apt-get update -qq && sudo apt-get install -y -qq postgresql-client-17
+
+      - name: Dump baza de date (criptat)
+        if: steps.check.outputs.skip == 'false'
+        env:
+          DB_URL: ${{ secrets.SUPABASE_DB_URL }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+        run: |
+          pg_dump "$DB_URL" --no-owner --no-privileges --schema=public --schema=auth \
+            | gzip \
+            | openssl enc -aes-256-cbc -pbkdf2 -pass env:PASS -out db-$(date +%F).sql.gz.enc
+          ls -la db-*.sql.gz.enc
+
+      - name: Backup fișiere CV din storage (criptat)
+        if: steps.check.outputs.skip == 'false' && env.SERVICE_KEY != ''
+        env:
+          SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          PASS: ${{ secrets.BACKUP_PASSPHRASE }}
+          BASE: https://vrdjhhexyzsfzfwpcjhb.supabase.co/storage/v1
+        run: |
+          mkdir -p cvs && cd cvs
+          # listează recursiv obiectele din bucketul fw-cvs (paginat)
+          offset=0
+          while : ; do
+            page=$(curl -sf -X POST "$BASE/object/list/fw-cvs" \
+              -H "Authorization: Bearer $SERVICE_KEY" -H "Content-Type: application/json" \
+              -d "{\"prefix\":\"\",\"limit\":100,\"offset\":$offset,\"sortBy\":{\"column\":\"name\",\"order\":\"asc\"}}")
+            count=$(echo "$page" | jq 'length')
+            [ "$count" -eq 0 ] && break
+            echo "$page" | jq -r '.[].name' | while read -r name; do
+              # obiectele de la rădăcină sunt directoare de dată; listăm și nivelul 2
+              sub=$(curl -sf -X POST "$BASE/object/list/fw-cvs" \
+                -H "Authorization: Bearer $SERVICE_KEY" -H "Content-Type: application/json" \
+                -d "{\"prefix\":\"$name/\",\"limit\":1000,\"offset\":0}")
+              echo "$sub" | jq -r --arg p "$name" '.[] | select(.id != null) | $p + "/" + .name' | while read -r path; do
+                mkdir -p "$(dirname "$path")"
+                curl -sf "$BASE/object/fw-cvs/$path" -H "Authorization: Bearer $SERVICE_KEY" -o "$path" || true
+              done
+            done
+            offset=$((offset + 100))
+          done
+          cd .. && tar czf - cvs | openssl enc -aes-256-cbc -pbkdf2 -pass env:PASS -out cvs-$(date +%F).tar.gz.enc
+          rm -rf cvs
+
+      - name: Urcă arhivele (păstrate 90 de zile)
+        if: steps.check.outputs.skip == 'false'
+        uses: actions/upload-artifact@v4
+        with:
+          name: backup-${{ github.run_id }}
+          path: "*.enc"
+          retention-days: 90
