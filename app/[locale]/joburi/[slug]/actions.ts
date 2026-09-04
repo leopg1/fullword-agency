@@ -27,6 +27,8 @@ export async function submitApplication(
     const locale = String(formData.get("locale") ?? "ro");
     // honeypot anti-spam: câmp invizibil care trebuie să rămână gol
     if (String(formData.get("website") ?? "") !== "") return { status: "success" };
+    // consimțământ GDPR: bifa e obligatorie și verificată și pe server
+    if (formData.get("gdpr") !== "on") return { status: "error" };
     if (!name || !phone || name.length > 200 || phone.length > 50) {
       return { status: "error" };
     }

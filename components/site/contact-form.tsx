@@ -2,6 +2,7 @@
 
 import { useActionState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { CheckCircle2, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -95,6 +96,23 @@ export function ContactForm({ defaultType = "contact" }: { defaultType?: "contac
         </p>
       )}
 
+      <label className="flex cursor-pointer items-start gap-3">
+        <input type="checkbox" name="gdpr" required className="mt-0.5 size-5 shrink-0 accent-primary" />
+        <span className="text-sm text-muted-foreground">
+          {t.rich("formConsent", {
+            policy: (chunks) => (
+              <Link
+                href="/politica-de-confidentialitate"
+                target="_blank"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
+      </label>
+
       <Button type="submit" disabled={pending} className="h-14 w-full rounded-xl text-lg font-semibold sm:w-auto sm:px-10">
         {pending ? (
           <>
@@ -109,7 +127,6 @@ export function ContactForm({ defaultType = "contact" }: { defaultType?: "contac
         )}
       </Button>
 
-      <p className="text-sm text-muted-foreground">{t("formPrivacy")}</p>
     </form>
   );
 }

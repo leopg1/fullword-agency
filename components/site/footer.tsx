@@ -147,16 +147,6 @@ export async function Footer() {
                 ANPC — SAL
               </a>
             </li>
-            <li>
-              <a
-                href="https://ec.europa.eu/consumers/odr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex min-h-10 items-center text-base text-white/85 underline-offset-4 hover:text-white hover:underline"
-              >
-                {t("sol")}
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

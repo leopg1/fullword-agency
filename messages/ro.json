@@ -55,7 +55,6 @@
     "cookies": "Politica de cookies",
     "terms": "Termeni și condiții",
     "companyData": "FULL WORK SERVICES S.R.L. · CUI 45291775 · Reg. Com. J2021020993406",
-    "sol": "Soluționarea online a litigiilor (SOL)",
     "address": "Str. Grigore Ionescu nr. 63, Sector 2, București",
     "rights": "Toate drepturile rezervate."
   },
@@ -191,7 +190,7 @@
     "formSending": "Se trimite...",
     "formSuccess": "Mulțumim! Am primit aplicarea ta și te sunăm în cel mult 24 de ore.",
     "formError": "Ceva n-a mers. Încearcă din nou sau scrie-ne direct pe WhatsApp.",
-    "formPrivacy": "Prin trimitere ești de acord cu prelucrarea datelor conform politicii de confidențialitate.",
+    "formConsent": "Sunt de acord ca FULL WORK SERVICES S.R.L. să îmi folosească datele și CV-ul în procesul de recrutare, conform <policy>Politicii de confidențialitate</policy>.",
     "orWhatsapp": "sau aplică direct pe",
     "whatsappText": "Bună ziua! Aș dori să aplic pentru jobul: {title}",
     "applyNow": "Aplică acum"
@@ -226,7 +225,7 @@
     "formSending": "Se trimite...",
     "formSuccess": "Mulțumim! Am primit mesajul și te contactăm în aceeași zi lucrătoare.",
     "formError": "Ceva n-a mers. Încearcă din nou sau sună-ne direct.",
-    "formPrivacy": "Prin trimitere ești de acord cu prelucrarea datelor conform politicii de confidențialitate."
+    "formConsent": "Sunt de acord ca FULL WORK SERVICES S.R.L. să folosească datele de mai sus pentru a-mi răspunde la această cerere, conform <policy>Politicii de confidențialitate</policy>."
   },
   "blogPage": {
     "title": "Blog",
@@ -798,7 +797,8 @@
           "Prin formularul de contact sau de cerere de ofertă: nume, telefon, email și mesajul tău.",
           "Când aplici la un job prin site: nume, telefon, email și CV-ul pe care îl încarci.",
           "Dacă ne scrii pe WhatsApp, conversația are loc în aplicația WhatsApp, la inițiativa ta, și este supusă și politicii de confidențialitate WhatsApp.",
-          "Atât. Nu colectăm date pe ascuns și nu folosim cookie-uri de urmărire sau de marketing."
+          "Site-ul ține și o statistică anonimă a vizitelor — fără cookie-uri și fără adrese IP — care nu poate fi legată de tine în niciun fel.",
+        "Atât. Nu colectăm date pe ascuns și nu folosim cookie-uri de urmărire sau de marketing."
         ]
       },
       {
@@ -881,9 +881,9 @@
       {
         "h": "Ce nu folosim",
         "p": [
-          "Fără cookie-uri de marketing. Fără cookie-uri de urmărire. Fără instrumente de statistici (analytics) în acest moment.",
+          "Fără cookie-uri de marketing. Fără cookie-uri de urmărire. Fără instrumente de analiză bazate pe cookie-uri. Ținem doar o statistică internă anonimă a vizitelor — fără cookie-uri și fără adrese IP — care nu te poate identifica în niciun fel.",
           "Fonturile sunt servite direct de pe serverul nostru, deci nici măcar la acest nivel nu se trimit date către terți.",
-          "Dacă vreodată vom adăuga un instrument de statistici, vom actualiza această politică înainte și, dacă legea o cere, îți vom cere acordul."
+          "Dacă vreodată vom adăuga un instrument de statistici bazat pe cookie-uri, vom actualiza această politică înainte și, dacă legea o cere, îți vom cere acordul."
         ]
       },
       {
@@ -955,7 +955,7 @@
         "h": "Legea aplicabilă",
         "p": [
           "Acești termeni sunt guvernați de legea română. Orice neînțelegere încercăm mai întâi să o rezolvăm pe cale amiabilă — scrie-ne și discutăm. Dacă nu reușim, competente sunt instanțele din România.",
-          "Dacă ești consumator, te poți adresa și Autorității Naționale pentru Protecția Consumatorilor (ANPC — anpc.ro) sau platformei europene de soluționare online a litigiilor (SOL)."
+          "Dacă ești consumator, te poți adresa și Autorității Naționale pentru Protecția Consumatorilor (ANPC — anpc.ro)."
         ]
       },
       {
@@ -1061,6 +1061,6 @@
     "download": "Descarcă CV-ul tău",
     "another": "Completează alt CV",
     "error": "Ceva n-a mers. Verifică numele, telefonul și meseria, apoi încearcă din nou.",
-    "privacy": "Prin trimitere ești de acord să te contactăm în legătură cu joburile."
+    "formConsent": "Sunt de acord ca FULL WORK SERVICES S.R.L. să îmi folosească datele și CV-ul în procesul de recrutare, conform <policy>Politicii de confidențialitate</policy>."
   }
 }

@@ -55,7 +55,6 @@
     "cookies": "Cookie policy",
     "terms": "Terms and conditions",
     "companyData": "FULL WORK SERVICES S.R.L. · VAT ID 45291775 · Trade Reg. J2021020993406",
-    "sol": "Online dispute resolution (ODR)",
     "address": "63 Grigore Ionescu St., District 2, Bucharest, Romania",
     "rights": "All rights reserved."
   },
@@ -191,7 +190,7 @@
     "formSending": "Sending...",
     "formSuccess": "Thank you! We received your application and will call you within 24 hours.",
     "formError": "Something went wrong. Try again or message us directly on WhatsApp.",
-    "formPrivacy": "By submitting you agree to the processing of your data according to our privacy policy.",
+    "formConsent": "I agree that FULL WORK SERVICES S.R.L. may use my details and CV in the recruitment process, in line with the <policy>Privacy Policy</policy>.",
     "orWhatsapp": "or apply directly on",
     "whatsappText": "Hello! I would like to apply for the job: {title}",
     "applyNow": "Apply now"
@@ -226,7 +225,7 @@
     "formSending": "Sending...",
     "formSuccess": "Thank you! We received your message and will contact you the same business day.",
     "formError": "Something went wrong. Try again or call us directly.",
-    "formPrivacy": "By submitting you agree to the processing of your data according to our privacy policy."
+    "formConsent": "I agree that FULL WORK SERVICES S.R.L. may use the details above to respond to my request, in line with the <policy>Privacy Policy</policy>."
   },
   "blogPage": {
     "title": "Blog",
@@ -798,7 +797,8 @@
           "Through the contact or quote request form: your name, phone, email and message.",
           "When you apply for a job on the site: your name, phone, email and the CV you upload.",
           "If you message us on WhatsApp, the conversation takes place in the WhatsApp app, at your initiative, and is also subject to WhatsApp's privacy policy.",
-          "That is all. We do not collect data behind your back and we do not use tracking or marketing cookies."
+          "The site also keeps an anonymous visit statistic — no cookies and no IP addresses — which cannot be linked to you in any way.",
+        "That is all. We do not collect data behind your back and we do not use tracking or marketing cookies."
         ]
       },
       {
@@ -881,9 +881,9 @@
       {
         "h": "What we do not use",
         "p": [
-          "No marketing cookies. No tracking cookies. No analytics tools at this time.",
+          "No marketing cookies. No tracking cookies. No cookie-based analytics tools. We only keep an internal, anonymous count of visits — no cookies and no IP addresses — which cannot identify you in any way.",
           "Fonts are served directly from our own server, so no data is sent to third parties even at that level.",
-          "If we ever add an analytics tool, we will update this policy first and, where the law requires it, ask for your consent."
+          "If we ever add a cookie-based analytics tool, we will update this policy first and, where the law requires it, ask for your consent."
         ]
       },
       {
@@ -955,7 +955,7 @@
         "h": "Governing law",
         "p": [
           "These terms are governed by Romanian law. If a disagreement arises, we first try to solve it amicably — write to us and let's talk. If that fails, the competent courts are those of Romania.",
-          "If you are a consumer, you may also contact the Romanian consumer protection authority (ANPC — anpc.ro) or the EU online dispute resolution platform (ODR)."
+          "If you are a consumer, you may also contact the Romanian consumer protection authority (ANPC — anpc.ro)."
         ]
       },
       {
@@ -1061,6 +1061,6 @@
     "download": "Download your CV",
     "another": "Fill in another CV",
     "error": "Something went wrong. Check your name, phone and trade, then try again.",
-    "privacy": "By submitting you agree to be contacted about jobs."
+    "formConsent": "I agree that FULL WORK SERVICES S.R.L. may use my details and CV in the recruitment process, in line with the <policy>Privacy Policy</policy>."
   }
 }

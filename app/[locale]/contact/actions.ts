@@ -14,6 +14,8 @@ export async function submitLead(
   try {
     // honeypot anti-spam
     if (String(formData.get("website") ?? "") !== "") return { status: "success" };
+    // consimțământ GDPR: bifa e obligatorie și verificată și pe server
+    if (formData.get("gdpr") !== "on") return { status: "error" };
 
     const name = String(formData.get("name") ?? "").trim();
     const phone = String(formData.get("phone") ?? "").trim();

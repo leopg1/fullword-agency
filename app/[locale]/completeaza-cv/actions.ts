@@ -20,6 +20,8 @@ export async function submitCvApplication(
   try {
     // honeypot anti-spam
     if (String(formData.get("website") ?? "") !== "") return { status: "success" };
+    // consimțământ GDPR: bifa e obligatorie și verificată și pe server
+    if (formData.get("gdpr") !== "on") return { status: "error" };
 
     const name = clean(formData.get("name"), 200);
     const phone = clean(formData.get("phone"), 50);

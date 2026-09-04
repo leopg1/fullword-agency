@@ -2,6 +2,7 @@
 
 import { useActionState, useEffect, useRef, useState } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
 import { ArrowLeft, CheckCircle2, FileText, Loader2, Send } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -138,6 +139,23 @@ export function ApplyForm({ jobId }: { jobId: string }) {
         </p>
       )}
 
+      <label className="flex cursor-pointer items-start gap-3">
+        <input type="checkbox" name="gdpr" required className="mt-0.5 size-5 shrink-0 accent-primary" />
+        <span className="text-sm text-muted-foreground">
+          {t.rich("formConsent", {
+            policy: (chunks) => (
+              <Link
+                href="/politica-de-confidentialitate"
+                target="_blank"
+                className="underline underline-offset-4 hover:text-foreground"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
+        </span>
+      </label>
+
       <Button type="submit" disabled={pending} className="h-14 w-full rounded-xl text-lg font-semibold">
         {pending ? (
           <>
@@ -152,7 +170,6 @@ export function ApplyForm({ jobId }: { jobId: string }) {
         )}
       </Button>
 
-      <p className="text-sm text-muted-foreground">{t("formPrivacy")}</p>
     </form>
   );
 }
