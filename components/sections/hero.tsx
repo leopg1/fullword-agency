@@ -45,7 +45,7 @@ export async function Hero() {
   return (
     <section className="grid lg:grid-cols-[1.1fr_0.9fr]">
       {/* Stânga — mesaj + fork */}
-      <div className="flex flex-col justify-center px-5 py-14 md:px-8 md:py-20 lg:py-24 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-14">
+      <div className="flex flex-col justify-center px-5 py-12 md:px-8 md:py-16 lg:py-16 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-14">
         {/* Zona LCP — conținut vizibil instant, fără animații */}
         <h1 className="max-w-[16ch] text-4xl leading-[1.12] md:text-5xl lg:text-[3.4rem]">
           {t("titleStart")}{" "}

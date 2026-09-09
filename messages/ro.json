@@ -73,18 +73,14 @@
   "audience": {
     "title": "Cu ce te putem ajuta?",
     "subtitle": "Alege drumul tău — durează 30 de secunde.",
+    "chooseLabel": "Alege ce te interesează:",
     "companiesTitle": "Sunt o companie",
-    "companiesText": "Ai nevoie de oameni și nu ai timp de zeci de interviuri. Preluăm noi tot procesul, de la anunț până la angajare.",
-    "companiesB1": "Primele CV-uri în 48 de ore",
-    "companiesB2": "Înlocuim gratuit persoana în primele 30 de zile",
-    "companiesB3": "Administrare HR și acte complet acoperite",
+    "companiesText": "Preluăm noi tot procesul, de la anunț până la angajare. Tu ne spui de cine ai nevoie, restul rezolvăm noi.",
     "companiesCta": "Cere ofertă",
-    "candidatesTitle": "Caut un loc de muncă",
-    "candidatesText": "Joburi verificate, în România și în Europa, cu contract oficial și plată la timp. Fără nicio taxă din partea ta.",
-    "candidatesB1": "Interviu în maxim 24 de ore",
-    "candidatesB2": "Cazare și transport asigurate la joburile din străinătate",
-    "candidatesB3": "Te însoțim până în prima zi de muncă",
-    "candidatesCta": "Vezi joburile deschise"
+    "candidatesTitle": "Sunt persoană fizică",
+    "candidatesText": "Joburi verificate, în România și în Europa, cu contract oficial și plată la timp. Pentru tine, totul e gratuit.",
+    "jobsLink": "Caut un job",
+    "candidatesCta": "Nu ai CV? Îți facem noi unul"
   },
   "services": {
     "title": "Serviciile noastre",

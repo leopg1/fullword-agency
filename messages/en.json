@@ -73,18 +73,14 @@
   "audience": {
     "title": "How can we help?",
     "subtitle": "Pick your path — it takes 30 seconds.",
+    "chooseLabel": "Pick what you need:",
     "companiesTitle": "I'm a company",
-    "companiesText": "You need people and no time for dozens of interviews. We take over the whole process, from posting to hiring.",
-    "companiesB1": "First CVs within 48 hours",
-    "companiesB2": "Free replacement within the first 30 days",
-    "companiesB3": "HR administration and paperwork fully covered",
+    "companiesText": "We take over the whole process, from posting to hiring. You tell us who you need, we handle the rest.",
     "companiesCta": "Request an offer",
-    "candidatesTitle": "I'm looking for a job",
-    "candidatesText": "Verified jobs in Romania and across Europe, with official contracts and on-time pay. No fees for you, ever.",
-    "candidatesB1": "Interview within 24 hours",
-    "candidatesB2": "Housing and transport covered for jobs abroad",
-    "candidatesB3": "We stay with you until your first day at work",
-    "candidatesCta": "See open jobs"
+    "candidatesTitle": "I'm an individual",
+    "candidatesText": "Verified jobs in Romania and across Europe, with official contracts and on-time pay. Always free for you.",
+    "jobsLink": "I'm looking for a job",
+    "candidatesCta": "No CV? We'll make you one"
   },
   "services": {
     "title": "Our services",

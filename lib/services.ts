@@ -10,6 +10,9 @@ import type { StaticAppPathname } from "@/i18n/routing";
  * Din panoul de admin se pot schimba doar VIZIBILITATEA și ORDINEA (tabelul
  * `fw_services`); textele se editează din „Texte site".
  */
+/** Cui i se adresează un serviciu — decide în ce coloană a fork-ului de pe Acasă apare. */
+export type ServiceAudience = "companies" | "individuals";
+
 export type ServiceDef = {
   key: string;
   /** namespace-ul din messages/{ro,en}.json */
@@ -17,15 +20,17 @@ export type ServiceDef = {
   href: StaticAppPathname;
   /** cheia etichetei din namespace-ul `footer` (diferă de `key`) */
   footerKey: string;
+  /** Permisele, înființarea de firmă și medierea se cer de ambele părți. */
+  audience: ServiceAudience[];
 };
 
 export const SERVICE_DEFS: ServiceDef[] = [
-  { key: "recruitment", namespace: "svcRecrutare", href: "/servicii/recrutare", footerKey: "recruitment" },
-  { key: "hr", namespace: "svcHr", href: "/servicii/hr-outsourcing", footerKey: "hrOutsourcing" },
-  { key: "permits", namespace: "svcPermise", href: "/servicii/permise-de-munca", footerKey: "workPermits" },
-  { key: "market", namespace: "svcInfiintare", href: "/servicii/infiintare-firma", footerKey: "marketEntry" },
-  { key: "citizenship", namespace: "svcCetatenie", href: "/servicii/cetatenie", footerKey: "citizenship" },
-  { key: "mediation", namespace: "svcMediere", href: "/servicii/mediere", footerKey: "mediation" },
+  { key: "recruitment", namespace: "svcRecrutare", href: "/servicii/recrutare", footerKey: "recruitment", audience: ["companies"] },
+  { key: "hr", namespace: "svcHr", href: "/servicii/hr-outsourcing", footerKey: "hrOutsourcing", audience: ["companies"] },
+  { key: "permits", namespace: "svcPermise", href: "/servicii/permise-de-munca", footerKey: "workPermits", audience: ["companies", "individuals"] },
+  { key: "market", namespace: "svcInfiintare", href: "/servicii/infiintare-firma", footerKey: "marketEntry", audience: ["companies", "individuals"] },
+  { key: "citizenship", namespace: "svcCetatenie", href: "/servicii/cetatenie", footerKey: "citizenship", audience: ["individuals"] },
+  { key: "mediation", namespace: "svcMediere", href: "/servicii/mediere", footerKey: "mediation", audience: ["companies", "individuals"] },
 ];
 
 export type ServiceSetting = { key: string; published: boolean; sort_order: number };
@@ -60,6 +65,11 @@ export const getAllServices = cache(async (): Promise<Service[]> => {
 /** Doar serviciile vizibile pe site, în ordine. */
 export const getServices = cache(async (): Promise<Service[]> =>
   (await getAllServices()).filter((s) => s.published)
+);
+
+/** Serviciile vizibile pentru o audiență — listele din fork-ul de pe Acasă. */
+export const getServicesForAudience = cache(async (audience: ServiceAudience): Promise<Service[]> =>
+  (await getServices()).filter((s) => s.audience.includes(audience))
 );
 
 /**
