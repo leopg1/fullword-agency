@@ -43,9 +43,9 @@ export async function Hero() {
   const trust = [t("trust1"), t("trust2"), t("trust3")];
 
   return (
-    <section className="grid lg:grid-cols-[1.1fr_0.9fr]">
+    <section className="container-site grid gap-8 py-12 md:py-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-14 lg:py-16">
       {/* Stânga — mesaj + fork */}
-      <div className="flex flex-col justify-center px-5 py-12 md:px-8 md:py-16 lg:py-16 lg:pl-[max(2rem,calc((100vw-80rem)/2+2rem))] lg:pr-14">
+      <div className="flex flex-col justify-center">
         {/* Zona LCP — conținut vizibil instant, fără animații */}
         <h1 className="max-w-[16ch] text-4xl leading-[1.12] md:text-5xl lg:text-[3.4rem]">
           {t("titleStart")}{" "}
@@ -108,7 +108,7 @@ export async function Hero() {
       </div>
 
       {/* Dreapta — fotografie reală, card rotunjit cu umbră */}
-      <div className="relative min-h-[21rem] p-5 md:p-8 lg:min-h-0 lg:py-8 lg:pl-0 lg:pr-8">
+      <div className="relative min-h-[21rem] lg:min-h-0">
         <div className="relative h-full min-h-[16rem] overflow-hidden rounded-[1.75rem] shadow-xl ring-1 ring-black/5">
           <Image
             src="/images/hero/santier.webp"
