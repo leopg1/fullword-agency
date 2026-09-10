@@ -13,8 +13,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const base: Metadata =
     locale === "ro"
-      ? { title: 'Permise de muncă pentru angajați non-UE', description: 'Aducem legal angajați din afara UE: evaluare eligibilitate, dosare IGI, avize de muncă și negocieri colective — birocrația e treaba noastră.' }
-      : { title: 'Work permits for non-EU employees', description: 'Hire non-EU employees legally: eligibility checks, IGI files, work approvals and collective bargaining — we handle the bureaucracy.' };
+      ? { title: 'Permise de muncă pentru angajați non-UE', description: 'Obținem permisele de muncă pentru angajații din afara UE: evaluare eligibilitate, dosare IGI și avize de muncă — birocrația e treaba noastră.' }
+      : { title: 'Work permits for non-EU employees', description: 'Work permits for your non-EU employees: eligibility checks, IGI files and work approvals — we handle the bureaucracy.' };
   return { ...base, alternates: alternatesFor('/servicii/permise-de-munca', locale) };
 }
 

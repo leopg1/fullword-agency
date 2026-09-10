@@ -9,7 +9,17 @@ import { WhatsappIcon } from "@/components/site/whatsapp-icon";
 import { FaqSection } from "@/components/site/faq-section";
 import { whatsappLink } from "@/lib/site";
 
-type ServiceItem = { title: string; text: string };
+/**
+ * Paginile de serviciu au fost scrise în trei formate: text simplu (mediere),
+ * {title,text} (recrutare, HR, permise) și {title,desc} (înființare, cetățenie).
+ * Le acceptăm pe toate, altfel conținutul dispare de pe pagină.
+ */
+type ServiceItem = string | { title?: string; text?: string; desc?: string };
+
+function normalizeItem(item: ServiceItem): { title?: string; text?: string } {
+  if (typeof item === "string") return { text: item };
+  return { title: item.title, text: item.text ?? item.desc };
+}
 type Step = { title: string; text: string };
 type Faq = { q: string; a: string };
 
@@ -83,15 +93,20 @@ export async function ServicePage({ namespace }: { namespace: string }) {
             <h2 className="text-3xl md:text-4xl">{t("includesTitle")}</h2>
           </BlurFade>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {includes.map((item, i) => (
-              <BlurFade key={item.title} inView delay={Math.min(0.06 * i, 0.3)} className="h-full">
-                <article className="h-full rounded-2xl border border-border bg-card p-6 md:p-7">
-                  <CheckCircle2 className="size-7 text-brand" aria-hidden />
-                  <h3 className="mt-4 text-xl">{item.title}</h3>
-                  <p className="mt-2 text-base text-muted-foreground md:text-lg">{item.text}</p>
-                </article>
-              </BlurFade>
-            ))}
+            {includes.map((raw, i) => {
+              const item = normalizeItem(raw);
+              return (
+                <BlurFade key={item.title ?? item.text ?? i} inView delay={Math.min(0.06 * i, 0.3)} className="h-full">
+                  <article className="h-full rounded-2xl border border-border bg-card p-6 md:p-7">
+                    <CheckCircle2 className="size-7 text-brand" aria-hidden />
+                    {item.title && <h3 className="mt-4 text-xl">{item.title}</h3>}
+                    <p className={`text-base text-muted-foreground md:text-lg ${item.title ? "mt-2" : "mt-4"}`}>
+                      {item.text}
+                    </p>
+                  </article>
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
       </section>

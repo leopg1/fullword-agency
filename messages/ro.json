@@ -90,13 +90,13 @@
     "hrTitle": "Partener HR extern",
     "hrText": "Contracte, pontaje, fișe de post și conformitate legală — externalizezi tot HR-ul la noi.",
     "permitsTitle": "Permise de muncă",
-    "permitsText": "Aducem legal angajați din afara UE: dosare IGI, avize și toată birocrația, rezolvate de noi.",
+    "permitsText": "Obținem permisele de muncă pentru angajații din afara UE: dosare IGI, avize și toată birocrația, rezolvate de noi.",
     "marketTitle": "Înființare firmă în România",
     "marketText": "Pentru antreprenori străini: firmă înregistrată, cont bancar și acte în regulă, fără drumuri.",
     "citizenshipTitle": "Cetățenie română",
     "citizenshipText": "Redobândirea cetățeniei: dosar, arhive, traduceri și depunere la ANC, pas cu pas.",
     "mediationTitle": "Mediere",
-    "mediationText": "Rezolvăm conflicte de muncă pe cale amiabilă, rapid și confidențial, fără instanță.",
+    "mediationText": "Rezolvăm conflicte pe cale amiabilă, rapid și confidențial, fără instanță.",
     "cta": "Află mai multe"
   },
   "domains": {
@@ -267,7 +267,7 @@
       },
       {
         "title": "Garanție de înlocuire 30 de zile",
-        "text": "Dacă persoana angajată pleacă în primele 30 de zile, o înlocuim noi."
+        "text": "Dacă persoana angajată pleacă în primele 30 de zile, o înlocuim noi — o singură dată, fără costuri suplimentare."
       }
     ],
     "forWhoTitle": "Pentru cine e",
@@ -300,7 +300,7 @@
       },
       {
         "q": "Ce se întâmplă dacă omul angajat pleacă repede?",
-        "a": "Ai garanție de înlocuire: dacă persoana pleacă în primele 30 de zile, căutăm din nou și îți aducem alt candidat."
+        "a": "Ai garanție de înlocuire: dacă persoana pleacă în primele 30 de zile, căutăm din nou și îți aducem alt candidat — o singură dată, fără costuri suplimentare."
       },
       {
         "q": "Trebuie să mă ocup eu de interviuri?",
@@ -332,6 +332,10 @@
       {
         "title": "Performanță și retenție",
         "text": "Evaluări, feedback pentru echipă și strategii de employer branding, ca oamenii buni să rămână la tine."
+      },
+      {
+        "title": "Negocieri colective",
+        "text": "Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
       }
     ],
     "forWhoTitle": "Pentru cine e",
@@ -339,7 +343,8 @@
       "Ai o firmă în creștere și actele de personal au început să te depășească.",
       "Nu-ți permiți încă un om de HR cu normă întreagă, dar simți că ai nevoie de unul.",
       "Îți pleacă oamenii buni și nu știi exact de ce.",
-      "Vrei să fii sigur că ești în regulă cu legislația muncii, fără să o studiezi tu."
+      "Vrei să fii sigur că ești în regulă cu legislația muncii, fără să o studiezi tu.",
+      "Firma ta a crescut și a venit momentul negocierilor colective cu angajații."
     ],
     "stepsTitle": "Cum lucrăm",
     "steps": [
@@ -373,6 +378,10 @@
       {
         "q": "Cât costă consultanța de HR?",
         "a": "Depinde de mărimea echipei și de ce procese preluăm. Scrie-ne și îți facem o ofertă pe situația ta."
+      },
+      {
+        "q": "Vă ocupați și de Contractul Colectiv de Muncă?",
+        "a": "Da. Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
       }
     ],
     "ctaTitle": "Scapă de grija HR-ului",
@@ -382,7 +391,7 @@
   "svcPermise": {
     "eyebrow": "Pentru angajatori",
     "title": "Permise de muncă pentru angajați non-UE",
-    "subtitle": "Aduci muncitori din străinătate sau negociezi cu angajații? Ne ocupăm noi de dosare, autorități și acte, cu respectarea tuturor cerințelor legale.",
+    "subtitle": "Ai nevoie de permise de muncă pentru angajați din afara UE? Ne ocupăm noi de dosare, autorități și acte, cu respectarea tuturor cerințelor legale.",
     "includesTitle": "Ce include serviciul",
     "includes": [
       {
@@ -400,24 +409,19 @@
       {
         "title": "Comunicarea cu autoritățile",
         "text": "Ținem legătura cu instituțiile în locul tău și urmărim dosarul până la rezultat."
-      },
-      {
-        "title": "Negocieri colective",
-        "text": "Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
       }
     ],
     "forWhoTitle": "Pentru cine e",
     "forWho": [
-      "Ai firmă de construcții, HoReCa sau producție și nu mai găsești oameni în țară.",
-      "Vrei să angajezi muncitori din străinătate, dar te sperie birocrația și drumurile pe la ghișee.",
-      "Ai depus deja un dosar și s-a împotmolit pe la autorități.",
-      "Firma ta a crescut și a venit momentul negocierilor colective cu angajații."
+      "Ai firmă de construcții, HoReCa sau producție și vrei să angajezi un cetățean din afara UE.",
+      "Ai găsit deja omul potrivit, dar te sperie birocrația și drumurile pe la ghișee.",
+      "Ai depus deja un dosar și s-a împotmolit pe la autorități."
     ],
     "stepsTitle": "Cum lucrăm",
     "steps": [
       {
         "title": "Evaluăm situația",
-        "text": "Ne spui pe cine vrei să angajezi sau ce ai de negociat. Verificăm condițiile și îți spunem clar ce e de făcut."
+        "text": "Ne spui pe cine vrei să angajezi. Verificăm condițiile și îți spunem clar ce e de făcut."
       },
       {
         "title": "Pregătim actele",
@@ -439,16 +443,12 @@
         "a": "Termenele depind de autorități și de fiecare caz în parte. După ce îți evaluăm situația, îți spunem realist la ce să te aștepți."
       },
       {
-        "q": "Vă ocupați și de Contractul Colectiv de Muncă?",
-        "a": "Da. Te reprezentăm în negocierile colective și redactăm Contractul Colectiv de Muncă."
-      },
-      {
         "q": "Cât costă serviciul?",
         "a": "Depinde de numărul de persoane și de complexitatea dosarelor. Scrie-ne ce ai nevoie și îți facem o ofertă concretă."
       }
     ],
     "ctaTitle": "Scapă de drumuri și dosare",
-    "ctaText": "Spune-ne ce ai nevoie — permise de muncă sau negocieri colective — și îți răspundem cu pașii concreți și o ofertă.",
+    "ctaText": "Spune-ne ce ai nevoie și îți răspundem cu pașii concreți și o ofertă.",
     "ctaButton": "Cere ofertă"
   },
   "svcInfiintare": {
@@ -621,8 +621,8 @@
   },
   "svcMediere": {
     "eyebrow": "Servicii de mediere",
-    "title": "Mediere pentru conflicte de muncă",
-    "subtitle": "Când apare un conflict între angajat și angajator, nu trebuie să ajungi direct în instanță. Medierea e o cale mai calmă: stai la masă cu un mediator neutru, discuți deschis și cauți o soluție bună pentru ambele părți.",
+    "title": "Mediere pentru conflicte",
+    "subtitle": "Când apare un conflict — la locul de muncă sau între oricare două părți — nu trebuie să ajungi direct în instanță. Medierea e o cale mai calmă: stai la masă cu un mediator neutru, discuți deschis și cauți o soluție bună pentru ambele părți.",
     "includesTitle": "Ce include serviciul",
     "includes": [
       "Mediere pentru conflicte între angajat și angajator, cu un mediator neutru și imparțial",
@@ -671,7 +671,7 @@
         "a": "Acordul semnat la mediere este un înscris sub semnătură privată. Ca să capete putere de executare, el poate fi autentificat la notar sau consfințit de instanță printr-o hotărâre. Îți explicăm pas cu pas varianta potrivită pentru situația ta."
       }
     ],
-    "ctaTitle": "Ai un conflict la locul de muncă?",
+    "ctaTitle": "Ai un conflict de rezolvat?",
     "ctaText": "Scrie-ne pe WhatsApp și povestește-ne situația. Îți spunem sincer dacă medierea te poate ajuta și care ar fi pașii.",
     "ctaButton": "Scrie-ne pe WhatsApp"
   },
@@ -794,7 +794,7 @@
           "Când aplici la un job prin site: nume, telefon, email și CV-ul pe care îl încarci.",
           "Dacă ne scrii pe WhatsApp, conversația are loc în aplicația WhatsApp, la inițiativa ta, și este supusă și politicii de confidențialitate WhatsApp.",
           "Site-ul ține și o statistică anonimă a vizitelor — fără cookie-uri și fără adrese IP — care nu poate fi legată de tine în niciun fel.",
-        "Atât. Nu colectăm date pe ascuns și nu folosim cookie-uri de urmărire sau de marketing."
+          "Atât. Nu colectăm date pe ascuns și nu folosim cookie-uri de urmărire sau de marketing."
         ]
       },
       {

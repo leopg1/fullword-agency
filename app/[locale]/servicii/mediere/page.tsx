@@ -13,8 +13,8 @@ export async function generateMetadata({
   const { locale } = await params;
   const base: Metadata =
     locale === "ro"
-      ? { title: 'Mediere profesională a conflictelor de muncă', description: 'Rezolvăm conflictele dintre angajați și angajatori pe cale amiabilă: rapid, confidențial și cu valoare legală — fără instanță.' }
-      : { title: 'Professional workplace mediation', description: 'We settle disputes between employees and employers amicably: fast, confidential and legally binding — without going to court.' };
+      ? { title: 'Mediere profesională a conflictelor', description: 'Rezolvăm conflictele pe cale amiabilă — la locul de muncă sau între oricare două părți: rapid, confidențial și cu valoare legală, fără instanță.' }
+      : { title: 'Professional conflict mediation', description: 'We settle disputes amicably — at work or between any two parties: fast, confidential and legally binding, without going to court.' };
   return { ...base, alternates: alternatesFor('/servicii/mediere', locale) };
 }
 

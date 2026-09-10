@@ -90,13 +90,13 @@
     "hrTitle": "External HR partner",
     "hrText": "Contracts, timesheets, job descriptions and legal compliance — outsource your entire HR to us.",
     "permitsTitle": "Work permits",
-    "permitsText": "Hire non-EU employees legally: IGI files, approvals and all the paperwork, handled by us.",
+    "permitsText": "Work permits for your non-EU employees: IGI files, approvals and all the paperwork, handled by us.",
     "marketTitle": "Company formation in Romania",
     "marketText": "For foreign entrepreneurs: registered company, bank account and full compliance, without the queues.",
     "citizenshipTitle": "Romanian citizenship",
     "citizenshipText": "Citizenship reacquisition: file, archives, translations and ANC submission, step by step.",
     "mediationTitle": "Mediation",
-    "mediationText": "We settle workplace disputes amicably, fast and confidentially, without going to court.",
+    "mediationText": "We settle disputes amicably, fast and confidentially, without going to court.",
     "cta": "Learn more"
   },
   "domains": {
@@ -267,7 +267,7 @@
       },
       {
         "title": "30-day replacement guarantee",
-        "text": "If the person you hire leaves within the first 30 days, we replace them."
+        "text": "If the person you hire leaves within the first 30 days, we replace them — once, at no extra cost."
       }
     ],
     "forWhoTitle": "Who it's for",
@@ -300,7 +300,7 @@
       },
       {
         "q": "What happens if the new hire leaves quickly?",
-        "a": "You're covered by the replacement guarantee: if the person leaves within the first 30 days, we search again and bring you another candidate."
+        "a": "You're covered by the replacement guarantee: if the person leaves within the first 30 days, we search again and bring you another candidate — once, at no extra cost."
       },
       {
         "q": "Do I have to run the interviews myself?",
@@ -332,6 +332,10 @@
       {
         "title": "Performance and Retention",
         "text": "Assessments, team feedback and employer branding strategies, so your good people stay with you."
+      },
+      {
+        "title": "Labor Negotiations",
+        "text": "We represent you in collective negotiations and draft the Collective Labor Agreement."
       }
     ],
     "forWhoTitle": "Who it's for",
@@ -339,7 +343,8 @@
       "Your company is growing and HR paperwork is starting to overwhelm you.",
       "You can't justify a full-time HR person yet, but you feel you need one.",
       "Good people keep leaving and you're not sure why.",
-      "You want to be sure you're in line with labor legislation, without studying it yourself."
+      "You want to be sure you're in line with labor legislation, without studying it yourself.",
+      "Your company has grown and it's time for collective negotiations with your employees."
     ],
     "stepsTitle": "How we work",
     "steps": [
@@ -373,6 +378,10 @@
       {
         "q": "How much does HR consulting cost?",
         "a": "It depends on your team size and on which processes we take over. Message us and we'll send an offer for your situation."
+      },
+      {
+        "q": "Do you also handle the Collective Labor Agreement?",
+        "a": "Yes. We represent you in collective negotiations and draft the Collective Labor Agreement."
       }
     ],
     "ctaTitle": "Take HR off your plate",
@@ -382,7 +391,7 @@
   "svcPermise": {
     "eyebrow": "For employers",
     "title": "Work permits for non-EU employees",
-    "subtitle": "Bringing in workers from abroad or negotiating with your employees? We handle the files, the authorities and the paperwork, in full compliance with legal requirements.",
+    "subtitle": "Need work permits for employees from outside the EU? We handle the files, the authorities and the paperwork, in full compliance with legal requirements.",
     "includesTitle": "What's included",
     "includes": [
       {
@@ -400,24 +409,19 @@
       {
         "title": "Communication with the authorities",
         "text": "We deal with the institutions on your behalf and follow the file through to the result."
-      },
-      {
-        "title": "Labor Negotiations",
-        "text": "We represent you in collective negotiations and draft the Collective Labor Agreement."
       }
     ],
     "forWhoTitle": "Who it's for",
     "forWho": [
-      "You run a construction, hospitality or production company and can't find workers locally anymore.",
-      "You want to hire workers from abroad, but the bureaucracy and the queues put you off.",
-      "You've already submitted a file and it got stuck with the authorities.",
-      "Your company has grown and it's time for collective negotiations with your employees."
+      "You run a construction, hospitality or production company and want to hire someone from outside the EU.",
+      "You've already found the right person, but the bureaucracy and the queues put you off.",
+      "You've already submitted a file and it got stuck with the authorities."
     ],
     "stepsTitle": "How we work",
     "steps": [
       {
         "title": "We assess your situation",
-        "text": "Tell us who you want to hire or what you're negotiating. We check the conditions and tell you clearly what needs to be done."
+        "text": "Tell us who you want to hire. We check the conditions and tell you clearly what needs to be done."
       },
       {
         "title": "We prepare the paperwork",
@@ -439,16 +443,12 @@
         "a": "Timelines depend on the authorities and on each individual case. After assessing your situation, we tell you realistically what to expect."
       },
       {
-        "q": "Do you also handle the Collective Labor Agreement?",
-        "a": "Yes. We represent you in collective negotiations and draft the Collective Labor Agreement."
-      },
-      {
         "q": "How much does it cost?",
         "a": "It depends on the number of people and the complexity of the files. Tell us what you need and we'll send a concrete offer."
       }
     ],
     "ctaTitle": "Skip the queues and the paperwork",
-    "ctaText": "Tell us what you need — work permits or collective bargaining — and we'll reply with the concrete steps and an offer.",
+    "ctaText": "Tell us what you need and we'll reply with the concrete steps and an offer.",
     "ctaButton": "Request a quote"
   },
   "svcInfiintare": {
@@ -621,8 +621,8 @@
   },
   "svcMediere": {
     "eyebrow": "Mediation services",
-    "title": "Mediation for workplace disputes",
-    "subtitle": "When a conflict appears between an employee and an employer, court is not the only way. Mediation is a calmer path: you sit down with a neutral mediator, talk openly and look for a solution that works for both sides.",
+    "title": "Mediation for disputes",
+    "subtitle": "When a conflict appears — at work or between any two parties — court is not the only way. Mediation is a calmer path: you sit down with a neutral mediator, talk openly and look for a solution that works for both sides.",
     "includesTitle": "What the service includes",
     "includes": [
       "Mediation for employee–employer conflicts, with a neutral, impartial mediator",
@@ -671,7 +671,7 @@
         "a": "The agreement signed in mediation is a private document. To become enforceable, it can be authenticated by a notary or approved by the court through a ruling. We explain step by step which option fits your situation."
       }
     ],
-    "ctaTitle": "Facing a conflict at work?",
+    "ctaTitle": "Facing a conflict?",
     "ctaText": "Message us on WhatsApp and tell us your situation. We will tell you honestly whether mediation can help and what the next steps would be.",
     "ctaButton": "Message us on WhatsApp"
   },
@@ -794,7 +794,7 @@
           "When you apply for a job on the site: your name, phone, email and the CV you upload.",
           "If you message us on WhatsApp, the conversation takes place in the WhatsApp app, at your initiative, and is also subject to WhatsApp's privacy policy.",
           "The site also keeps an anonymous visit statistic — no cookies and no IP addresses — which cannot be linked to you in any way.",
-        "That is all. We do not collect data behind your back and we do not use tracking or marketing cookies."
+          "That is all. We do not collect data behind your back and we do not use tracking or marketing cookies."
         ]
       },
       {
