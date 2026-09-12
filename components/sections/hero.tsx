@@ -1,9 +1,7 @@
 import Image, { getImageProps } from "next/image";
 import { preload } from "react-dom";
 import { getLocale, getTranslations } from "next-intl/server";
-import { ArrowRight, CheckCircle2 } from "lucide-react";
-import { Link } from "@/i18n/navigation";
-import { Button } from "@/components/ui/button";
+import { CheckCircle2 } from "lucide-react";
 import { BlurFade } from "@/components/ui/blur-fade";
 import { NumberTicker } from "@/components/ui/number-ticker";
 
@@ -73,31 +71,8 @@ export async function Hero() {
           {t("subtitle")}
         </p>
 
-        {/* Fork dual CTA */}
-        <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:gap-4">
-            <Button
-              asChild
-              className="h-14 rounded-xl px-8 text-lg font-semibold"
-            >
-              <Link href="/servicii/recrutare">
-                {t("ctaCompanies")}
-                <ArrowRight className="size-5" aria-hidden />
-              </Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              className="h-14 rounded-xl border-2 border-foreground/20 px-8 text-lg font-semibold text-foreground hover:bg-muted"
-            >
-              <Link href="/joburi">
-                {t("ctaCandidates")}
-                <ArrowRight className="size-5" aria-hidden />
-              </Link>
-            </Button>
-          </div>
-
-        {/* Semnale de încredere */}
-        <ul className="mt-9 flex flex-col gap-x-6 gap-y-2.5 text-base text-muted-foreground md:flex-row md:flex-wrap">
+        {/* Semnale de încredere — drumurile stau în panoul de mai jos, nu aici */}
+        <ul className="mt-8 flex flex-col gap-x-6 gap-y-2.5 text-base text-muted-foreground md:flex-row md:flex-wrap">
           {trust.map((item) => (
             <li key={item} className="flex items-center gap-2">
               <CheckCircle2 className="size-5 shrink-0 text-primary" aria-hidden />

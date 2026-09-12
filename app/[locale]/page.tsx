@@ -33,8 +33,8 @@ export default async function HomePage({
   return (
     <main>
       <Hero />
-      <ServicesGrid className="bg-background" />
       <AudienceFork />
+      <ServicesGrid />
       <DomainsGrid />
       <ProcessSteps />
       <Founder compact />

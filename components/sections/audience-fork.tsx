@@ -36,7 +36,7 @@ export async function AudienceFork() {
   ];
 
   return (
-    <section className="bg-brand-tint pb-16 pt-12 md:pb-24 md:pt-16 lg:pb-28 lg:pt-14">
+    <section className="bg-background pb-16 pt-12 md:pb-24 md:pt-16 lg:pb-28 lg:pt-14">
       <div className="container-site">
         <BlurFade inView>
           <h2 className="text-3xl md:text-4xl">{t("title")}</h2>
@@ -46,7 +46,7 @@ export async function AudienceFork() {
         <div className="mt-8 grid gap-5 lg:grid-cols-2">
           {/* Companii — tentă deschisă */}
           <BlurFade inView delay={0.1} className="h-full">
-            <article className="flex h-full flex-col rounded-3xl border border-border bg-card p-7 md:p-10">
+            <article className="flex h-full flex-col rounded-3xl border border-brand-tint-2 bg-brand-tint p-7 md:p-10">
               <div className="flex items-center gap-4">
                 <div className="flex size-14 shrink-0 items-center justify-center rounded-2xl bg-brand">
                   <Briefcase className="size-7 text-brand-foreground" aria-hidden />
@@ -59,7 +59,7 @@ export async function AudienceFork() {
                   <li key={href}>
                     <Link
                       href={href}
-                      className="flex min-h-12 items-center justify-between gap-4 rounded-xl border border-brand-tint-2 bg-brand-tint px-4 py-2 text-base font-medium transition-colors hover:border-primary hover:bg-brand-tint-2 md:text-lg"
+                      className="flex min-h-12 items-center justify-between gap-4 rounded-xl border border-brand-tint-2 bg-card px-4 py-2 text-base font-medium transition-colors hover:border-primary hover:bg-brand-tint-2 md:text-lg"
                     >
                       {label}
                       <ArrowRight className="size-5 shrink-0 text-primary" aria-hidden />
